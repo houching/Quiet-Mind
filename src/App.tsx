@@ -6,6 +6,7 @@ import {
   MeanderState, 
   SOUND_KEYS, 
   SOUND_LABELS, 
+  SOUND_LABELS_KM, 
   SOUND_SHORTCODES, 
   SOUND_SORT_KEYS,
   TimerMode
@@ -98,6 +99,10 @@ export const App: React.FC = () => {
   });
 
   const t = TRANSLATIONS[lang];
+
+  const getSoundLabel = (key: string) => {
+    return lang === 'km' ? SOUND_LABELS_KM[key] || SOUND_LABELS[key] : SOUND_LABELS[key];
+  };
 
   // --- Active / Available Sounds Configuration ---
   const [activeKeys, setActiveKeys] = useState<string[]>(() => {
@@ -736,7 +741,7 @@ export const App: React.FC = () => {
               <ol>
                 {active.map(sound => (
                   <li key={sound.key} className="SoundItem active">
-                    <span className="label">{sound.label}</span>
+                    <span className="label">{getSoundLabel(sound.key)}</span>
                     <div className="buttonContainer right">
                       <button onClick={() => deactivateSound(sound.key)}>
                         <div className="buttonInner">
@@ -763,7 +768,7 @@ export const App: React.FC = () => {
               <ol>
                 {available.map(sound => (
                   <li key={sound.key} className="SoundItem">
-                    <span className="label">{sound.label}</span>
+                    <span className="label">{getSoundLabel(sound.key)}</span>
                     <div className="buttonContainer left">
                       <button onClick={() => activateSound(sound.key)}>
                         <div className="buttonInner">
@@ -1003,7 +1008,7 @@ export const App: React.FC = () => {
                     <div className={`image fill ${key}`} style={{ opacity: sound.volume }} />
                   </button>
                   <h3>
-                    {sound.label}
+                    {getSoundLabel(sound.key)}
                     {isPlaying && hasVolume && meander.isActive && (
                       <span className="meanderIndicator" />
                     )}

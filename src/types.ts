@@ -91,6 +91,35 @@ export const SOUND_LABELS: Record<string, string> = {
   vinyl: 'Record player'
 };
 
+export const SOUND_LABELS_KM: Record<string, string> = {
+  rain: 'ទឹកភ្លៀង',
+  thunder: 'ផ្គរលាន់',
+  waves: 'រលកសមុទ្រ',
+  wind: 'ខ្យល់បក់',
+  fire: 'ភ្លើងកំដៅ',
+  birds: 'សត្វស្លាប',
+  crickets: 'សត្វចង្រិត',
+  people: 'ហាងកាហ្វេ',
+  sbowl: 'ស្គរកណ្ដឹងតូច',
+  whitenoise: 'សំឡេងស',
+  aircon: 'ម៉ាស៊ីនត្រជាក់',
+  fanhigh: 'កង្ហារខ្លាំង',
+  fanlow: 'កង្ហារខ្សោយ',
+  city: 'ទីក្រុង',
+  chimesmetal: 'កណ្ដឹងខ្យល់ដែក',
+  stream: 'ទឹកអូរ',
+  raintinroof: 'ភ្លៀងលើដំបូលស័ង្កសី',
+  raintrees: 'ភ្លៀងលើស្លឹកឈើ',
+  raincabin: 'ភ្លៀងលើផ្ទះឈើ',
+  waterfall: 'ទឹកជ្រោះ',
+  cicadas: 'សត្វរៃ',
+  brownnoise: 'សំឡេងត្នោត',
+  pinknoise: 'សំឡេងផ្កាឈូក',
+  frogs: 'សត្វកង្កែប',
+  vinyl: 'ម៉ាស៊ីនចាក់ថាស'
+};
+
+
 export const SOUND_SHORTCODES: Record<string, string> = {
   rain: 'rno',
   thunder: 'thn',
