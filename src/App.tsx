@@ -936,7 +936,6 @@ export const App: React.FC = () => {
           <nav>
             <button
               className="updateButton active"
-              style={{ fontSize: '0.8rem', padding: '0.2rem 0.5rem', textDecoration: 'none' }}
               onClick={() => setLang(prev => prev === 'en' ? 'km' : 'en')}
             >
               {lang === 'en' ? 'ភាសាខ្មែរ' : 'English'}

@@ -161,12 +161,13 @@ html {
 }
 html,
 body,
-#root,
-#App {
+#root {
   height: 100%;
-  overflow-y: auto;
 }
 #App {
+  min-height: 100%;
+  min-height: 100dvh;
+  overflow-y: auto;
   color: #fff;
   -webkit-overflow-scrolling: touch;
   background: radial-gradient(
@@ -176,7 +177,7 @@ body,
     #0d0f14 100%
   );
   background-attachment: fixed;
-  font-family: Montserrat;
+  font-family: Montserrat, 'Kantumruy Pro', sans-serif;
   position: relative;
 }
 h1,
@@ -185,7 +186,7 @@ h3,
 h4,
 h5,
 p {
-  font-family: Montserrat;
+  font-family: Montserrat, 'Kantumruy Pro', sans-serif;
 }
 a {
   color: #fff;
@@ -226,7 +227,7 @@ audio {
 }
 .Title {
   text-align: center;
-  margin-top: 4rem;
+  margin-top: 1rem;
 }
 .Title h1 {
   text-transform: uppercase;
@@ -256,9 +257,13 @@ audio {
   border: 2px solid #fff;
   border-radius: 4px;
   min-width: 4rem;
+  min-height: 40px;
   margin-left: 1rem;
-  padding: 0.25rem 0;
-  font-size: 0.6rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   transition:
     background 0.3s,
     color 0.3s;
@@ -431,19 +436,20 @@ audio {
 .Header {
   background-color: rgba(0, 0, 0, 0.3);
   flex-direction: column;
-  justify-content: flex-start;
-  height: 2.8rem;
-  transition: height 0.3s;
+  justify-content: center;
+  min-height: 48px;
+  transition: min-height 0.3s;
   display: flex;
 }
 .Header .container {
   justify-content: space-between;
-  height: 2.8rem;
+  align-items: center;
+  min-height: 48px;
   display: flex;
 }
 .Header nav,
 .Header .GlobalVolume {
-  height: 2.8rem;
+  min-height: 48px;
 }
 .Header nav {
   justify-content: flex-end;
@@ -454,8 +460,12 @@ audio {
 .Header .updateButton {
   cursor: pointer;
   border-radius: 4px;
-  padding: 0.25rem 0.75rem;
-  text-decoration: underline;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   transition:
     background-color 0.3s,
     color 0.3s;
@@ -471,7 +481,7 @@ audio {
 .home {
   width: 100%;
   min-height: 100%;
-  padding: 56px 20px;
+  padding: 1.5rem 1.25rem;
 }
 .PlayControls {
   flex: 1;
@@ -515,10 +525,10 @@ audio {
 .PlayControls .secondary {
   border: 2px solid #fff;
   border-radius: 50%;
-  width: 2.5rem;
-  min-width: 38px;
-  height: 2.5rem;
-  min-height: 38px;
+  width: 3rem;
+  min-width: 44px;
+  height: 3rem;
+  min-height: 44px;
   font-size: 0.7rem;
   display: block;
 }
@@ -868,11 +878,11 @@ audio {
 }
 .MixInputItem button.delete {
   border-left: 2px solid #fff;
-  max-width: 2rem;
+  min-width: 44px;
 }
 @media (max-width: 512px) {
   .MixInputItem button.delete {
-    min-width: 32px;
+    min-width: 44px;
   }
 }
 .MixInput {
@@ -1549,12 +1559,15 @@ audio {
   text-transform: uppercase;
   border: 2px solid #fff;
   border-radius: 4px;
-  width: 6rem;
-  height: 2rem;
+  width: 6.5rem;
+  min-height: 44px;
   margin-top: 0;
   margin-bottom: 0;
-  padding: 0.25rem 0;
+  padding: 0.25rem 0.5rem;
   font-size: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   transition:
     color 0.4s,
     background-color 0.4s,
@@ -2088,16 +2101,19 @@ audio {
 .SoundSlider span {
   display: block;
 }
-.SoundSlider input[type="range"] {
+.SoundSlider input[type="range"],
+.SoundsGrid .sliderContainer input[type="range"] {
   -webkit-appearance: none;
   background: 0 0;
   width: 100%;
   margin: 10px 0;
 }
-.SoundSlider input[type="range"]:focus {
+.SoundSlider input[type="range"]:focus,
+.SoundsGrid .sliderContainer input[type="range"]:focus {
   outline: none;
 }
-.SoundSlider input[type="range"]::-webkit-slider-runnable-track {
+.SoundSlider input[type="range"]::-webkit-slider-runnable-track,
+.SoundsGrid .sliderContainer input[type="range"]::-webkit-slider-runnable-track {
   cursor: pointer;
   background: #fff;
   border: 0 solid #010101;
@@ -2108,7 +2124,8 @@ audio {
     0 0 #000,
     0 0 #0d0d0d;
 }
-.SoundSlider input[type="range"]::-webkit-slider-thumb {
+.SoundSlider input[type="range"]::-webkit-slider-thumb,
+.SoundsGrid .sliderContainer input[type="range"]::-webkit-slider-thumb {
   cursor: pointer;
   -webkit-appearance: none;
   background: #fff;
@@ -2121,10 +2138,12 @@ audio {
     1px 1px 1px rgba(0, 0, 0, 0.25),
     0 0 1px rgba(13, 13, 13, 0.25);
 }
-.SoundSlider input[type="range"]:focus::-webkit-slider-runnable-track {
+.SoundSlider input[type="range"]:focus::-webkit-slider-runnable-track,
+.SoundsGrid .sliderContainer input[type="range"]:focus::-webkit-slider-runnable-track {
   background: #fff;
 }
-.SoundSlider input[type="range"]::-moz-range-track {
+.SoundSlider input[type="range"]::-moz-range-track,
+.SoundsGrid .sliderContainer input[type="range"]::-moz-range-track {
   cursor: pointer;
   background: #fff;
   border: 0 solid #010101;
@@ -2135,7 +2154,8 @@ audio {
     0 0 #000,
     0 0 #0d0d0d;
 }
-.SoundSlider input[type="range"]::-moz-range-thumb {
+.SoundSlider input[type="range"]::-moz-range-thumb,
+.SoundsGrid .sliderContainer input[type="range"]::-moz-range-thumb {
   cursor: pointer;
   background: #fff;
   border: 1px solid #d9d9d9;
@@ -2146,7 +2166,8 @@ audio {
     1px 1px 1px rgba(0, 0, 0, 0.25),
     0 0 1px rgba(13, 13, 13, 0.25);
 }
-.SoundSlider input[type="range"]::-ms-track {
+.SoundSlider input[type="range"]::-ms-track,
+.SoundsGrid .sliderContainer input[type="range"]::-ms-track {
   cursor: pointer;
   color: transparent;
   background: 0 0;
@@ -2154,7 +2175,8 @@ audio {
   width: 100%;
   height: 8px;
 }
-.SoundSlider input[type="range"]::-ms-fill-lower {
+.SoundSlider input[type="range"]::-ms-fill-lower,
+.SoundsGrid .sliderContainer input[type="range"]::-ms-fill-lower {
   background: #f2f2f2;
   border: 0 solid #010101;
   border-radius: 8px;
@@ -2162,7 +2184,8 @@ audio {
     0 0 #000,
     0 0 #0d0d0d;
 }
-.SoundSlider input[type="range"]::-ms-fill-upper {
+.SoundSlider input[type="range"]::-ms-fill-upper,
+.SoundsGrid .sliderContainer input[type="range"]::-ms-fill-upper {
   background: #fff;
   border: 0 solid #010101;
   border-radius: 8px;
@@ -2170,7 +2193,8 @@ audio {
     0 0 #000,
     0 0 #0d0d0d;
 }
-.SoundSlider input[type="range"]::-ms-thumb {
+.SoundSlider input[type="range"]::-ms-thumb,
+.SoundsGrid .sliderContainer input[type="range"]::-ms-thumb {
   cursor: pointer;
   background: #fff;
   border: 1px solid #d9d9d9;
@@ -2181,7 +2205,8 @@ audio {
     1px 1px 1px rgba(0, 0, 0, 0.25),
     0 0 1px rgba(13, 13, 13, 0.25);
 }
-.SoundSlider input[type="range"]:focus::-ms-fill-lower {
+.SoundSlider input[type="range"]:focus::-ms-fill-lower,
+.SoundsGrid .sliderContainer input[type="range"]:focus::-ms-fill-lower {
   background: #fff;
 }
 .SoundSlider input[type="range"]:focus::-ms-fill-upper {
@@ -2275,11 +2300,14 @@ audio {
   border: 2px solid #fff;
   border-radius: 4px;
   width: 10rem;
-  height: 2rem;
+  min-height: 44px;
   margin-top: 0;
   margin-bottom: 0;
-  padding: 0.25rem 0;
+  padding: 0.25rem 0.5rem;
   font-size: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   transition:
     color 0.4s,
     background-color 0.4s,
