@@ -1,0 +1,761 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="700" viewBox="0 0 1000 700">
+  <defs>
+    <!-- Glowing shadow definitions for active glassmorphism -->
+    <!-- Card is 60x60 at offset (20,20), so edges are at 20 and 80.
+         With stdDeviation=3, blur extends ~9px (3σ), reaching ~11 to ~89.
+         This stays well within the 0-100 cell boundary — no hard cut-off. -->
+    <filter id="glow-blue" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="glow-fire" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="glow-nature" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="glow-noise" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="glow-ambient" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="glow-indicator" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Specific Category Fills -->
+    <linearGradient id="grad-blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#1d4ed8" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="grad-fire" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ef4444" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#b91c1c" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="grad-nature" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#047857" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="grad-noise" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#6d28d9" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="grad-ambient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#b45309" stop-opacity="0.2"/>
+    </linearGradient>
+  </defs>
+  <!-- Sound: rain (outline) at (0, 0) -->
+  <g transform="translate(0, 0)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="0.6" color="#ffffff">
+      <path d="M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M8 22v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M12 22v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M16 22v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    </g>
+  </g>
+
+  <!-- Sound: rain (fill) at (0, 100) -->
+  <g transform="translate(0, 100)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="url(#grad-blue)" stroke="rgba(255, 255, 255, 0.5)" stroke-width="2" filter="url(#glow-blue)" />
+    <rect x="21" y="21" width="58" height="58" rx="17" fill="none" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="1.0" color="#ffffff" filter="drop-shadow(0px 0px 3px rgba(255,255,255,0.5))">
+      <path d="M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M8 22v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M12 22v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M16 22v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    </g>
+  </g>
+
+  <!-- Sound: thunder (outline) at (100, 0) -->
+  <g transform="translate(100, 0)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="0.6" color="#ffffff">
+      <path d="M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="m13 12-3 5h4l-3 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </g>
+  </g>
+
+  <!-- Sound: thunder (fill) at (100, 100) -->
+  <g transform="translate(100, 100)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="url(#grad-blue)" stroke="rgba(255, 255, 255, 0.5)" stroke-width="2" filter="url(#glow-blue)" />
+    <rect x="21" y="21" width="58" height="58" rx="17" fill="none" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="1.0" color="#ffffff" filter="drop-shadow(0px 0px 3px rgba(255,255,255,0.5))">
+      <path d="M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="m13 12-3 5h4l-3 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </g>
+  </g>
+
+  <!-- Sound: waves (outline) at (200, 0) -->
+  <g transform="translate(200, 0)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="0.6" color="#ffffff">
+      <path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.6 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.6 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.6 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    </g>
+  </g>
+
+  <!-- Sound: waves (fill) at (200, 100) -->
+  <g transform="translate(200, 100)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="url(#grad-blue)" stroke="rgba(255, 255, 255, 0.5)" stroke-width="2" filter="url(#glow-blue)" />
+    <rect x="21" y="21" width="58" height="58" rx="17" fill="none" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="1.0" color="#ffffff" filter="drop-shadow(0px 0px 3px rgba(255,255,255,0.5))">
+      <path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.6 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.6 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.6 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    </g>
+  </g>
+
+  <!-- Sound: wind (outline) at (300, 0) -->
+  <g transform="translate(300, 0)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="0.6" color="#ffffff">
+      <path d="M12.8 18H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M19 12H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M14 6H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M12.8 18a2.5 2.5 0 1 1-2.5-2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M19 12a2.5 2.5 0 1 1-2.5-2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M14 6a2.5 2.5 0 1 1-2.5-2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    </g>
+  </g>
+
+  <!-- Sound: wind (fill) at (300, 100) -->
+  <g transform="translate(300, 100)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="url(#grad-blue)" stroke="rgba(255, 255, 255, 0.5)" stroke-width="2" filter="url(#glow-blue)" />
+    <rect x="21" y="21" width="58" height="58" rx="17" fill="none" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="1.0" color="#ffffff" filter="drop-shadow(0px 0px 3px rgba(255,255,255,0.5))">
+      <path d="M12.8 18H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M19 12H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M14 6H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M12.8 18a2.5 2.5 0 1 1-2.5-2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M19 12a2.5 2.5 0 1 1-2.5-2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M14 6a2.5 2.5 0 1 1-2.5-2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    </g>
+  </g>
+
+  <!-- Sound: fire (outline) at (400, 0) -->
+  <g transform="translate(400, 0)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="0.6" color="#ffffff">
+      <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </g>
+  </g>
+
+  <!-- Sound: fire (fill) at (400, 100) -->
+  <g transform="translate(400, 100)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="url(#grad-fire)" stroke="rgba(255, 255, 255, 0.5)" stroke-width="2" filter="url(#glow-fire)" />
+    <rect x="21" y="21" width="58" height="58" rx="17" fill="none" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="1.0" color="#ffffff" filter="drop-shadow(0px 0px 3px rgba(255,255,255,0.5))">
+      <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </g>
+  </g>
+
+  <!-- Sound: birds (outline) at (500, 0) -->
+  <g transform="translate(500, 0)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="0.6" color="#ffffff">
+      <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </g>
+  </g>
+
+  <!-- Sound: birds (fill) at (500, 100) -->
+  <g transform="translate(500, 100)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="url(#grad-nature)" stroke="rgba(255, 255, 255, 0.5)" stroke-width="2" filter="url(#glow-nature)" />
+    <rect x="21" y="21" width="58" height="58" rx="17" fill="none" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="1.0" color="#ffffff" filter="drop-shadow(0px 0px 3px rgba(255,255,255,0.5))">
+      <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </g>
+  </g>
+
+  <!-- Sound: crickets (outline) at (600, 0) -->
+  <g transform="translate(600, 0)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="0.6" color="#ffffff">
+      <rect x="10" y="8" width="4" height="10" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+    <circle cx="12" cy="6" r="2" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path d="M10 5C8 3 5 3 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    <path d="M14 5C16 3 19 3 20 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    <path d="M9 10L6 9L5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M15 10L18 9L19 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M9 14L5 15L4 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M15 14L19 15L20 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </g>
+  </g>
+
+  <!-- Sound: crickets (fill) at (600, 100) -->
+  <g transform="translate(600, 100)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="url(#grad-nature)" stroke="rgba(255, 255, 255, 0.5)" stroke-width="2" filter="url(#glow-nature)" />
+    <rect x="21" y="21" width="58" height="58" rx="17" fill="none" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="1.0" color="#ffffff" filter="drop-shadow(0px 0px 3px rgba(255,255,255,0.5))">
+      <rect x="10" y="8" width="4" height="10" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+    <circle cx="12" cy="6" r="2" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path d="M10 5C8 3 5 3 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    <path d="M14 5C16 3 19 3 20 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    <path d="M9 10L6 9L5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M15 10L18 9L19 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M9 14L5 15L4 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M15 14L19 15L20 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </g>
+  </g>
+
+  <!-- Sound: people (outline) at (700, 0) -->
+  <g transform="translate(700, 0)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="0.6" color="#ffffff">
+      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path d="M22 21v-2a4 4 0 0 0-3-3.87" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2" fill="none"/>
+    </g>
+  </g>
+
+  <!-- Sound: people (fill) at (700, 100) -->
+  <g transform="translate(700, 100)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="url(#grad-ambient)" stroke="rgba(255, 255, 255, 0.5)" stroke-width="2" filter="url(#glow-ambient)" />
+    <rect x="21" y="21" width="58" height="58" rx="17" fill="none" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="1.0" color="#ffffff" filter="drop-shadow(0px 0px 3px rgba(255,255,255,0.5))">
+      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path d="M22 21v-2a4 4 0 0 0-3-3.87" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2" fill="none"/>
+    </g>
+  </g>
+
+  <!-- Sound: sbowl (outline) at (800, 0) -->
+  <g transform="translate(800, 0)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="0.6" color="#ffffff">
+      <path d="M3 9a9 9 0 0 0 18 0H3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="none"/>
+    <path d="M6 18c0 1.5 2 2.5 6 2.5s6-1 6-2.5" stroke="currentColor" stroke-width="1.5" fill="none"/>
+    <path d="M12 9V3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <path d="M8 3a4 4 0 0 1 0 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    <path d="M2 8A12 12 0 0 1 5 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    <path d="M22 8A12 12 0 0 0 19 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    </g>
+  </g>
+
+  <!-- Sound: sbowl (fill) at (800, 100) -->
+  <g transform="translate(800, 100)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="url(#grad-ambient)" stroke="rgba(255, 255, 255, 0.5)" stroke-width="2" filter="url(#glow-ambient)" />
+    <rect x="21" y="21" width="58" height="58" rx="17" fill="none" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="1.0" color="#ffffff" filter="drop-shadow(0px 0px 3px rgba(255,255,255,0.5))">
+      <path d="M3 9a9 9 0 0 0 18 0H3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="none"/>
+    <path d="M6 18c0 1.5 2 2.5 6 2.5s6-1 6-2.5" stroke="currentColor" stroke-width="1.5" fill="none"/>
+    <path d="M12 9V3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <path d="M8 3a4 4 0 0 1 0 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    <path d="M2 8A12 12 0 0 1 5 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    <path d="M22 8A12 12 0 0 0 19 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    </g>
+  </g>
+
+  <!-- Sound: whitenoise (outline) at (900, 0) -->
+  <g transform="translate(900, 0)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="0.6" color="#ffffff">
+      <rect width="20" height="14" x="2" y="5" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path d="M17 5L12 2L7 5" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" fill="none"/>
+    <path d="M5 8h4M12 8h3M7 11h6M5 14h5M13 14h6M9 16h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- Sound: whitenoise (fill) at (900, 100) -->
+  <g transform="translate(900, 100)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="url(#grad-noise)" stroke="rgba(255, 255, 255, 0.5)" stroke-width="2" filter="url(#glow-noise)" />
+    <rect x="21" y="21" width="58" height="58" rx="17" fill="none" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="1.0" color="#ffffff" filter="drop-shadow(0px 0px 3px rgba(255,255,255,0.5))">
+      <rect width="20" height="14" x="2" y="5" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path d="M17 5L12 2L7 5" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" fill="none"/>
+    <path d="M5 8h4M12 8h3M7 11h6M5 14h5M13 14h6M9 16h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- Sound: aircon (outline) at (0, 200) -->
+  <g transform="translate(0, 200)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="0.6" color="#ffffff">
+      <rect width="20" height="8" x="2" y="6" rx="1" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path d="M6 18v-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M10 18v-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M14 18v-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M18 18v-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- Sound: aircon (fill) at (0, 300) -->
+  <g transform="translate(0, 300)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="url(#grad-noise)" stroke="rgba(255, 255, 255, 0.5)" stroke-width="2" filter="url(#glow-noise)" />
+    <rect x="21" y="21" width="58" height="58" rx="17" fill="none" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="1.0" color="#ffffff" filter="drop-shadow(0px 0px 3px rgba(255,255,255,0.5))">
+      <rect width="20" height="8" x="2" y="6" rx="1" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path d="M6 18v-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M10 18v-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M14 18v-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M18 18v-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- Sound: fanhigh (outline) at (100, 200) -->
+  <g transform="translate(100, 200)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="0.6" color="#ffffff">
+      <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path d="M12 9c1.5 0 2.5-1.5 1.5-3S10.5 4.5 9 6" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path d="M15 12c0 1.5 1.5 2.5 3 1.5s1.5-3 0-4.5" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path d="M12 15c-1.5 0-2.5 1.5-1.5 3s3 1.5 4.5 0" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path d="M9 12c0-1.5-1.5-2.5-3-1.5s-1.5 3 0 4.5" stroke="currentColor" stroke-width="2" fill="none"/>
+    </g>
+  </g>
+
+  <!-- Sound: fanhigh (fill) at (100, 300) -->
+  <g transform="translate(100, 300)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="url(#grad-noise)" stroke="rgba(255, 255, 255, 0.5)" stroke-width="2" filter="url(#glow-noise)" />
+    <rect x="21" y="21" width="58" height="58" rx="17" fill="none" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="1.0" color="#ffffff" filter="drop-shadow(0px 0px 3px rgba(255,255,255,0.5))">
+      <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path d="M12 9c1.5 0 2.5-1.5 1.5-3S10.5 4.5 9 6" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path d="M15 12c0 1.5 1.5 2.5 3 1.5s1.5-3 0-4.5" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path d="M12 15c-1.5 0-2.5 1.5-1.5 3s3 1.5 4.5 0" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path d="M9 12c0-1.5-1.5-2.5-3-1.5s-1.5 3 0 4.5" stroke="currentColor" stroke-width="2" fill="none"/>
+    </g>
+  </g>
+
+  <!-- Sound: fanlow (outline) at (200, 200) -->
+  <g transform="translate(200, 200)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="0.6" color="#ffffff">
+      <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path d="M12 9C13.5 9 14 7 14 5.5S13 4 12 4s-2.5 0-2.5 1.5S10.5 9 12 9Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+    <path d="M15 12c0 1.5 2 2 3.5 2s1.5-1 1.5-2-.5-2.5-2-2.5-3 .5-3 2Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+    <path d="M12 15c-1.5 0-2 2-2 3.5s1 1.5 2 1.5 2.5-.5 2.5-2-1.5-3-2-3Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+    <path d="M9 12c0-1.5-2-2-3.5-2S4 11 4 12s.5 2.5 2 2.5 3-.5 3-2Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+    </g>
+  </g>
+
+  <!-- Sound: fanlow (fill) at (200, 300) -->
+  <g transform="translate(200, 300)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="url(#grad-noise)" stroke="rgba(255, 255, 255, 0.5)" stroke-width="2" filter="url(#glow-noise)" />
+    <rect x="21" y="21" width="58" height="58" rx="17" fill="none" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="1.0" color="#ffffff" filter="drop-shadow(0px 0px 3px rgba(255,255,255,0.5))">
+      <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path d="M12 9C13.5 9 14 7 14 5.5S13 4 12 4s-2.5 0-2.5 1.5S10.5 9 12 9Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+    <path d="M15 12c0 1.5 2 2 3.5 2s1.5-1 1.5-2-.5-2.5-2-2.5-3 .5-3 2Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+    <path d="M12 15c-1.5 0-2 2-2 3.5s1 1.5 2 1.5 2.5-.5 2.5-2-1.5-3-2-3Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+    <path d="M9 12c0-1.5-2-2-3.5-2S4 11 4 12s.5 2.5 2 2.5 3-.5 3-2Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+    </g>
+  </g>
+
+  <!-- Sound: city (outline) at (300, 200) -->
+  <g transform="translate(300, 200)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="0.6" color="#ffffff">
+      <path d="M2 22h20" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path d="M10 6h4" stroke="currentColor" stroke-width="2"/>
+    <path d="M10 10h4" stroke="currentColor" stroke-width="2"/>
+    <path d="M10 14h4" stroke="currentColor" stroke-width="2"/>
+    </g>
+  </g>
+
+  <!-- Sound: city (fill) at (300, 300) -->
+  <g transform="translate(300, 300)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="url(#grad-ambient)" stroke="rgba(255, 255, 255, 0.5)" stroke-width="2" filter="url(#glow-ambient)" />
+    <rect x="21" y="21" width="58" height="58" rx="17" fill="none" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="1.0" color="#ffffff" filter="drop-shadow(0px 0px 3px rgba(255,255,255,0.5))">
+      <path d="M2 22h20" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path d="M10 6h4" stroke="currentColor" stroke-width="2"/>
+    <path d="M10 10h4" stroke="currentColor" stroke-width="2"/>
+    <path d="M10 14h4" stroke="currentColor" stroke-width="2"/>
+    </g>
+  </g>
+
+  <!-- Sound: chimesmetal (outline) at (400, 200) -->
+  <g transform="translate(400, 200)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="0.6" color="#ffffff">
+      <path d="M4 3h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M6 3v12" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path d="M10 3v18" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path d="M14 3v14" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path d="M18 3v10" stroke="currentColor" stroke-width="2" fill="none"/>
+    <circle cx="10" cy="21" r="1" fill="currentColor"/>
+    </g>
+  </g>
+
+  <!-- Sound: chimesmetal (fill) at (400, 300) -->
+  <g transform="translate(400, 300)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="url(#grad-ambient)" stroke="rgba(255, 255, 255, 0.5)" stroke-width="2" filter="url(#glow-ambient)" />
+    <rect x="21" y="21" width="58" height="58" rx="17" fill="none" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="1.0" color="#ffffff" filter="drop-shadow(0px 0px 3px rgba(255,255,255,0.5))">
+      <path d="M4 3h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M6 3v12" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path d="M10 3v18" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path d="M14 3v14" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path d="M18 3v10" stroke="currentColor" stroke-width="2" fill="none"/>
+    <circle cx="10" cy="21" r="1" fill="currentColor"/>
+    </g>
+  </g>
+
+  <!-- Sound: stream (outline) at (500, 200) -->
+  <g transform="translate(500, 200)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="0.6" color="#ffffff">
+      <path d="M2 8c4-3 6 3 10 0s6-3 10 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M2 14c4-3 6 3 10 0s6-3 10 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M2 20c4-3 6 3 10 0s6-3 10 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    </g>
+  </g>
+
+  <!-- Sound: stream (fill) at (500, 300) -->
+  <g transform="translate(500, 300)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="url(#grad-blue)" stroke="rgba(255, 255, 255, 0.5)" stroke-width="2" filter="url(#glow-blue)" />
+    <rect x="21" y="21" width="58" height="58" rx="17" fill="none" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="1.0" color="#ffffff" filter="drop-shadow(0px 0px 3px rgba(255,255,255,0.5))">
+      <path d="M2 8c4-3 6 3 10 0s6-3 10 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M2 14c4-3 6 3 10 0s6-3 10 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M2 20c4-3 6 3 10 0s6-3 10 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    </g>
+  </g>
+
+  <!-- Sound: raintinroof (outline) at (600, 200) -->
+  <g transform="translate(600, 200)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="0.6" color="#ffffff">
+      <path d="M2 12l10-8 10 8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <path d="M5 9.6l7-5.6 7 5.6" stroke="currentColor" stroke-width="1.5" fill="none"/>
+    <path d="M6 8.8L6 14M10 5.6L10 14M14 5.6L14 14M18 8.8L18 14" stroke="currentColor" stroke-width="1.5" fill="none"/>
+    <path d="M2 14h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <path d="M5 2L4 4M12 1L11 3M19 2L18 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- Sound: raintinroof (fill) at (600, 300) -->
+  <g transform="translate(600, 300)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="url(#grad-blue)" stroke="rgba(255, 255, 255, 0.5)" stroke-width="2" filter="url(#glow-blue)" />
+    <rect x="21" y="21" width="58" height="58" rx="17" fill="none" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="1.0" color="#ffffff" filter="drop-shadow(0px 0px 3px rgba(255,255,255,0.5))">
+      <path d="M2 12l10-8 10 8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <path d="M5 9.6l7-5.6 7 5.6" stroke="currentColor" stroke-width="1.5" fill="none"/>
+    <path d="M6 8.8L6 14M10 5.6L10 14M14 5.6L14 14M18 8.8L18 14" stroke="currentColor" stroke-width="1.5" fill="none"/>
+    <path d="M2 14h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <path d="M5 2L4 4M12 1L11 3M19 2L18 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- Sound: raintrees (outline) at (700, 200) -->
+  <g transform="translate(700, 200)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="0.6" color="#ffffff">
+      <path d="m12 7-8 12h16L12 7Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="none"/>
+    <path d="M12 19v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <path d="M9 13h6M7 16h10" stroke="currentColor" stroke-width="2"/>
+    <path d="M7 2L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <path d="M12 1L11 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <path d="M17 2L16 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- Sound: raintrees (fill) at (700, 300) -->
+  <g transform="translate(700, 300)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="url(#grad-blue)" stroke="rgba(255, 255, 255, 0.5)" stroke-width="2" filter="url(#glow-blue)" />
+    <rect x="21" y="21" width="58" height="58" rx="17" fill="none" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="1.0" color="#ffffff" filter="drop-shadow(0px 0px 3px rgba(255,255,255,0.5))">
+      <path d="m12 7-8 12h16L12 7Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="none"/>
+    <path d="M12 19v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <path d="M9 13h6M7 16h10" stroke="currentColor" stroke-width="2"/>
+    <path d="M7 2L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <path d="M12 1L11 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <path d="M17 2L16 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- Sound: raincabin (outline) at (800, 200) -->
+  <g transform="translate(800, 200)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="0.6" color="#ffffff">
+      <path d="m3 11 9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="none"/>
+    <path d="M9 22V13h6v9" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path d="M6 3L5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <path d="M12 1L11 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <path d="M18 3L17 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- Sound: raincabin (fill) at (800, 300) -->
+  <g transform="translate(800, 300)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="url(#grad-blue)" stroke="rgba(255, 255, 255, 0.5)" stroke-width="2" filter="url(#glow-blue)" />
+    <rect x="21" y="21" width="58" height="58" rx="17" fill="none" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="1.0" color="#ffffff" filter="drop-shadow(0px 0px 3px rgba(255,255,255,0.5))">
+      <path d="m3 11 9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="none"/>
+    <path d="M9 22V13h6v9" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path d="M6 3L5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <path d="M12 1L11 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <path d="M18 3L17 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- Sound: waterfall (outline) at (900, 200) -->
+  <g transform="translate(900, 200)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="0.6" color="#ffffff">
+      <path d="M3 4h4v16M21 4h-4v16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M10 2v20M14 2v20" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none" stroke-dasharray="4 2"/>
+    <path d="M12 5v14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none" stroke-dasharray="6 3"/>
+    <path d="M7 20c2-1 4 1 6 0s4-1 6 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    </g>
+  </g>
+
+  <!-- Sound: waterfall (fill) at (900, 300) -->
+  <g transform="translate(900, 300)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="url(#grad-blue)" stroke="rgba(255, 255, 255, 0.5)" stroke-width="2" filter="url(#glow-blue)" />
+    <rect x="21" y="21" width="58" height="58" rx="17" fill="none" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="1.0" color="#ffffff" filter="drop-shadow(0px 0px 3px rgba(255,255,255,0.5))">
+      <path d="M3 4h4v16M21 4h-4v16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M10 2v20M14 2v20" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none" stroke-dasharray="4 2"/>
+    <path d="M12 5v14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none" stroke-dasharray="6 3"/>
+    <path d="M7 20c2-1 4 1 6 0s4-1 6 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    </g>
+  </g>
+
+  <!-- Sound: cicadas (outline) at (0, 400) -->
+  <g transform="translate(0, 400)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="0.6" color="#ffffff">
+      <rect x="10" y="5" width="4" height="12" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+    <circle cx="12" cy="4" r="1.5" fill="currentColor"/>
+    <path d="M9 7C6 8 5 12 6 18c.5 3 2 4 3 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    <path d="M15 7C18 8 19 12 18 18c-.5 3-2 4-3 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    <path d="M10 2.5L9 1.5M14 2.5L15 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- Sound: cicadas (fill) at (0, 500) -->
+  <g transform="translate(0, 500)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="url(#grad-nature)" stroke="rgba(255, 255, 255, 0.5)" stroke-width="2" filter="url(#glow-nature)" />
+    <rect x="21" y="21" width="58" height="58" rx="17" fill="none" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="1.0" color="#ffffff" filter="drop-shadow(0px 0px 3px rgba(255,255,255,0.5))">
+      <rect x="10" y="5" width="4" height="12" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+    <circle cx="12" cy="4" r="1.5" fill="currentColor"/>
+    <path d="M9 7C6 8 5 12 6 18c.5 3 2 4 3 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    <path d="M15 7C18 8 19 12 18 18c-.5 3-2 4-3 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    <path d="M10 2.5L9 1.5M14 2.5L15 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- Sound: frogs (outline) at (100, 400) -->
+  <g transform="translate(100, 400)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="0.6" color="#ffffff">
+      <path d="M6 14a6 6 0 0 1 12 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <circle cx="7.5" cy="8.5" r="2.5" stroke="currentColor" stroke-width="2" fill="none"/>
+    <circle cx="16.5" cy="8.5" r="2.5" stroke="currentColor" stroke-width="2" fill="none"/>
+    <circle cx="7.5" cy="8.5" r="0.75" fill="currentColor"/>
+    <circle cx="16.5" cy="8.5" r="0.75" fill="currentColor"/>
+    <path d="M9 13.5c1.5 1.5 4.5 1.5 6 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    <path d="M4 17c1-2 3-2 3-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M20 17c-1-2-3-2-3-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- Sound: frogs (fill) at (100, 500) -->
+  <g transform="translate(100, 500)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="url(#grad-nature)" stroke="rgba(255, 255, 255, 0.5)" stroke-width="2" filter="url(#glow-nature)" />
+    <rect x="21" y="21" width="58" height="58" rx="17" fill="none" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="1.0" color="#ffffff" filter="drop-shadow(0px 0px 3px rgba(255,255,255,0.5))">
+      <path d="M6 14a6 6 0 0 1 12 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <circle cx="7.5" cy="8.5" r="2.5" stroke="currentColor" stroke-width="2" fill="none"/>
+    <circle cx="16.5" cy="8.5" r="2.5" stroke="currentColor" stroke-width="2" fill="none"/>
+    <circle cx="7.5" cy="8.5" r="0.75" fill="currentColor"/>
+    <circle cx="16.5" cy="8.5" r="0.75" fill="currentColor"/>
+    <path d="M9 13.5c1.5 1.5 4.5 1.5 6 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    <path d="M4 17c1-2 3-2 3-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M20 17c-1-2-3-2-3-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- Sound: clock (outline) at (200, 400) -->
+  <g transform="translate(200, 400)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="0.6" color="#ffffff">
+      <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+    <polyline points="12 6 12 12 16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </g>
+  </g>
+
+  <!-- Sound: clock (fill) at (200, 500) -->
+  <g transform="translate(200, 500)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="url(#grad-ambient)" stroke="rgba(255, 255, 255, 0.5)" stroke-width="2" filter="url(#glow-ambient)" />
+    <rect x="21" y="21" width="58" height="58" rx="17" fill="none" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="1.0" color="#ffffff" filter="drop-shadow(0px 0px 3px rgba(255,255,255,0.5))">
+      <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+    <polyline points="12 6 12 12 16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </g>
+  </g>
+
+  <!-- Sound: vinyl (outline) at (300, 400) -->
+  <g transform="translate(300, 400)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="0.6" color="#ffffff">
+      <rect x="2" y="2" width="20" height="20" rx="3" stroke="currentColor" stroke-width="2" fill="none"/>
+    <circle cx="11" cy="12" r="7" stroke="currentColor" stroke-width="2" fill="none"/>
+    <circle cx="11" cy="12" r="2.5" stroke="currentColor" stroke-width="1.5" fill="none"/>
+    <circle cx="11" cy="12" r="0.75" fill="currentColor"/>
+    <path d="M19 5v4l-4 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <rect x="18" y="4" width="2" height="2" fill="currentColor"/>
+    </g>
+  </g>
+
+  <!-- Sound: vinyl (fill) at (300, 500) -->
+  <g transform="translate(300, 500)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="url(#grad-ambient)" stroke="rgba(255, 255, 255, 0.5)" stroke-width="2" filter="url(#glow-ambient)" />
+    <rect x="21" y="21" width="58" height="58" rx="17" fill="none" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="1.0" color="#ffffff" filter="drop-shadow(0px 0px 3px rgba(255,255,255,0.5))">
+      <rect x="2" y="2" width="20" height="20" rx="3" stroke="currentColor" stroke-width="2" fill="none"/>
+    <circle cx="11" cy="12" r="7" stroke="currentColor" stroke-width="2" fill="none"/>
+    <circle cx="11" cy="12" r="2.5" stroke="currentColor" stroke-width="1.5" fill="none"/>
+    <circle cx="11" cy="12" r="0.75" fill="currentColor"/>
+    <path d="M19 5v4l-4 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <rect x="18" y="4" width="2" height="2" fill="currentColor"/>
+    </g>
+  </g>
+
+  <!-- Sound: brownnoise (outline) at (400, 400) -->
+  <g transform="translate(400, 400)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="0.6" color="#ffffff">
+      <path d="M2 10s3-4 5-4 4 8 5 8 4-8 5-8 5 4 5 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M2 14s3-4 5-4 4 8 5 8 4-8 5-8 5 4 5 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.5"/>
+    </g>
+  </g>
+
+  <!-- Sound: brownnoise (fill) at (400, 500) -->
+  <g transform="translate(400, 500)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="url(#grad-noise)" stroke="rgba(255, 255, 255, 0.5)" stroke-width="2" filter="url(#glow-noise)" />
+    <rect x="21" y="21" width="58" height="58" rx="17" fill="none" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="1.0" color="#ffffff" filter="drop-shadow(0px 0px 3px rgba(255,255,255,0.5))">
+      <path d="M2 10s3-4 5-4 4 8 5 8 4-8 5-8 5 4 5 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M2 14s3-4 5-4 4 8 5 8 4-8 5-8 5 4 5 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.5"/>
+    </g>
+  </g>
+
+  <!-- Sound: pinknoise (outline) at (500, 400) -->
+  <g transform="translate(500, 400)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="0.6" color="#ffffff">
+      <path d="M2 12h3l2-7 2 14 2-10 2 6 2-11 2 9 2-5h3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </g>
+  </g>
+
+  <!-- Sound: pinknoise (fill) at (500, 500) -->
+  <g transform="translate(500, 500)">
+    <rect x="20" y="20" width="60" height="60" rx="18" fill="url(#grad-noise)" stroke="rgba(255, 255, 255, 0.5)" stroke-width="2" filter="url(#glow-noise)" />
+    <rect x="21" y="21" width="58" height="58" rx="17" fill="none" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" />
+    <g transform="translate(38, 38) scale(1.0)" opacity="1.0" color="#ffffff" filter="drop-shadow(0px 0px 3px rgba(255,255,255,0.5))">
+      <path d="M2 12h3l2-7 2 14 2-10 2 6 2-11 2 9 2-5h3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </g>
+  </g>
+
+  <!-- ==================== UI ELEMENTS ROW (Y=600) ==================== -->
+
+  <!-- meander (24x24) -->
+  <g transform="translate(0, 600)">
+    <g transform="translate(4, 4) scale(0.66)" color="#ffffff">
+      <path d="M5 3v18M12 3v18M19 3v18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <circle cx="5" cy="8" r="2.5" fill="currentColor"/>
+    <circle cx="12" cy="16" r="2.5" fill="currentColor"/>
+    <circle cx="19" cy="11" r="2.5" fill="currentColor"/>
+    </g>
+  </g>
+
+  <!-- reset (24x24) -->
+  <g transform="translate(30, 600)">
+    <g transform="translate(4, 4) scale(0.66)" color="#ffffff">
+      <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l.73-1.19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </g>
+  </g>
+
+  <!-- canRestore (24x24) -->
+  <g transform="translate(60, 600)">
+    <circle cx="12" cy="12" r="11" fill="rgba(255, 255, 255, 0.25)" stroke="rgba(255, 255, 255, 0.6)" stroke-width="1.5" />
+    <g transform="translate(4, 4) scale(0.66)" color="#ffffff">
+      <path d="M21 12a9 9 0 1 1-9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <polyline points="21 3 21 8 16 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </g>
+  </g>
+
+  <!-- meanderIndicator (16x16) -->
+  <g transform="translate(90, 600)">
+    <circle cx="8" cy="8" r="5" fill="#ffffff" filter="url(#glow-indicator)" />
+  </g>
+
+  <!-- fb (32x32) -->
+  <g transform="translate(120, 600)">
+    <rect x="1" y="1" width="30" height="30" rx="6" fill="rgba(255, 255, 255, 0.06)" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1" />
+    <g transform="translate(4, 4) scale(1.0)" color="#ffffff">
+      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" stroke="currentColor" stroke-width="2" fill="none"/>
+    </g>
+  </g>
+
+  <!-- tw (32x32) -->
+  <g transform="translate(160, 600)">
+    <rect x="1" y="1" width="30" height="30" rx="6" fill="rgba(255, 255, 255, 0.06)" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1" />
+    <g transform="translate(4, 4) scale(1.0)" color="#ffffff">
+      <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" stroke="currentColor" stroke-width="2" fill="none"/>
+    </g>
+  </g>
+
+  <!-- re (32x32) -->
+  <g transform="translate(200, 600)">
+    <rect x="1" y="1" width="30" height="30" rx="6" fill="rgba(255, 255, 255, 0.06)" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1" />
+    <g transform="translate(4, 4) scale(1.0)" color="#ffffff">
+      <circle cx="12" cy="14" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+    <circle cx="9" cy="13.5" r="1.3" fill="currentColor"/>
+    <circle cx="15" cy="13.5" r="1.3" fill="currentColor"/>
+    <path d="M9 17c1 1 2 1.2 3 1.2s2-.2 3-1.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    <path d="M12 6V3l3-.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <circle cx="15.5" cy="2.5" r="1.3" fill="currentColor"/>
+    <circle cx="3" cy="10" r="1.2" fill="currentColor"/>
+    <circle cx="21" cy="10" r="1.2" fill="currentColor"/>
+    </g>
+  </g>
+
+  <!-- tu (32x32) -->
+  <g transform="translate(240, 600)">
+    <rect x="1" y="1" width="30" height="30" rx="6" fill="rgba(255, 255, 255, 0.06)" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1" />
+    <g transform="translate(4, 4) scale(1.0)" color="#ffffff">
+      <path d="M18 20a4 4 0 0 1-4 4h-2a4 4 0 0 1-4-4V9H5V6h3V2h4v4h4v3h-4v11z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" fill="none"/>
+    </g>
+  </g>
+
+  <!-- mountainview (120x40) -->
+  <g transform="translate(280, 600)">
+    <!-- Google Play store badge vector -->
+    <rect x="2" y="2" width="116" height="36" rx="6" fill="#000000" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <path d="M12 10 L25 18 L12 26 Z" fill="#ffffff"/>
+    <text x="32" y="18" fill="#ffffff" font-size="7" font-family="-apple-system, sans-serif" letter-spacing="0.5">GET IT ON</text>
+    <text x="32" y="29" fill="#ffffff" font-size="11" font-weight="bold" font-family="-apple-system, sans-serif">Google Play</text>
+  </g>
+
+  <!-- cupertino (120x40) -->
+  <g transform="translate(410, 600)">
+    <!-- Apple App Store badge vector -->
+    <rect x="2" y="2" width="116" height="36" rx="6" fill="#000000" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <path d="M15 15 A 3 3 0 0 1 20 15 A 3 3 0 0 1 25 20 A 3 3 0 0 1 15 20" fill="none" stroke="#ffffff" stroke-width="2"/>
+    <path d="M20 10 L20 26" fill="none" stroke="#ffffff" stroke-width="2"/>
+    <text x="32" y="16" fill="#ffffff" font-size="6" font-family="-apple-system, sans-serif" letter-spacing="0.5">Download on the</text>
+    <text x="32" y="28" fill="#ffffff" font-size="12" font-weight="bold" font-family="-apple-system, sans-serif">App Store</text>
+  </g>
+
+</svg>

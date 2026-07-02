@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  Sound, 
-  Mix, 
-  TimerState, 
-  MeanderState, 
-  SOUND_KEYS, 
-  SOUND_LABELS, 
-  SOUND_LABELS_KM, 
-  SOUND_SHORTCODES, 
+import {
+  Sound,
+  Mix,
+  TimerState,
+  MeanderState,
+  SOUND_KEYS,
+  SOUND_LABELS,
+  SOUND_LABELS_KM,
+  SOUND_SHORTCODES,
   SOUND_SORT_KEYS,
   TimerMode
 } from './types';
@@ -90,12 +90,13 @@ const TRANSLATIONS = {
   }
 };
 
-const DEFAULT_ACTIVE_KEYS = [...SOUND_KEYS];
+// Why only 10: show core sounds first, rest revealed via "More Sounds" button
+const DEFAULT_ACTIVE_KEYS = SOUND_KEYS.slice(0, 10);
 
 export const App: React.FC = () => {
   // --- Language / i18n State ---
   const [lang, setLang] = useState<'en' | 'km'>(() => {
-    const stored = localStorage.getItem('asoftmurmur_lang');
+    const stored = localStorage.getItem('quietmind_lang');
     return (stored === 'km' ? 'km' : 'en');
   });
 
@@ -107,7 +108,7 @@ export const App: React.FC = () => {
 
   // --- Active / Available Sounds Configuration ---
   const [activeKeys, setActiveKeys] = useState<string[]>(() => {
-    const stored = localStorage.getItem('asoftmurmur_active_keys');
+    const stored = localStorage.getItem('quietmind_active_keys');
     return stored ? JSON.parse(stored) : DEFAULT_ACTIVE_KEYS;
   });
 
@@ -127,7 +128,7 @@ export const App: React.FC = () => {
   });
 
   const [globalVolume, setGlobalVolume] = useState<number>(() => {
-    const stored = localStorage.getItem('asoftmurmur_global_volume');
+    const stored = localStorage.getItem('quietmind_global_volume');
     return stored ? parseFloat(stored) : 0.5;
   });
 
@@ -160,7 +161,7 @@ export const App: React.FC = () => {
 
   // --- Saved Mixes State ---
   const [mixes, setMixes] = useState<Mix[]>(() => {
-    const stored = localStorage.getItem('asoftmurmur_saved_mixes');
+    const stored = localStorage.getItem('quietmind_saved_mixes');
     return stored ? JSON.parse(stored) : [];
   });
   const [newMixName, setNewMixName] = useState<string>('');
@@ -174,19 +175,19 @@ export const App: React.FC = () => {
 
   // --- Local Storage Synchronization ---
   useEffect(() => {
-    localStorage.setItem('asoftmurmur_lang', lang);
+    localStorage.setItem('quietmind_lang', lang);
   }, [lang]);
 
   useEffect(() => {
-    localStorage.setItem('asoftmurmur_active_keys', JSON.stringify(activeKeys));
+    localStorage.setItem('quietmind_active_keys', JSON.stringify(activeKeys));
   }, [activeKeys]);
 
   useEffect(() => {
-    localStorage.setItem('asoftmurmur_global_volume', globalVolume.toString());
+    localStorage.setItem('quietmind_global_volume', globalVolume.toString());
   }, [globalVolume]);
 
   useEffect(() => {
-    localStorage.setItem('asoftmurmur_saved_mixes', JSON.stringify(mixes));
+    localStorage.setItem('quietmind_saved_mixes', JSON.stringify(mixes));
   }, [mixes]);
 
   // --- URL Search Params Parse (Share URL load) ---
@@ -236,7 +237,7 @@ export const App: React.FC = () => {
         if (timer.secondsLeft <= 1) {
           // Timer triggered
           setTimer(prev => ({ ...prev, isActive: false, secondsLeft: 0 }));
-          
+
           if (timer.mode === 'stop' || timer.mode === 'fadeOut') {
             setIsPlaying(false);
           } else if (timer.mode === 'start') {
@@ -283,8 +284,8 @@ export const App: React.FC = () => {
                 mState.direction = Math.random() > 0.5 ? 'right' : 'left';
               }
 
-              const targetVol = mState.direction === 'right' 
-                ? baseVol + (1 - baseVol) / 3 
+              const targetVol = mState.direction === 'right'
+                ? baseVol + (1 - baseVol) / 3
                 : baseVol / 1.5;
 
               const diff = Math.abs(baseVol - targetVol) / 30;
@@ -601,13 +602,13 @@ export const App: React.FC = () => {
       <div className="TimerInput">
         <div className="input">
           <div className="step1">
-            <button 
+            <button
               className={timerInputMode === 'stop' ? 'selected' : 'deselected'}
               onClick={() => setTimerInputMode('stop')}
             >
               Stop Playback
             </button>
-            <button 
+            <button
               className={timerInputMode === 'fadeOut' ? 'selected' : 'deselected'}
               onClick={() => setTimerInputMode('fadeOut')}
             >
@@ -616,22 +617,22 @@ export const App: React.FC = () => {
           </div>
           <div className="step3">
             <label style={{ display: 'flex', alignItems: 'center' }}>
-              <input 
-                type="number" 
-                min="0" 
+              <input
+                type="number"
+                min="0"
                 max="23"
-                value={timerInputHours} 
-                onChange={(e) => setTimerInputHours(Math.max(0, parseInt(e.target.value) || 0))} 
+                value={timerInputHours}
+                onChange={(e) => setTimerInputHours(Math.max(0, parseInt(e.target.value) || 0))}
               />
               {t.hours}
             </label>
             <label style={{ display: 'flex', alignItems: 'center', marginLeft: '1rem' }}>
-              <input 
-                type="number" 
-                min="0" 
+              <input
+                type="number"
+                min="0"
                 max="59"
-                value={timerInputMins} 
-                onChange={(e) => setTimerInputMins(Math.max(0, Math.min(59, parseInt(e.target.value) || 0)))} 
+                value={timerInputMins}
+                onChange={(e) => setTimerInputMins(Math.max(0, Math.min(59, parseInt(e.target.value) || 0)))}
               />
               {t.minutes}
             </label>
@@ -650,9 +651,9 @@ export const App: React.FC = () => {
     return (
       <div className="MixInput">
         <form onSubmit={handleSaveMix} className="save">
-          <input 
-            type="text" 
-            placeholder={t.mixNamePlaceholder} 
+          <input
+            type="text"
+            placeholder={t.mixNamePlaceholder}
             value={newMixName}
             onChange={(e) => setNewMixName(e.target.value)}
           />
@@ -669,15 +670,15 @@ export const App: React.FC = () => {
                   <div className="wrap">
                     {mixDeletePendingId === mix.id ? (
                       <div className="deletePending">
-                        <button 
-                          className="deleteCancel interactive" 
+                        <button
+                          className="deleteCancel interactive"
                           type="button"
                           onClick={() => setMixDeletePendingId(null)}
                         >
                           Cancel
                         </button>
-                        <button 
-                          className="deleteConfirm interactive" 
+                        <button
+                          className="deleteConfirm interactive"
                           type="button"
                           onClick={() => handleDeleteMix(mix.id)}
                         >
@@ -686,15 +687,15 @@ export const App: React.FC = () => {
                       </div>
                     ) : (
                       <>
-                        <button 
-                          className="main interactive" 
+                        <button
+                          className="main interactive"
                           type="button"
                           onClick={() => handleLoadMix(mix.sounds)}
                         >
                           {mix.name}
                         </button>
-                        <button 
-                          className="share interactive" 
+                        <button
+                          className="share interactive"
                           type="button"
                           onClick={() => {
                             // Load sounds then open share tab
@@ -704,8 +705,8 @@ export const App: React.FC = () => {
                         >
                           Share
                         </button>
-                        <button 
-                          className="delete interactive" 
+                        <button
+                          className="delete interactive"
                           type="button"
                           onClick={() => setMixDeletePendingId(mix.id)}
                         >
@@ -799,7 +800,7 @@ export const App: React.FC = () => {
   const renderShareTab = () => {
     const shareUrl = getShareUrl();
     const encodedUrl = encodeURIComponent(shareUrl);
-    const twitterText = encodeURIComponent("Check out this ambient noise mix I made! @asoftmurmur ");
+    const twitterText = encodeURIComponent("Check out this ambient noise mix I made! @quietmindapp ");
 
     return (
       <div className="ShareInput">
@@ -823,26 +824,26 @@ export const App: React.FC = () => {
         <div className="letsGetSocial">
           <h3>{t.shareTitle}</h3>
           <div className="links">
-            <a 
-              className="fb" 
+            <a
+              className="fb"
               href={`http://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`}
-              target="_blank" 
+              target="_blank"
               rel="noopener noreferrer"
             >
               <span />Facebook
             </a>
-            <a 
-              className="tw" 
+            <a
+              className="tw"
               href={`http://twitter.com/intent/tweet?text=${twitterText}&url=${encodedUrl}`}
-              target="_blank" 
+              target="_blank"
               rel="noopener noreferrer"
             >
               <span />Twitter
             </a>
-            <a 
-              className="re" 
+            <a
+              className="re"
               href={`http://www.reddit.com/submit?url=${encodedUrl}`}
-              target="_blank" 
+              target="_blank"
               rel="noopener noreferrer"
             >
               <span />Reddit
@@ -877,19 +878,6 @@ export const App: React.FC = () => {
 
       <div className="Header">
         <div className="container">
-          <nav>
-            <span style={{ paddingLeft: '1.5rem', fontWeight: 600, fontSize: '0.95rem' }}>
-              {t.title}
-            </span>
-            <button 
-              className="updateButton active" 
-              style={{ fontSize: '0.8rem', padding: '0.2rem 0.5rem', textDecoration: 'none' }}
-              onClick={() => setLang(prev => prev === 'en' ? 'km' : 'en')}
-            >
-              {lang === 'en' ? 'ភាសាខ្មែរ' : 'English'}
-            </button>
-          </nav>
-          
           <div className="GlobalVolume">
             <div className="sliderContainer">
               <input
@@ -901,13 +889,23 @@ export const App: React.FC = () => {
                 onChange={(e) => setGlobalVolume(parseFloat(e.target.value))}
               />
             </div>
-            <button 
-              className="mute interactive" 
+            <button
+              className="mute interactive"
               onClick={() => setGlobalVolume(prev => prev > 0 ? 0 : 0.5)}
             >
               {globalVolume > 0 ? t.mute : t.unmute}
             </button>
           </div>
+
+          <nav>
+            <button
+              className="updateButton active"
+              style={{ fontSize: '0.8rem', padding: '0.2rem 0.5rem', textDecoration: 'none' }}
+              onClick={() => setLang(prev => prev === 'en' ? 'km' : 'en')}
+            >
+              {lang === 'en' ? 'ភាសាខ្មែរ' : 'English'}
+            </button>
+          </nav>
         </div>
       </div>
 
@@ -918,14 +916,6 @@ export const App: React.FC = () => {
         </div>
 
         <div className="PlayControls">
-          <button 
-            className={`pb ${isPlaying ? 'stop' : 'play'}`}
-            onClick={() => setIsPlaying(prev => !prev)}
-            title={isPlaying ? 'Pause' : 'Play'}
-          >
-            <div className="first" />
-          </button>
-
           <button
             className={`secondary meander interactive ${meander.isActive ? 'active' : 'inactive'}`}
             onClick={toggleMeander}
@@ -934,6 +924,14 @@ export const App: React.FC = () => {
             <div className="buttonContents">
               <span className="image" />
             </div>
+          </button>
+
+          <button
+            className={`pb ${isPlaying ? 'stop' : 'play'}`}
+            onClick={() => setIsPlaying(prev => !prev)}
+            title={isPlaying ? 'Pause' : 'Play'}
+          >
+            <div className="first" />
           </button>
 
           <button
@@ -950,25 +948,25 @@ export const App: React.FC = () => {
         {/* Row controls showing Timers, Mixes, Manage Sounds, Share */}
         <div className={`RowControls ${activeTab || ''}`}>
           <div className="container">
-            <button 
+            <button
               onClick={() => toggleTab('timers')}
               className={`rowControl interactive timers ${activeTab === 'timers' ? 'expanded' : 'initial'} ${timer.isActive ? 'timeDisplay' : ''}`}
             >
               {timer.isActive ? formatSecondsDigits(timer.secondsLeft) : t.timers}
             </button>
-            <button 
+            <button
               onClick={() => toggleTab('mixes')}
               className={`rowControl interactive mixes ${activeTab === 'mixes' ? 'expanded' : 'initial'}`}
             >
               {t.mixes}
             </button>
-            <button 
+            <button
               onClick={() => toggleTab('manage')}
               className={`rowControl interactive sounds ${activeTab === 'manage' ? 'expanded' : 'initial'}`}
             >
               {t.sounds}
             </button>
-            <button 
+            <button
               onClick={() => toggleTab('share')}
               className={`rowControl interactive share ${activeTab === 'share' ? 'expanded' : 'initial'}`}
             >
@@ -1029,6 +1027,28 @@ export const App: React.FC = () => {
               </div>
             );
           })}
+        </div>
+
+        {/* Toggle between More Sounds / Show Less */}
+        <div className="MoreSounds">
+          {activeKeys.length < SOUND_KEYS.length ? (
+            <button
+              className="button interactive"
+              onClick={() => {
+                const remaining = SOUND_KEYS.filter(k => !activeKeys.includes(k));
+                setActiveKeys(prev => [...prev, ...remaining]);
+              }}
+            >
+              More Sounds
+            </button>
+          ) : (
+            <button
+              className="button interactive"
+              onClick={() => setActiveKeys([...DEFAULT_ACTIVE_KEYS])}
+            >
+              Show Less
+            </button>
+          )}
         </div>
       </div>
     </div>
