@@ -15,7 +15,7 @@ import { SoundPlayer } from './components/SoundPlayer';
 // Multi-language translation dictionary for Khmer intranet context
 const TRANSLATIONS = {
   en: {
-    title: 'A Soft Murmur',
+    title: 'Quiet Mind',
     subtitle: 'Mix ambient sounds together to focus or relax',
     mute: 'Mute',
     unmute: 'Unmute',
@@ -51,7 +51,7 @@ const TRANSLATIONS = {
     limitMessage: 'Please remove an active sound first (max 25 active sounds).'
   },
   km: {
-    title: 'សំឡេងរងំស្រទន់',
+    title: 'ស្ងប់ចិត្ត',
     subtitle: 'លាយសំឡេងជុំវិញខ្លួនជាមួយគ្នា ដើម្បីបង្កើនការផ្ដោតអារម្មណ៍ ឬលំហែកាយ',
     mute: 'បិទសំឡេង',
     unmute: 'បើកសំឡេង',
