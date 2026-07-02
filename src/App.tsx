@@ -190,6 +190,21 @@ export const App: React.FC = () => {
     localStorage.setItem('quietmind_saved_mixes', JSON.stringify(mixes));
   }, [mixes]);
 
+  // --- Clear soundLoadedStatus for muted sounds to ensure spinners show correctly on reload ---
+  useEffect(() => {
+    setSoundLoadedStatus(prev => {
+      let changed = false;
+      const next = { ...prev };
+      Object.keys(sounds).forEach(key => {
+        if (sounds[key].volume <= 0.02 && next[key]) {
+          delete next[key];
+          changed = true;
+        }
+      });
+      return changed ? next : prev;
+    });
+  }, [sounds]);
+
   // --- URL Search Params Parse (Share URL load) ---
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -859,8 +874,8 @@ export const App: React.FC = () => {
       {/* 25 Hidden SoundPlayers dynamically rendering audio loops */}
       {SOUND_KEYS.map(key => {
         const sound = sounds[key];
-        // Load audio if volume is non-zero, or it is in the active list
-        const shouldLoadAudio = sound.volume > 0.02 || activeKeys.includes(key);
+        // Load audio strictly when unmuted (volume > 0.02) to prevent continuous network requests when muted/off
+        const shouldLoadAudio = sound.volume > 0.02;
 
         if (!shouldLoadAudio) return null;
 

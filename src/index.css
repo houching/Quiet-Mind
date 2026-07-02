@@ -244,10 +244,7 @@ audio {
 }
 @media screen and (max-width: 512px) {
   .GlobalVolume {
-    margin-left: 0;
-  }
-  .GlobalVolume .sliderContainer {
-    display: none;
+    margin-left: 0.5rem;
   }
 }
 .GlobalVolume .mute {

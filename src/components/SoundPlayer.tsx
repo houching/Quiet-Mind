@@ -43,13 +43,13 @@ export const SoundPlayer: React.FC<SoundPlayerProps> = ({
 
   // Handle Play/Stop transitions
   useEffect(() => {
-    if (!isPlaying) {
+    if (!isPlaying || calculatedVolume <= 0.02) {
       if (mainRef.current) mainRef.current.pause();
       if (glueRef.current) glueRef.current.pause();
       return;
     }
 
-    if (canBeginPlay && calculatedVolume > 0.02) {
+    if (canBeginPlay) {
       // If playing is toggled on, start with glue or main
       if (glueRef.current && mainRef.current) {
         if (glueShouldPlayRef.current) {
@@ -84,21 +84,18 @@ export const SoundPlayer: React.FC<SoundPlayerProps> = ({
     }
   };
 
-  const handleCanPlayThrough = (e: React.SyntheticEvent<HTMLAudioElement>) => {
+  const handleMainCanPlayThrough = () => {
     if (!haveDoneHandleCanBeginPlayRef.current) {
       haveDoneHandleCanBeginPlayRef.current = true;
       setCanBeginPlay(true);
       onLoaded();
+    }
+  };
 
-      const duration = (e.target as HTMLAudioElement).duration;
-      if (duration) {
-        setGlueDuration(duration);
-      }
-
-      if (isPlaying && calculatedVolume > 0.02 && glueRef.current) {
-        glueRef.current.volume = calculatedVolume;
-        glueRef.current.play().catch(() => {});
-      }
+  const handleGlueLoadedMetadata = (e: React.SyntheticEvent<HTMLAudioElement>) => {
+    const duration = (e.target as HTMLAudioElement).duration;
+    if (duration) {
+      setGlueDuration(duration);
     }
   };
 
@@ -118,6 +115,7 @@ export const SoundPlayer: React.FC<SoundPlayerProps> = ({
 
     if (!glueShouldPlayRef.current && currentTime > duration - glueDuration / 2) {
       if (glueRef.current) {
+        glueRef.current.preload = 'auto'; // Dynamically load glue track before playing
         glueRef.current.currentTime = 0;
       }
       glueShouldPlayRef.current = true;
@@ -132,13 +130,14 @@ export const SoundPlayer: React.FC<SoundPlayerProps> = ({
         src={getAudioSrc(soundKey, 'main')}
         preload="auto"
         loop
+        onCanPlayThrough={handleMainCanPlayThrough}
         onTimeUpdate={handleMainTimeUpdate}
       />
       <audio
         ref={glueRef}
         src={getAudioSrc(soundKey, 'glue')}
-        preload="auto"
-        onCanPlayThrough={handleCanPlayThrough}
+        preload="none"
+        onLoadedMetadata={handleGlueLoadedMetadata}
         onTimeUpdate={handleGlueTimeUpdate}
       />
     </div>
