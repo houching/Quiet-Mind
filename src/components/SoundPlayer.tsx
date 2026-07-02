@@ -25,7 +25,7 @@ export const SoundPlayer: React.FC<SoundPlayerProps> = ({
   const haveDoneHandleCanBeginPlayRef = useRef<boolean>(false);
 
   const getAudioSrc = (key: string, type: 'main' | 'glue') => {
-    return `/assets/p/content/${key}/${type}-${key}.mp4`;
+    return `${import.meta.env.BASE_URL}assets/p/content/${key}/${type}-${key}.mp4`;
   };
 
 

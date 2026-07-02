@@ -12,6 +12,7 @@ import {
   TimerMode
 } from './types';
 import { SoundPlayer } from './components/SoundPlayer';
+import spinner from './assets/spinner.gif';
 
 // Multi-language translation dictionary for Khmer intranet context
 const TRANSLATIONS = {
@@ -1002,7 +1003,7 @@ export const App: React.FC = () => {
                     className={`imageContainer interactive ${key} pro`}
                   >
                     <div className={`loadingIndicator ${!isLoaded && hasVolume && isPlaying ? 'loadingGlue' : ''}`}>
-                      <img src="/assets/spinner.gif" height="32" width="30" alt="Loading icon" />
+                      <img src={spinner} height="32" width="30" alt="Loading icon" />
                     </div>
                     <div className={`image outline ${key}`} />
                     <div className={`image fill ${key}`} style={{ opacity: sound.volume }} />
