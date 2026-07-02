@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   Sound,
   Mix,
@@ -242,20 +242,41 @@ export const App: React.FC = () => {
     }
   }, []);
 
+  // Use refs to keep values fresh inside the interval without re-creating the timer
+  const timerRef = useRef(timer);
+  const meanderRef = useRef(meander);
+  const soundsRef = useRef(sounds);
+
+  useEffect(() => {
+    timerRef.current = timer;
+  }, [timer]);
+
+  useEffect(() => {
+    meanderRef.current = meander;
+  }, [meander]);
+
+  useEffect(() => {
+    soundsRef.current = sounds;
+  }, [sounds]);
+
   // --- 1-Second Timer Tick (Handles Countdown & Meander volume drifts) ---
   useEffect(() => {
     if (!isPlaying) return;
 
     const interval = setInterval(() => {
+      const currentTimer = timerRef.current;
+      const currentMeander = meanderRef.current;
+      const currentSounds = soundsRef.current;
+
       // 1. Timer Tick
-      if (timer.isActive) {
-        if (timer.secondsLeft <= 1) {
+      if (currentTimer.isActive) {
+        if (currentTimer.secondsLeft <= 1) {
           // Timer triggered
           setTimer(prev => ({ ...prev, isActive: false, secondsLeft: 0 }));
 
-          if (timer.mode === 'stop' || timer.mode === 'fadeOut') {
+          if (currentTimer.mode === 'stop' || currentTimer.mode === 'fadeOut') {
             setIsPlaying(false);
-          } else if (timer.mode === 'start') {
+          } else if (currentTimer.mode === 'start') {
             setIsPlaying(true);
           }
           setMeander(prev => ({ ...prev, isActive: false }));
@@ -271,16 +292,16 @@ export const App: React.FC = () => {
       }
 
       // 2. Meander Volume Drift
-      if (meander.isActive) {
+      if (currentMeander.isActive) {
         setMeander(prevMeander => {
           const nextTick = prevMeander.tickCount + 1;
           let meanderSounds = prevMeander.sounds ? { ...prevMeander.sounds } : null;
 
           if (!meanderSounds) {
             meanderSounds = {};
-            Object.keys(sounds).forEach(key => {
+            Object.keys(currentSounds).forEach(key => {
               meanderSounds![key] = {
-                baseVolume: sounds[key].volume,
+                baseVolume: currentSounds[key].volume,
                 tickOffset: 0,
                 direction: Math.random() > 0.5 ? 'right' : 'left'
               };
@@ -323,7 +344,7 @@ export const App: React.FC = () => {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [isPlaying, timer.isActive, timer.secondsLeft, timer.mode, meander.isActive, sounds]);
+  }, [isPlaying]);
 
   // --- Helper to trigger sound loading indicator ---
   const handleSoundLoaded = (key: string) => {

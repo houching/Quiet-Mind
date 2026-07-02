@@ -148,10 +148,13 @@ input[type="text"] {
   font-family: Montserrat;
   font-style: normal;
   font-weight: 400;
-  src:
-    url(./assets/montserrat-webfont.ttf) format("truetype"),
-    url(./assets/montserrat-webfont.svg) format("svg"),
-    url(./assets/montserrat-webfont.woff) format("woff");
+  src: url(./assets/montserrat-webfont.ttf) format("truetype");
+}
+@font-face {
+  font-family: 'Kantumruy Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: url(./assets/kantumruy-pro-regular.ttf) format("truetype");
 }
 html {
   background-color: #0d0f14;
