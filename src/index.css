@@ -1,4 +1,3110 @@
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{font-size:100%;font:inherit;vertical-align:baseline;border:0;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:"";content:none}table{border-collapse:collapse;border-spacing:0}button{color:inherit;font:inherit;font-size:inherit;line-height:inherit;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;background-color:transparent;border:0;padding:0;-webkit-tap-highlight-color:transparent!important}button::-moz-focus-inner{border:0;padding:0}button:focus,button:active{outline:0!important}input[type=text]{font-size:inherit;background-color:transparent;border:0}@font-face{font-family:Montserrat;font-style:normal;font-weight:400;src:url(./assets/montserrat-webfont.ttf)format("truetype"),url(./assets/montserrat-webfont.svg)format("svg"),url(./assets/montserrat-webfont.woff)format("woff")}html{background-color:#0d0f14}html,body,#root,#App{height:100%;overflow-y:auto}#App{color:#fff;-webkit-overflow-scrolling:touch;background:radial-gradient(ellipse at 50% 0%,#1a2332 0%,#141820 40%,#0d0f14 100%);background-attachment:fixed;font-family:Montserrat;position:relative}h1,h2,h3,h4,h5,p{font-family:Montserrat}a{color:#fff}a,.interactive,#firebaseui-auth-container button{cursor:pointer}.hoverOpacity:hover,a:hover,#firebaseui-auth-container button:hover{opacity:.8}.hoverOpacity:active,a:active,#firebaseui-auth-container button:active{opacity:.5}*{box-sizing:border-box;line-height:1.4em}.noSelect{user-select:none}audio{width:230px;position:absolute;left:0}@media (max-width:512px){html{font-size:14px}}@media (max-width:448px){html{font-size:12px}}.Title{text-align:center;margin-top:4rem}.Title h1{text-transform:uppercase;font-size:4rem}.Title p{margin-top:.5rem}.GlobalVolume{justify-content:space-around;align-items:center;max-width:16rem;margin-left:1rem;display:inline-flex;position:relative;flex:1}@media screen and (max-width:512px){.GlobalVolume{margin-left:0}.GlobalVolume .sliderContainer{display:none}}.GlobalVolume .mute{text-align:center;text-transform:uppercase;border:2px solid #fff;border-radius:4px;min-width:4rem;margin-left:1rem;padding:.25rem 0;font-size:.6rem;transition:background .3s,color .3s}.GlobalVolume .mute:hover,.GlobalVolume .mute:active{color:#1f1e21;background:#fff}.GlobalVolume input[type=range]{-webkit-appearance:none;width:100%;margin:11px 0}.GlobalVolume input[type=range]:focus{outline:none}.GlobalVolume input[type=range]::-webkit-slider-runnable-track{cursor:pointer;background:#fff;border:0 solid #fff;border-radius:255px;width:100%;height:2px;box-shadow:0 0 1px #000,0 0 #0d0d0d}.GlobalVolume input[type=range]::-webkit-slider-thumb{cursor:pointer;-webkit-appearance:none;background:#fff;border:1px solid #c8c8c8;border-radius:4px;width:12px;height:24px;margin-top:-11px;box-shadow:0 0 #000,0 0 #0d0d0d}.GlobalVolume input[type=range]:focus::-webkit-slider-runnable-track{background:#fff}.GlobalVolume input[type=range]::-moz-range-track{cursor:pointer;background:#fff;border:0 solid #fff;border-radius:255px;width:100%;height:2px;box-shadow:0 0 1px #000,0 0 #0d0d0d}.GlobalVolume input[type=range]::-moz-range-thumb{cursor:pointer;background:#fff;border:1px solid #c8c8c8;border-radius:4px;width:12px;height:24px;box-shadow:0 0 #000,0 0 #0d0d0d}.GlobalVolume input[type=range]::-ms-track{cursor:pointer;color:transparent;background:0 0;border-color:transparent;width:100%;height:2px}.GlobalVolume input[type=range]::-ms-fill-lower{background:#f2f2f2;border:0 solid #fff;border-radius:510px;box-shadow:0 0 1px #000,0 0 #0d0d0d}.GlobalVolume input[type=range]::-ms-fill-upper{background:#fff;border:0 solid #fff;border-radius:510px;box-shadow:0 0 1px #000,0 0 #0d0d0d}.GlobalVolume input[type=range]::-ms-thumb{cursor:pointer;background:#fff;border:1px solid #c8c8c8;border-radius:4px;width:12px;height:2px;box-shadow:0 0 #000,0 0 #0d0d0d}.GlobalVolume input[type=range]:focus::-ms-fill-lower{background:#fff}.GlobalVolume input[type=range]:focus::-ms-fill-upper{background:#fff}.Subscribe{border-top:1px solid rgba(255,255,255,.6);flex:1;display:flex;overflow:hidden}.Subscribe #dialog-content{flex-direction:column;flex:1;align-items:center;display:flex}.Subscribe form{flex-direction:row;flex:1;justify-content:center;align-items:center;height:3.5rem;display:flex}.Subscribe .emailInput{border:0;border-radius:4px 0 0 4px;min-width:20rem;height:2.2rem;padding:0 .75rem;font-size:1.25rem;line-height:2.2rem}.Subscribe .button{color:#fff;text-transform:uppercase;cursor:pointer;background:0 0;border:2px solid #fff;border-radius:0 4px 4px 0;height:2.2rem;margin:0;padding:0 .75rem;font-family:Montserrat,sans-serif;font-size:.75rem;transition:color .5s,background-color .5s;display:block}.Subscribe .button:hover{color:#000;background-color:#fff}.Subscribe .text{text-align:center;flex-direction:column;flex:1;justify-content:center;align-items:center;max-width:500px;padding:0 2rem 1rem;font-size:.75rem;line-height:1.4em;display:flex}.Header{background-color:rgba(0,0,0,.3);flex-direction:column;justify-content:flex-start;height:2.8rem;transition:height .3s;display:flex}.Header .container{justify-content:space-between;height:2.8rem;display:flex}.Header nav,.Header .GlobalVolume{height:2.8rem}.Header nav{justify-content:flex-end;align-items:center;padding-right:1rem;display:inline-flex}.Header .updateButton{cursor:pointer;border-radius:4px;padding:.25rem .75rem;text-decoration:underline;transition:background-color .3s,color .3s}.Header .updateButton.active{color:#000;background-color:#fff;text-decoration:none}.Header.subscribe{height:10rem}.home{width:100%;min-height:100%;padding:56px 20px}.PlayControls{flex:1;justify-content:space-around;align-items:flex-start;padding:4rem 0 2rem;display:flex}.PlayControls .pb{cursor:pointer;flex-direction:column;justify-content:space-around;align-items:flex-start;width:5rem;height:5rem;display:flex}.PlayControls .pb .first{margin-left:.25rem;transition:border .15s linear,opacity .1s}.PlayControls .pb .first:hover{opacity:.9}.PlayControls .pb.play .first{border:2.5rem solid transparent;border-left:4.5rem solid #fff;border-right:0 solid #fff;width:5rem;height:5rem}.PlayControls .pb.stop .first{border:0 solid transparent;border-left:1.6rem solid #fff;border-right:1.6rem solid #fff;width:4.5rem;height:4.5rem}.PlayControls .secondary{border:2px solid #fff;border-radius:50%;width:2.5rem;min-width:38px;height:2.5rem;min-height:38px;font-size:.7rem;display:block}.PlayControls .secondary:hover{background-color:rgba(255,255,255,.4)}.PlayControls .secondary:active{background-color:rgba(255,255,255,.6)}.PlayControls .buttonContents{justify-content:center;align-items:center;width:100%;height:100%;display:flex;position:relative}.PlayControls .secondary.meander .image,.PlayControls .secondary.reset .image{width:24px;height:24px;display:block}.PlayControls .secondary.meander.active{background-color:rgba(255,255,255,.6)}.PlayControls .secondary.meander .image{background-image:url(./assets/sprite.svg);background-position:0px -600px;width:24px;height:24px}.PlayControls .secondary.reset .image{background-image:url(./assets/sprite.svg);background-position:-30px -600px;width:24px;height:24px}.PlayControls .secondary.reset.canRestore .image{background-image:url(./assets/sprite.svg);background-position:-60px -600px;width:24px;height:24px}.PlayControls .meanderHelpText{text-align:center;color:#fff;background-color:#000;border-radius:4px;width:180px;padding:.75rem .5rem;position:absolute;top:45px}.PlayControls .meanderHelpText:before{content:"";border-bottom:10px solid #000;border-left:10px solid transparent;border-right:10px solid transparent;height:10px;display:block;position:absolute;top:-15px;left:80px}.ActiveTimerDisplay{flex-direction:column;flex:1;display:flex}.ActiveTimerDisplay .wrap{flex-direction:column;flex:1;justify-content:center;align-items:center;display:flex}.ActiveTimerDisplay .msg{text-align:center;max-width:80%;padding-bottom:.5rem;font-size:1rem}.ActiveTimerDisplay .timeLeft{background-color:rgba(255,255,255,.2);width:6em;padding:.5rem 1rem;font-size:1.75rem;display:flex}.ActiveTimerDisplay .timeLeft>span{flex:1;justify-content:space-between;display:flex}.ActiveTimerDisplay .timeLeft>span .colon{text-align:center;width:.4em}.ActiveTimerDisplay .timeLeft>span .time{text-align:center;width:.675em}.ActiveTimerDisplay .controls{border-top:1px solid rgba(255,255,255,.1);justify-content:space-between;align-items:center;height:95px;padding:0 1rem;display:flex}.ActiveTimerDisplay .controls button{border:2px solid #fff;border-radius:4px;padding:.5rem 1rem;transition:background-color .3s,color .3s}.ActiveTimerDisplay .controls button:hover,.ActiveTimerDisplay .controls button:active{color:#1f1e21;background-color:#fff}.TimerInput{flex:1;height:285px;transition:height .3s;display:flex}.TimerInput.extraHeight{height:380px}.TimerInput .input{flex-direction:column;flex:1;justify-content:flex-start;align-items:center;width:100%;display:flex;position:relative}.TimerInput select{color:#fff;font-family:inherit;font-size:inherit;line-height:inherit;background-color:transparent}.TimerInput .step1,.TimerInput .step2,.TimerInput .step3{border-bottom:1px solid rgba(255,255,255,.1)}.TimerInput .step1,.TimerInput .step2,.TimerInput .step3,.TimerInput .step4{justify-content:space-between;align-items:center;width:100%;height:95px;display:flex}.TimerInput .step1{padding:0 .5rem;display:flex}.TimerInput .step1 button{border-radius:4px;flex:1;height:3.4em;margin:0 .5rem;font-size:.9rem;transition:background .3s,border .3s,padding .3s}.TimerInput .step1 button.selected{background-color:rgba(255,255,255,.4)}.TimerInput .step1.haveSelection button.deselected{border-color:gray}.TimerInput .step1.haveSelection button.deselected:hover{background-color:rgba(255,255,255,.2)}.TimerInput .step1.haveSelection button.deselected:active{background-color:rgba(255,255,255,.4)}.TimerInput .step1,.TimerInput .step2{justify-content:center;align-items:center;display:flex}.TimerInput .step1 select,.TimerInput .step2 select{margin-left:.5rem}.TimerInput .step2{opacity:1;padding:0 1rem;transition:height .3s,opacity .3s}.TimerInput .step2.empty{opacity:0;height:0}.TimerInput .step2 .wrap{flex:1;justify-content:space-between;align-items:center;display:flex}.TimerInput .step2 .origin,.TimerInput .step2 .to,.TimerInput .step2 .destination{flex-direction:column;align-items:center;display:flex}.TimerInput .step2 .origin,.TimerInput .step2 .destination{flex:6}.TimerInput .step2 .to{flex:3;margin-top:1.25rem}.TimerInput .step2 select{width:100%;min-height:28px;margin-top:.25rem;padding:.5rem 1rem}@media (max-width:512px){.TimerInput .step2 select{padding:.25rem .5rem}}.TimerInput .step2 label{color:#c8c8c8;height:1rem;min-height:14px;font-size:.8rem}.TimerInput .step3{justify-content:center}.TimerInput .step3 input{font-size:1.25rem;line-height:inherit;color:#fff;text-align:right;background-color:transparent;border:1px solid rgba(255,255,255,.7);border-radius:4px;width:4rem;margin:0 .5rem;padding:.25rem}.TimerInput .step4{justify-content:space-between;align-items:center;padding:0 1rem}.TimerInput .step4 button{color:#fff;border:2px solid #fff;border-radius:4px;padding:.5rem 1rem;transition:color .3s,background-color .3s}.TimerInput .step4 button:hover,.TimerInput .step4 button:active{color:#1f1e21;background-color:#fff}.MixInputItem{flex:1;width:100%;min-height:3rem;margin-bottom:.75rem;padding:.25rem 0;display:flex;position:relative}.MixInputItem .wrap{flex:1;width:100%;height:100%;display:flex;position:relative}.MixInputItem .deletePending{background-color:#1f1e21;margin:0;display:flex;position:absolute;top:0;bottom:0;left:0;right:0}.MixInputItem button{background-color:rgba(0,0,0,.3);border-top:2px solid #fff;border-bottom:2px solid #fff;padding:.5rem;transition:background-color .3s,color .3s}.MixInputItem button:hover,.MixInputItem button:active{color:#1f1e21;background-color:#fff}.MixInputItem button.main{flex:8}.MixInputItem button.main,.MixInputItem button.deleteCancel{border-left:2px solid #fff;border-right:2px solid #fff;border-radius:4px 0 0 4px}.MixInputItem button.share{text-transform:uppercase;flex:1;font-size:.7rem}.MixInputItem button.deleteCancel{flex:1}.MixInputItem button.delete,.MixInputItem button.deleteConfirm{border-right:2px solid #fff;border-radius:0 4px 4px 0;flex:1}.MixInputItem button.delete{border-left:2px solid #fff;max-width:2rem}@media (max-width:512px){.MixInputItem button.delete{min-width:32px}}.MixInput{flex-direction:column;justify-content:space-between;align-items:center;height:400px;display:flex}.MixInput .save,.MixInput .controls{height:95px;display:flex}.MixInput .save{justify-content:space-between;align-items:center;width:100%;padding:1.5rem 1rem;display:flex}.MixInput .save input{color:#fff;border:1px solid rgba(255,255,255,.1);flex:1;margin-right:1rem;padding:.5rem;font-family:inherit;font-size:1.2rem}.MixInput .save input::placeholder{color:rgba(255,255,255,.6)}.MixInput .save button{border:2px solid #fff;border-radius:4px;padding:.5rem 1rem;transition:background-color .3s,color .3s}.MixInput .save button:hover,.MixInput .save button:active{color:#1f1e21;background-color:#fff}@media (max-width:512px){.MixInput .save input,.MixInput .save button{max-height:55px}}.MixInput input{background-color:transparent}.MixInput .mixList{background-color:rgba(255,255,255,.1);border-top:1px solid rgba(255,255,255,.1);border-bottom:1px solid rgba(255,255,255,.1);flex-direction:column;flex:1;align-items:center;width:100%;padding:.5rem 1rem;display:flex;overflow-y:auto}.MixInput .mixList ol{flex:1;width:100%}.MixInput .mixList .noMixMessage{color:rgba(255,255,255,.6);flex:1;justify-content:center;align-items:center;width:100%;font-size:.8rem;display:flex}.MixInput .controls{justify-content:space-between;align-items:center;width:100%;padding:0 1rem}.MixInput .controls button{border:2px solid #fff;border-radius:4px;padding:.5rem 1rem;transition:background-color .3s,color .3s}.MixInput .controls button:hover,.MixInput .controls button:active{color:#1f1e21;background-color:#fff}.ManageSoundsInput{flex-direction:column;justify-content:space-between;align-items:center;height:400px;display:flex}.ManageSoundsInput .content{flex-direction:row;flex:1;display:flex;overflow-y:auto}@media (max-width:1200px){.ManageSoundsInput .content{flex-direction:column}}.ManageSoundsInput .pane1,.ManageSoundsInput .pane2{flex-direction:column;flex:1;display:flex}.ManageSoundsInput .pane2{border-left:1px solid rgba(255,255,255,.1)}@media (max-width:1200px){.ManageSoundsInput .pane2{border-top:1px solid rgba(255,255,255,.1);border-left:none;margin-top:2rem}}.ManageSoundsInput .slots{border-bottom:1px solid rgba(255,255,255,.1);flex-shrink:0;justify-content:center;height:4rem;display:flex}@media (max-width:1200px){.ManageSoundsInput .slots{height:3rem}}.ManageSoundsInput .slots p{font-size:1.2rem;line-height:4rem}@media (max-width:1200px){.ManageSoundsInput .slots p{font-size:1rem;line-height:3rem}}.ManageSoundsInput .lists{background:rgba(255,255,255,.1);flex-shrink:1}.ManageSoundsInput .activeList,.ManageSoundsInput .inactiveList{flex-direction:column;flex:1;justify-content:flex-start;align-items:center;width:100%;padding-left:1rem;padding-right:1rem;display:flex;overflow-y:auto}.ManageSoundsInput .activeList ol,.ManageSoundsInput .inactiveList ol{flex-flow:wrap;justify-content:flex-start;align-items:center;width:100%;margin:1rem 0;display:flex}.ManageSoundsInput .SoundItem,.ManageSoundsInput .emptySlot{border:2px solid #fff;border-radius:4px;flex-direction:row;justify-content:flex-end;align-items:center;width:calc(50% - 2rem);height:3rem;margin:.5rem 1rem;padding:0 .5rem;display:flex}@media (max-width:1200px){.ManageSoundsInput .SoundItem,.ManageSoundsInput .emptySlot{width:calc(25% - 1rem);height:2.5rem;margin:.5rem}.ManageSoundsInput .SoundItem .label,.ManageSoundsInput .emptySlot .label{font-size:.8rem}}@media (max-width:975px){.ManageSoundsInput .SoundItem,.ManageSoundsInput .emptySlot{width:calc(33.33% - 1rem)}}@media (max-width:768px){.ManageSoundsInput .SoundItem,.ManageSoundsInput .emptySlot{width:calc(50% - 1rem)}}@media (max-width:580px){.ManageSoundsInput .SoundItem,.ManageSoundsInput .emptySlot{width:100%}}@media (max-width:480px){.ManageSoundsInput .SoundItem,.ManageSoundsInput .emptySlot{height:3rem}.ManageSoundsInput .SoundItem .label,.ManageSoundsInput .emptySlot .label{font-size:1rem}}.ManageSoundsInput .emptySlot{background:rgba(255,255,255,.1);justify-content:center;align-items:center;display:flex}.ManageSoundsInput .emptySlot p{text-transform:uppercase;color:rgba(255,255,255,.7);font-size:.8rem}.ManageSoundsInput .clearAllContainer{justify-content:center;align-items:center;width:100%;display:flex}.ManageSoundsInput .clearAllContainer button{text-transform:uppercase;margin-bottom:1.5rem;font-size:.8rem}.ManageSoundsInput .controls{border-top:1px solid rgba(255,255,255,.1);flex-shrink:0;justify-content:center;align-items:center;width:100%;height:4rem;padding:0 1rem;display:flex}.ManageSoundsInput .controls button,.ManageSoundsInput .clearAllContainer button{border:2px solid #fff;border-radius:4px;padding:.5rem 1rem;transition:background-color .3s,color .3s}.ManageSoundsInput .controls button:hover,.ManageSoundsInput .controls button:active,.ManageSoundsInput .clearAllContainer button:hover,.ManageSoundsInput .clearAllContainer button:active{color:#1f1e21;background-color:#fff}.ManageSoundsInput .slotMessage{color:#fff;background:#050505;border-radius:25px;justify-content:center;align-items:center;width:400px;height:50px;display:flex;position:fixed;top:calc(50% - 25px);right:calc(50% - 200px);box-shadow:0 0 24px 10px rgba(255,255,255,.2)}.SoundItem{transition:background .1s,color .1s;position:relative}.SoundItem.active{color:#000;background:#fff}.SoundItem .label{user-select:none;flex:1;order:2}.SoundItem .previewButton{order:3;width:2rem;height:2rem;margin:0 .5rem;position:relative}.SoundItem .previewButton .touchTarget{position:absolute;top:-8px;bottom:-8px;left:-8px;right:-8px}.SoundItem .previewButton .button{width:2rem;height:2rem}.SoundItem .previewButton .previewInnerContainer{background:#1e1e1e;border-radius:1rem;justify-content:center;align-items:center;width:2rem;height:2rem;display:flex}.SoundItem .previewButton .previewInner{content:"";border:6px solid transparent;border-left:10px solid #fff;border-right-width:0;width:0;height:0;margin-right:-2px}.SoundItem .previewButton.previewing .previewInner{background:#fff;border:4px solid #fff;margin-right:0}.SoundItem .buttonContainer{border:2px solid #000;border-radius:4px;order:4;justify-content:center;align-items:center;width:36px;height:36px;display:flex;overflow:hidden}@media (max-width:1200px){.SoundItem .buttonContainer{width:32px;height:32px}}@media (max-width:512px){.SoundItem .buttonContainer{width:28px;height:28px}}.SoundItem .buttonContainer button{background:#fff}.SoundItem .buttonContainer button:hover{background:#ebebeb}.SoundItem .buttonContainer button:active{background:#d7d7d7}.SoundItem .buttonContainer button,.SoundItem .buttonContainer .buttonInner{width:36px;height:36px}@media (max-width:1200px){.SoundItem .buttonContainer button,.SoundItem .buttonContainer .buttonInner{width:32px;height:32px}}@media (max-width:512px){.SoundItem .buttonContainer button,.SoundItem .buttonContainer .buttonInner{width:28px;height:28px}}.SoundItem .buttonContainer .buttonInner{justify-content:center;align-items:center;display:flex}@media (min-width:1201px){.SoundItem .buttonContainer .buttonInnerContent{background:#000;width:12px;height:6px;margin-left:-12px;position:relative}.SoundItem .buttonContainer .buttonInnerContent:after{content:"";top:-5px;right:-12px;left:initial;border:8px solid transparent;border-left:12px solid #000;border-right:none;display:block;position:absolute}}@media (max-width:1200px){.SoundItem .buttonContainer .buttonInnerContent{background:#000;width:6px;height:12px;margin-top:-12px;position:relative}.SoundItem .buttonContainer .buttonInnerContent:after{content:"";bottom:-12px;right:-5px;left:initial;border:8px solid transparent;border-top:12px solid #000;border-bottom:none;display:block;position:absolute}}@media (max-width:512px){.SoundItem .buttonContainer .buttonInnerContent{width:6px;height:8px;margin-top:-10px}.SoundItem .buttonContainer .buttonInnerContent:after{bottom:-10px}}@media (min-width:1201px){.SoundItem .buttonContainer.left{order:1;margin-right:.5rem}.SoundItem .buttonContainer.left .buttonInnerContent{margin-left:initial;margin-right:-12px}.SoundItem .buttonContainer.left .buttonInnerContent:after{top:-5px;right:initial;border:8px solid transparent;border-left:none;border-right:12px solid #000;left:-12px}}@media (max-width:1200px){.SoundItem .buttonContainer.left .buttonInnerContent{margin-bottom:-12px;margin-top:initial;background:#000;width:6px;height:12px;position:relative}.SoundItem .buttonContainer.left .buttonInnerContent:after{content:"";left:initial;bottom:unset;border:8px solid transparent;border-top:none;border-bottom:12px solid #000;display:block;position:absolute;top:-12px}}@media (max-width:512px){.SoundItem .buttonContainer.left .buttonInnerContent{width:6px;height:8px;margin-bottom:-10px}.SoundItem .buttonContainer.left .buttonInnerContent:after{top:-10px}}.SoundItem .biggerTarget{z-index:0;position:absolute;top:0;bottom:0;left:0;right:0}.ShareInput{flex-direction:column;justify-content:space-around;align-items:center;height:100%;display:flex;position:relative}.ShareInput .linkStuff{flex-direction:column;flex:1;justify-content:space-around;width:100%;padding:0 1rem;display:flex}.ShareInput .shareUrl{text-align:center;background-color:rgba(255,255,255,.2);border:1px dashed rgba(255,255,255,.2);justify-content:center;align-items:center;width:calc(100% - 2rem);height:3.8rem;margin:1rem 1rem .25rem;padding:.5rem 1rem;display:flex}.ShareInput .options{color:#f0f0f0;justify-content:space-around;align-items:flex-end;width:100%;padding:0 1rem;font-size:.8rem;display:flex}.ShareInput .options input{margin-left:.5rem}.ShareInput .options .option,.ShareInput .options .mixListContainer,.ShareInput .options .clipboardContainer{flex:1;display:flex}.ShareInput .options .option{justify-content:center;display:flex}.ShareInput .options .mixListContainer{flex-direction:column;align-items:flex-start;display:flex}.ShareInput .options .mixListContainer select{transition:box-shadow 3s}.ShareInput .options .mixListContainer.highlight select{box-shadow:0 0 30px 5px #fff}.ShareInput .options .mixListContainer label{font-size:.8rem;line-height:1.6em}.ShareInput .options .mixListContainer select{font-family:inherit;font-size:.9rem}.ShareInput .options .clipboardContainer{justify-content:flex-end;display:flex}.ShareInput .options .clipboard{border:2px solid #fff;border-radius:4px;width:9rem;padding:.25rem .5rem;transition:background-color .3s,color .3s}.ShareInput .options .clipboard:hover,.ShareInput .options .clipboard:active{color:#1f1e21;background-color:#fff}.ShareInput .letsGetSocial{flex-direction:column;flex:1;width:100%;display:flex}.ShareInput .letsGetSocial h3{text-align:center;text-transform:uppercase;height:2.8rem;font-size:.8rem;line-height:2.8rem}.ShareInput .letsGetSocial .links{flex:1;justify-content:space-around;align-items:flex-start;padding-top:1.5rem;display:flex}.ShareInput .letsGetSocial a{display:block}.ShareInput .letsGetSocial a span{border-radius:4px;width:32px;height:32px;margin:0 auto .5rem;display:block}.ShareInput .letsGetSocial .fb span{background-image:url(./assets/sprite.svg);background-position:-120px -600px;width:32px;height:32px}.ShareInput .letsGetSocial .tw span{background-image:url(./assets/sprite.svg);background-position:-160px -600px;width:32px;height:32px}.ShareInput .letsGetSocial .re span{background-image:url(./assets/sprite.svg);background-position:-200px -600px;width:32px;height:32px}.ShareInput .letsGetSocial .tu span{background-image:url(./assets/sprite.svg);background-position:-232px -600px;width:32px;height:32px}.RowControls{width:35rem;max-width:90%;margin:1rem auto 2rem;position:relative}.RowControls.manage{width:70rem}.RowControls .container{justify-content:space-between;align-items:flex-start;width:35rem;max-width:100%;margin:0 auto;display:flex}.RowControls button.rowControl{text-transform:uppercase;border:2px solid #fff;border-radius:4px;width:6rem;height:2rem;margin-top:0;margin-bottom:0;padding:.25rem 0;font-size:.75rem;transition:color .4s,background-color .4s,border-color .3s,border-radius .15s;box-sizing:border-box!important}.RowControls button.rowControl.initial:hover{color:#1f1e21;background-color:#fff}.RowControls button.rowControl.initial:active{background-color:#c8c8c8}.RowControls button.rowControl.expanded{color:#1f1e21;background-color:#fff}.RowControls button.rowControl.timeDisplay>span{justify-content:center;display:flex}.RowControls button.rowControl.timeDisplay>span>span{display:block}.RowControls button.rowControl.timeDisplay .colon{text-align:center;width:.4em}.RowControls button.rowControl.timeDisplay .time{text-align:center;width:.675em}.RowControls .controlContent{border:0 solid transparent;width:100%;margin-top:3rem;transition:height .3s,border .3s;position:relative;overflow:hidden}.RowControls .controlContent.initial{height:0;margin:0}.RowControls .controlContent.expanded .TimerInput,.RowControls .controlContent.expanded .ShareInput,.RowControls .controlContent.expanded .MixInput,.RowControls .controlContent.expanded .ManageSoundsInput{background-color:rgba(255,255,255,.1);border-radius:4px;overflow:hidden}.RowControls .controlContent.expanded,.RowControls .controlContent .inner{height:380px}.RowControls .controlContent.expanded.timers,.RowControls .controlContent.expanded.timers .inner{height:285px}.RowControls .controlContent.expanded.timers.fade,.RowControls .controlContent.expanded.timers.fade .inner{height:380px}.RowControls .controlContent.expanded.manage,.RowControls .controlContent.expanded.manage .inner,.RowControls .controlContent.expanded.manage .ManageSoundsInput{height:636px}@media (max-width:1200px){.RowControls .controlContent.expanded.manage,.RowControls .controlContent.expanded.manage .inner,.RowControls .controlContent.expanded.manage .ManageSoundsInput{height:auto}}.RowControls .controlContent.expanded.mixes,.RowControls .controlContent.expanded.mixes .inner,.RowControls .controlContent.expanded.mixes .MixInput{height:380px}.RowControls .controlContent.expanded.mixes.mixes4,.RowControls .controlContent.expanded.mixes.mixes4 .inner,.RowControls .controlContent.expanded.mixes.mixes4 .MixInput{height:456px}.RowControls .controlContent.expanded.mixes.mixes5,.RowControls .controlContent.expanded.mixes.mixes5 .inner,.RowControls .controlContent.expanded.mixes.mixes5 .MixInput{height:516px}.RowControls .controlContent.expanded.mixes.mixes6,.RowControls .controlContent.expanded.mixes.mixes6 .inner,.RowControls .controlContent.expanded.mixes.mixes6 .MixInput{height:576px}.RowControls .controlContent.expanded.mixes.mixesLots,.RowControls .controlContent.expanded.mixes.mixesLots .inner,.RowControls .controlContent.expanded.mixes.mixesLots .MixInput{height:636px}.RowControls .managerHelpText{background:rgba(255,255,255,.5);flex-direction:column;justify-content:flex-start;align-items:center;display:flex;position:absolute;top:0;bottom:0;left:0;right:0}.RowControls .managerHelpText .content{background:#000;border-radius:4px;width:24rem;max-width:80%;margin-top:2rem;padding:1rem}.RowControls .managerHelpText .content p{margin-bottom:1rem}.RowControls .managerHelpText .content .it{font-style:italic}.RowControls .managerHelpText .content button{background:rgba(255,255,255,.2);border:2px solid #fff;border-radius:4px;margin:0 auto;padding:.25rem 1.75rem;display:block}.RowControls .managerHelpText .content button:hover{background:rgba(255,255,255,.3)}.RowControls .managerHelpText .content button:active{background:rgba(255,255,255,.4)}.SoundContainer{justify-content:center;align-items:center;width:250px;height:230px;display:flex;position:relative}@media screen and (max-width:512px) and (min-width:400px){.SoundContainer{width:50%}}.SoundContainer .inner{flex-direction:column;align-items:center;width:150px;height:180px;display:flex}.SoundContainer .imageContainer{width:100px;height:100px;margin-bottom:1rem;position:relative}.SoundContainer .imageContainer .image{background-repeat:no-repeat;position:absolute;top:0;bottom:0;left:0;right:0}.SoundContainer .imageContainer .image.outline.rain{background-image:url(./assets/sprite.svg);background-position:-0px -0px;width:100px;height:100px}.SoundContainer .imageContainer .image.outline.thunder{background-image:url(./assets/sprite.svg);background-position:-100px -0px;width:100px;height:100px}.SoundContainer .imageContainer .image.outline.waves{background-image:url(./assets/sprite.svg);background-position:-200px -0px;width:100px;height:100px}.SoundContainer .imageContainer .image.outline.wind{background-image:url(./assets/sprite.svg);background-position:-300px -0px;width:100px;height:100px}.SoundContainer .imageContainer .image.outline.fire{background-image:url(./assets/sprite.svg);background-position:-400px -0px;width:100px;height:100px}.SoundContainer .imageContainer .image.outline.birds{background-image:url(./assets/sprite.svg);background-position:-500px -0px;width:100px;height:100px}.SoundContainer .imageContainer .image.outline.crickets{background-image:url(./assets/sprite.svg);background-position:-600px -0px;width:100px;height:100px}.SoundContainer .imageContainer .image.outline.people{background-image:url(./assets/sprite.svg);background-position:-700px -0px;width:100px;height:100px}.SoundContainer .imageContainer .image.outline.sbowl{background-image:url(./assets/sprite.svg);background-position:-800px -0px;width:100px;height:100px}.SoundContainer .imageContainer .image.outline.whitenoise{background-image:url(./assets/sprite.svg);background-position:-900px -0px;width:100px;height:100px}.SoundContainer .imageContainer .image.fill.rain{background-image:url(./assets/sprite.svg);background-position:-0px -100px;width:100px;height:100px}.SoundContainer .imageContainer .image.fill.thunder{background-image:url(./assets/sprite.svg);background-position:-100px -100px;width:100px;height:100px}.SoundContainer .imageContainer .image.fill.waves{background-image:url(./assets/sprite.svg);background-position:-200px -100px;width:100px;height:100px}.SoundContainer .imageContainer .image.fill.wind{background-image:url(./assets/sprite.svg);background-position:-300px -100px;width:100px;height:100px}.SoundContainer .imageContainer .image.fill.fire{background-image:url(./assets/sprite.svg);background-position:-400px -100px;width:100px;height:100px}.SoundContainer .imageContainer .image.fill.birds{background-image:url(./assets/sprite.svg);background-position:-500px -100px;width:100px;height:100px}.SoundContainer .imageContainer .image.fill.crickets{background-image:url(./assets/sprite.svg);background-position:-600px -100px;width:100px;height:100px}.SoundContainer .imageContainer .image.fill.people{background-image:url(./assets/sprite.svg);background-position:-700px -100px;width:100px;height:100px}.SoundContainer .imageContainer .image.fill.sbowl{background-image:url(./assets/sprite.svg);background-position:-800px -100px;width:100px;height:100px}.SoundContainer .imageContainer .image.fill.whitenoise{background-image:url(./assets/sprite.svg);background-position:-900px -100px;width:100px;height:100px}.SoundContainer .imageContainer .loadingIndicator{opacity:0;z-index:1;background-color:rgba(0,0,0,.6);border-radius:50%;justify-content:center;align-items:center;width:100px;height:100px;transition:opacity .5s;display:flex;position:absolute;top:0;bottom:0;left:0;right:0}.SoundContainer .imageContainer .loadingIndicator.loadingGlue{opacity:1}.SoundContainer .imageContainer.pro .image.fill.aircon{background-image:url(./assets/sprite.svg);background-position:-0px -300px;width:100px;height:100px}.SoundContainer .imageContainer.pro .image.fill.fanhigh{background-image:url(./assets/sprite.svg);background-position:-100px -300px;width:100px;height:100px}.SoundContainer .imageContainer.pro .image.fill.fanlow{background-image:url(./assets/sprite.svg);background-position:-200px -300px;width:100px;height:100px}.SoundContainer .imageContainer.pro .image.fill.city{background-image:url(./assets/sprite.svg);background-position:-300px -300px;width:100px;height:100px}.SoundContainer .imageContainer.pro .image.fill.chimesmetal{background-image:url(./assets/sprite.svg);background-position:-400px -300px;width:100px;height:100px}.SoundContainer .imageContainer.pro .image.fill.stream{background-image:url(./assets/sprite.svg);background-position:-500px -300px;width:100px;height:100px}.SoundContainer .imageContainer.pro .image.fill.raintinroof{background-image:url(./assets/sprite.svg);background-position:-600px -300px;width:100px;height:100px}.SoundContainer .imageContainer.pro .image.fill.raintrees{background-image:url(./assets/sprite.svg);background-position:-700px -300px;width:100px;height:100px}.SoundContainer .imageContainer.pro .image.fill.raincabin{background-image:url(./assets/sprite.svg);background-position:-800px -300px;width:100px;height:100px}.SoundContainer .imageContainer.pro .image.fill.waterfall{background-image:url(./assets/sprite.svg);background-position:-900px -300px;width:100px;height:100px}.SoundContainer .imageContainer.pro .image.fill.cicadas{background-image:url(./assets/sprite.svg);background-position:-0px -500px;width:100px;height:100px}.SoundContainer .imageContainer.pro .image.fill.frogs{background-image:url(./assets/sprite.svg);background-position:-100px -500px;width:100px;height:100px}.SoundContainer .imageContainer.pro .image.fill.clock{background-image:url(./assets/sprite.svg);background-position:-200px -500px;width:100px;height:100px}.SoundContainer .imageContainer.pro .image.fill.vinyl{background-image:url(./assets/sprite.svg);background-position:-300px -500px;width:100px;height:100px}.SoundContainer .imageContainer.pro .image.fill.brownnoise{background-image:url(./assets/sprite.svg);background-position:-400px -500px;width:100px;height:100px}.SoundContainer .imageContainer.pro .image.fill.pinknoise{background-image:url(./assets/sprite.svg);background-position:-500px -500px;width:100px;height:100px}.SoundContainer .imageContainer.pro .image.outline.aircon{background-image:url(./assets/sprite.svg);background-position:-0px -200px;width:100px;height:100px}.SoundContainer .imageContainer.pro .image.outline.fanhigh{background-image:url(./assets/sprite.svg);background-position:-100px -200px;width:100px;height:100px}.SoundContainer .imageContainer.pro .image.outline.fanlow{background-image:url(./assets/sprite.svg);background-position:-200px -200px;width:100px;height:100px}.SoundContainer .imageContainer.pro .image.outline.city{background-image:url(./assets/sprite.svg);background-position:-300px -200px;width:100px;height:100px}.SoundContainer .imageContainer.pro .image.outline.chimesmetal{background-image:url(./assets/sprite.svg);background-position:-400px -200px;width:100px;height:100px}.SoundContainer .imageContainer.pro .image.outline.stream{background-image:url(./assets/sprite.svg);background-position:-500px -200px;width:100px;height:100px}.SoundContainer .imageContainer.pro .image.outline.raintinroof{background-image:url(./assets/sprite.svg);background-position:-600px -200px;width:100px;height:100px}.SoundContainer .imageContainer.pro .image.outline.raintrees{background-image:url(./assets/sprite.svg);background-position:-700px -200px;width:100px;height:100px}.SoundContainer .imageContainer.pro .image.outline.raincabin{background-image:url(./assets/sprite.svg);background-position:-800px -200px;width:100px;height:100px}.SoundContainer .imageContainer.pro .image.outline.waterfall{background-image:url(./assets/sprite.svg);background-position:-900px -200px;width:100px;height:100px}.SoundContainer .imageContainer.pro .image.outline.cicadas{background-image:url(./assets/sprite.svg);background-position:-0px -400px;width:100px;height:100px}.SoundContainer .imageContainer.pro .image.outline.frogs{background-image:url(./assets/sprite.svg);background-position:-100px -400px;width:100px;height:100px}.SoundContainer .imageContainer.pro .image.outline.clock{background-image:url(./assets/sprite.svg);background-position:-200px -400px;width:100px;height:100px}.SoundContainer .imageContainer.pro .image.outline.vinyl{background-image:url(./assets/sprite.svg);background-position:-300px -400px;width:100px;height:100px}.SoundContainer .imageContainer.pro .image.outline.brownnoise{background-image:url(./assets/sprite.svg);background-position:-400px -400px;width:100px;height:100px}.SoundContainer .imageContainer.pro .image.outline.pinknoise{background-image:url(./assets/sprite.svg);background-position:-500px -400px;width:100px;height:100px}.SoundContainer h3{position:relative}.SoundContainer .meanderIndicator{background-image:url(./assets/sprite.svg);background-position:-90px -600px;width:16px;height:16px;display:block;position:absolute;top:1px;right:-20px}.SoundSlider{flex-direction:column;flex:1;justify-content:flex-end;width:100px;display:flex}.SoundSlider span{display:block}.SoundSlider input[type=range]{-webkit-appearance:none;background:0 0;width:100%;margin:10px 0}.SoundSlider input[type=range]:focus{outline:none}.SoundSlider input[type=range]::-webkit-slider-runnable-track{cursor:pointer;background:#fff;border:0 solid #010101;border-radius:4px;width:100%;height:8px;box-shadow:0 0 #000,0 0 #0d0d0d}.SoundSlider input[type=range]::-webkit-slider-thumb{cursor:pointer;-webkit-appearance:none;background:#fff;border:1px solid #d9d9d9;border-radius:14px;width:28px;height:28px;margin-top:-10px;box-shadow:1px 1px 1px rgba(0,0,0,.25),0 0 1px rgba(13,13,13,.25)}.SoundSlider input[type=range]:focus::-webkit-slider-runnable-track{background:#fff}.SoundSlider input[type=range]::-moz-range-track{cursor:pointer;background:#fff;border:0 solid #010101;border-radius:4px;width:100%;height:8px;box-shadow:0 0 #000,0 0 #0d0d0d}.SoundSlider input[type=range]::-moz-range-thumb{cursor:pointer;background:#fff;border:1px solid #d9d9d9;border-radius:14px;width:28px;height:28px;box-shadow:1px 1px 1px rgba(0,0,0,.25),0 0 1px rgba(13,13,13,.25)}.SoundSlider input[type=range]::-ms-track{cursor:pointer;color:transparent;background:0 0;border-color:transparent;width:100%;height:8px}.SoundSlider input[type=range]::-ms-fill-lower{background:#f2f2f2;border:0 solid #010101;border-radius:8px;box-shadow:0 0 #000,0 0 #0d0d0d}.SoundSlider input[type=range]::-ms-fill-upper{background:#fff;border:0 solid #010101;border-radius:8px;box-shadow:0 0 #000,0 0 #0d0d0d}.SoundSlider input[type=range]::-ms-thumb{cursor:pointer;background:#fff;border:1px solid #d9d9d9;border-radius:14px;width:28px;height:8px;box-shadow:1px 1px 1px rgba(0,0,0,.25),0 0 1px rgba(13,13,13,.25)}.SoundSlider input[type=range]:focus::-ms-fill-lower{background:#fff}.SoundSlider input[type=range]:focus::-ms-fill-upper{background:#fff}.SoundList{flex-flow:wrap;justify-content:center;max-width:1400px;margin:0 auto;display:flex}.Footer .container{text-align:center;justify-content:space-around;max-width:30rem;margin:5rem auto 0;padding-bottom:2rem;display:flex}.Footer button{text-decoration:underline}.AppLinks{background-color:rgba(0,0,0,.3);border-radius:8px;justify-content:space-around;align-items:center;width:30rem;max-width:90%;height:5.2rem;margin:0 auto;padding:0 1rem;transition:height .2s;display:flex;position:relative}.AppLinks.hidden{height:0;overflow:hidden}.AppLinks a{background-color:#000;background-repeat:no-repeat;border:2px solid #fff;border-radius:8px;justify-content:center;align-items:center;width:148px;height:43.2px;display:flex;overflow:hidden}.AppLinks a span{width:120px;height:38px;display:block}.AppLinks .mountainview span{background-image:url(./assets/sprite.svg);background-position:-280px -600px;width:120px;height:40px}.AppLinks .cupertino span{background-image:url(./assets/sprite.svg);background-position:-410px -600px;width:120px;height:40px}.AppLinks .hide{color:#fff;opacity:.4;padding:.25rem .5rem;display:block;position:absolute;top:0;right:0}.AppLinks .hide:hover{opacity:.2}.MoreSounds{justify-content:center;width:100%;margin-top:1rem;display:flex}.MoreSounds .button{text-transform:uppercase;border:2px solid #fff;border-radius:4px;width:10rem;height:2rem;margin-top:0;margin-bottom:0;padding:.25rem 0;font-size:.75rem;transition:color .4s,background-color .4s,border-color .3s,border-radius .15s;box-sizing:border-box!important}.MoreSounds .button:hover{color:#1f1e21;background-color:#fff}.MoreSounds .button:active{background-color:#c8c8c8}.UpgradeModal{z-index:999;color:#000;background:#fff;flex-direction:column;display:flex;position:fixed;top:0;bottom:0;left:0;right:0}.UpgradeModal a{color:#000;text-decoration:none}.UpgradeModal a:hover{color:#0f0f0f}.UpgradeModal a:active{color:#1e1e1e}.UpgradeModal button{cursor:pointer}.UpgradeModal input{cursor:text}.UpgradeModal .continueContainer{flex:1;justify-content:space-between;display:flex}@media (max-width:850px){.UpgradeModal .continueContainer{flex-direction:column}}.UpgradeModal .continue.button,.UpgradeModal .cancel.button{text-align:center;text-transform:uppercase;color:#fff;border-radius:4px;margin:1rem 0;padding:1rem 5rem;font-weight:700}.UpgradeModal .continue.button{background:#009600}.UpgradeModal .continue.button:hover{background:#00a000}.UpgradeModal .continue.button:active{background:#0a0}.UpgradeModal .cancel.button{background:#969696}.UpgradeModal .cancel.button:hover{background:#a0a0a0}.UpgradeModal .cancel.button:active{background:#aaa}.UpgradeModal .UpgradeHeader{border-bottom:1px solid rgba(0,0,0,.1);padding:1rem 2rem}.UpgradeModal .UpgradeHeader .content{justify-content:flex-start;align-items:center;height:4rem;display:flex}.UpgradeModal .UpgradeHeader .content .icon{width:3rem;height:3rem;margin-left:-11px;margin-right:.25rem}.UpgradeModal .UpgradeHeader .content .title{font-size:2rem;font-weight:700}.UpgradeModal .UpgradeHeader .content .signIn{flex:1;justify-content:flex-end;display:flex}.UpgradeModal .UpgradeHeader .content .signIn button:hover{color:#646464}.UpgradeModal .UpgradeHeader .content .signIn button:active{color:#969696}.UpgradeModal .container{justify-content:center;align-items:flex-start;padding:2rem;font-size:1.25rem;display:flex;overflow-y:auto}.UpgradeModal .container p{margin-bottom:1rem;line-height:1.4}.UpgradeModal .Stage1{width:100%;max-width:1070px;max-height:100%;padding:1rem}.UpgradeModal .Stage1 p{text-align:center}.UpgradeModal .Stage1 .previewSounds ul{flex-wrap:wrap;justify-content:flex-start;width:100%;display:flex}.UpgradeModal .Stage1 li.SoundItem{box-sizing:border-box;border:2px solid #000;border-radius:4px;flex-direction:row;justify-content:center;align-items:flex-start;width:calc(25% - 2rem);margin:1rem;padding:1rem;font-size:.9rem;display:flex}@media (max-width:1200px){.UpgradeModal .Stage1 li.SoundItem{width:calc(33.333% - 2rem)}}@media (max-width:850px){.UpgradeModal .Stage1 li.SoundItem{width:calc(50% - 2rem)}}@media (max-width:650px){.UpgradeModal .Stage1 li.SoundItem{width:100%;margin-left:0;margin-right:0;font-size:1.25rem}}.UpgradeModal .Stage1 li.SoundItem:hover{background:#f5f5f5}.UpgradeModal .Stage1 li.SoundItem:active{background:#ebebeb}.UpgradeModal .Stage1 li.SoundItem.active{background:#d7ffd7}.UpgradeModal .Stage1 li.SoundItem.active .previewInner{border-color:#d7ffd7}.UpgradeModal .Stage1 li.SoundItem .label{margin-bottom:0;line-height:2rem}.UpgradeModal .Stage1 .continueContainer{width:40rem;max-width:90%;margin-top:2rem;margin-left:auto;margin-right:auto}@media (max-width:850px){.UpgradeModal .Stage1 .continueContainer{flex-direction:column;width:100%;max-width:100%}}.UpgradeModal .Stage2{max-width:100%;margin:2rem}.UpgradeModal .Stage2 .loadingContainer{background-color:rgba(255,255,255,.9);justify-content:center;align-items:center;display:flex;position:absolute;top:0;bottom:0;left:0;right:0}.UpgradeModal .Stage2 .loadingContainer .loading{border:1rem solid #d2d2d2;border-top-color:#464646;border-radius:50%;width:10rem;height:10rem;animation:1s linear infinite spin}@keyframes spin{0%{transform:rotate(0)}to{transform:rotate(360deg)}}.UpgradeModal .Stage2 h3{text-align:center;margin-bottom:4rem;font-size:2rem;display:block}.UpgradeModal .Stage2 label{margin-bottom:.5rem;display:block}.UpgradeModal .Stage2 input{border:2px solid #000;border-radius:.5rem;width:40rem;max-width:100%;height:2.2rem;margin-bottom:1rem;padding:2rem 1rem;font-size:2rem;line-height:2.2rem;display:block}@media (max-width:850px){.UpgradeModal .Stage2 input{padding:1.5rem .75rem;font-size:1.5rem}}.UpgradeModal .Stage2 input.invalid{background-color:rgba(231,76,60,.1);border-color:#e74c3c}.UpgradeModal .Stage2 .validationWarning{color:#e74c3c;width:40rem;max-width:100%}.UpgradeModal .Stage2 .userEnteredEmail{border:2px dashed #c8c8c8;padding:.5rem;font-weight:700}@media (max-width:850px){.UpgradeModal .Stage2 .userEnteredEmail{margin:0 auto;display:block}}.UpgradeModal .Stage2 .continueContainer{margin-top:3rem}.UpgradeModal .Stage3{width:40rem;max-width:100%}.UpgradeModal .Stage3 p{text-align:center}.UpgradeModal .Stage3 .price{font-size:150%}.UpgradeModal .Stage3 .currencyMessage,.UpgradeModal .Stage3 .webOnlyMessage{font-size:1.1rem}.UpgradeModal .Stage3 .webOnlyMessage{margin-top:3rem}.UpgradeModal .Stage3 .renewInput{flex-direction:row;justify-content:flex-start;width:450px;margin:3rem 0;display:flex}@media (max-width:512px){.UpgradeModal .Stage3 .renewInput{width:100%}}.UpgradeModal .Stage3 .renewInput label{line-height:2rem}.UpgradeModal .Stage3 .renewInput .renewLabel.inactive{color:#7d7d7d}.UpgradeModal .Stage3 .renewInput .toggle{background-color:#0f0;border:2px solid #646464;border-radius:1rem;width:4rem;height:2rem;margin-right:1rem;transition:background-color .1s;position:relative}.UpgradeModal .Stage3 .renewInput .toggle .inner{background:#fff;border-radius:50%;width:calc(2rem - 8px);height:calc(2rem - 8px);margin:2px;transition:right .1s,background-color .1s;position:absolute;right:0;box-shadow:0 0 4px 2px #646464}.UpgradeModal .Stage3 .renewInput .toggle.off{background:#969696}.UpgradeModal .Stage3 .renewInput .toggle.off .inner{right:2rem}.AccountView table td{padding-bottom:.75rem}.AccountView table .label{text-align:right;padding-right:1rem}.AccountView table .content{text-align:left}.AccountView table button{color:#000;margin:0;padding:0;font-weight:400;text-decoration:underline}.AccountView table .renewalOptions a{color:#00f}.Modal{z-index:999;color:#000;background:rgba(0,0,0,.8);flex-direction:column;justify-content:center;align-items:center;display:flex;position:fixed;top:0;bottom:0;left:0;right:0}.Modal .inner{background:#fff;border-radius:4px;width:40rem;max-width:90%;margin-top:-8rem;padding:1.5rem 2rem}.Modal .header{flex-direction:"row";justify-content:space-between;align-items:flex-start;padding-bottom:1.5rem;display:flex}.Modal .header .cornerClose{color:#000;padding:0 0 .5rem .5rem;font-size:2.5rem;font-weight:700;line-height:1}.Modal p,.Modal h2,.Modal button,.Modal label,.Modal input{line-height:1.4}.Modal h2{margin-bottom:1rem;font-size:2rem}.Modal p{margin-bottom:1rem}.Modal .buttonContainer{flex-direction:row-reverse;justify-content:space-between;padding-top:2.5rem;display:flex}.Modal button{color:#fff;border-radius:4px;padding:.5rem 1rem;font-weight:700}.Modal button.cancel{background:#e68c32}.Modal button.cancel:hover{background:#faa046}.Modal button.cancel:active{background:#ffb45a}.Modal button.submit{background:#009600}.Modal button.submit:hover{background:#0a0}.Modal button.submit:active{background:#00be00}.Modal .submitted button.cancel{background:#009600}.ProHelpModal{z-index:999;color:#000;background:rgba(0,0,0,.8);flex-direction:column;justify-content:center;align-items:center;display:flex;position:fixed;top:0;bottom:0;left:0;right:0}.ProHelpModal .inner{background:#fff;border-radius:4px;width:40rem;max-width:90%;margin-top:-8rem;padding:2rem}.ProHelpModal p,.ProHelpModal h2,.ProHelpModal button{line-height:1.4}.ProHelpModal h2{margin-bottom:1rem;font-size:2rem}.ProHelpModal p{margin-bottom:1rem}.ProHelpModal .buttonContainer{flex-direction:row-reverse;justify-content:space-between;margin-top:2rem;display:flex}.ProHelpModal button{color:#fff;border-radius:4px;padding:.5rem 1rem}.ProHelpModal button.ok{background:#009600}.ProHelpModal button.ok:hover{background:#0a0}.ProHelpModal button.ok:active{background:#00be00}.WaitingForLicense{z-index:999;background-color:rgba(0,0,0,.9);justify-content:center;align-items:center;display:flex;position:fixed;top:0;bottom:0;left:0;right:0}.WaitingForLicense .inner{flex-direction:column;justify-content:center;align-items:center;display:flex}.WaitingForLicense .inner .message{color:#fff;margin-bottom:3rem;font-size:2rem}.WaitingForLicense .inner .loading{border:1rem solid #d2d2d2;border-top-color:#464646;border-radius:50%;width:10rem;height:10rem;animation:1s linear infinite spin}.WaitingForLogin{z-index:999;background-color:rgba(0,0,0,.9);justify-content:center;align-items:center;display:flex;position:fixed;top:0;bottom:0;left:0;right:0}.WaitingForLogin .inner{flex-direction:column;justify-content:center;align-items:center;display:flex}.WaitingForLogin .inner .message{color:#fff;margin-bottom:3rem;font-size:2rem}.WaitingForLogin .inner .loading{border:1rem solid #d2d2d2;border-top-color:#464646;border-radius:50%;width:10rem;height:10rem;animation:1s linear infinite spin}.StaticSiteDescription .borderTop{width:100%;margin-top:5rem;display:none;position:relative}.StaticSiteDescription .borderTop:before{content:"";background-color:#fff;height:1px;display:none;position:absolute;top:50%;left:0;right:0}.StaticSiteDescription .borderTop *{box-sizing:border-box}.StaticSiteDescription .borderTop .left,.StaticSiteDescription .borderTop .right{background-color:#1e2832;width:50%;display:inline-block}@supports (width:10vw) and (((-webkit-mask-image:radial-gradient(black, white))) or ((-webkit-mask-image:radial-gradient(black, white)) or (mask-image:radial-gradient(black, white)))){.StaticSiteDescription .borderTop{height:3vw;display:block}.StaticSiteDescription .borderTop .left{height:3vw;-webkit-mask-image:radial-gradient(200vw at 50% 200vw,#000 0,#000 99.95%,transparent 100%);mask-image:radial-gradient(200vw at 50% 200vw,#000 0,#000 99.95%,transparent 100%)}.StaticSiteDescription .borderTop .right{height:3vw;-webkit-mask-image:radial-gradient(200vw at 50% -196.9vw,transparent 0,transparent 99.95%,#000 100%);mask-image:radial-gradient(200vw at 50% -196.9vw,transparent 0,transparent 99.95%,#000 100%)}@media (max-width:600px){.StaticSiteDescription .borderTop{height:6vw}.StaticSiteDescription .borderTop .left{-webkit-mask-image:radial-gradient(circle 100vw at 50% 100vw,black 0,black transparent 99.95%,transparent 100%);-webkit-mask-image:radial-gradient(circle 100vw at 50% 100vw,black 0,black transparent 99.95%,transparent 100%);mask-image:radial-gradient(circle 100vw at 50% 100vw,black 0,black transparent 99.95%,transparent 100%);height:6vw}.StaticSiteDescription .borderTop .right{height:6vw;-webkit-mask-image:radial-gradient(100vw at 50% -93.8vw,transparent 0,transparent 99.95%,#000 100%);mask-image:radial-gradient(100vw at 50% -93.8vw,transparent 0,transparent 99.95%,#000 100%)}}@media (max-width:1000px){.StaticSiteDescription .borderTop{height:4vw}.StaticSiteDescription .borderTop .left{height:4vw;-webkit-mask-image:radial-gradient(150vw at 50% 150vw,#000 0,#000 99.95%,transparent 100%);mask-image:radial-gradient(150vw at 50% 150vw,#000 0,#000 99.95%,transparent 100%)}.StaticSiteDescription .borderTop .right{height:4vw;-webkit-mask-image:radial-gradient(150vw at 50% -145.9vw,transparent 0,transparent 99.95%,#000 100%);mask-image:radial-gradient(150vw at 50% -145.9vw,transparent 0,transparent 99.95%,#000 100%)}}.StaticSiteDescription .hideButton{position:absolute;top:4rem;right:2rem}.StaticSiteDescription .hideButton button{color:#fff;padding:.25rem .5rem;font-size:1.5rem;font-weight:700}.StaticSiteDescription .inner{background:linear-gradient(#1e2832,#3c281e);width:100%;padding:3rem}.StaticSiteDescription .content{width:800px;max-width:100%;margin-left:auto;margin-right:auto;padding-top:4rem;font-size:1.1rem;line-height:1.45}.StaticSiteDescription .content p{margin-bottom:1.5rem}}.Toast{z-index:999;color:#000;background:rgba(20,20,20,.8);justify-content:center;align-items:center;font-size:1.25rem;display:flex;position:fixed;top:0;bottom:0;left:0;right:0}.Toast .inner{text-align:center;background:#fff;border-radius:8px;flex-direction:column;align-items:center;width:40rem;max-width:90%;padding:2rem 2rem 1rem;display:flex}.Toast .inner p{margin-bottom:1.5rem}.Toast a{color:inherit}.Toast .button{text-align:center;text-transform:uppercase;color:#fff;background:#000;border-radius:4px;margin:1rem 0;padding:1rem 5rem;font-weight:700}.Toast .button:hover{background:#141414}.Toast .button:active{background:#282828}#App.ios .RowControls .container{justify-content:center}#App.ios .RowControls .container>.timers,#App.ios .RowControls .container>.mixes,#App.ios .RowControls .container>.share{display:none}#App.ios .PlayControls .secondary,#App.ios .GlobalVolume{display:none!important}#App.ios .Header nav{max-width:100%!important}#App.ios .AppLinks .mountainview,#App.ios .AppLinks .hide{display:none!important}#App.ios .AppLinks{background:0 0}#App.ios .SoundSlider{display:none!important}#App.ios .SoundContainer{height:180px}#App.ios .SoundContainer:first-child{margin-top:2rem}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+button {
+  color: inherit;
+  font: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent !important;
+}
+button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+button:focus,
+button:active {
+  outline: 0 !important;
+}
+input[type="text"] {
+  font-size: inherit;
+  background-color: transparent;
+  border: 0;
+}
+@font-face {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 400;
+  src:
+    url(./assets/montserrat-webfont.ttf) format("truetype"),
+    url(./assets/montserrat-webfont.svg) format("svg"),
+    url(./assets/montserrat-webfont.woff) format("woff");
+}
+html {
+  background-color: #0d0f14;
+}
+html,
+body,
+#root,
+#App {
+  height: 100%;
+  overflow-y: auto;
+}
+#App {
+  color: #fff;
+  -webkit-overflow-scrolling: touch;
+  background: radial-gradient(
+    ellipse at 50% 0%,
+    #1a2332 0%,
+    #141820 40%,
+    #0d0f14 100%
+  );
+  background-attachment: fixed;
+  font-family: Montserrat;
+  position: relative;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  font-family: Montserrat;
+}
+a {
+  color: #fff;
+}
+a,
+.interactive {
+  cursor: pointer;
+}
+.hoverOpacity:hover,
+a:hover {
+  opacity: 0.8;
+}
+.hoverOpacity:active,
+a:active {
+  opacity: 0.5;
+}
+* {
+  box-sizing: border-box;
+  line-height: 1.4em;
+}
+.noSelect {
+  user-select: none;
+}
+audio {
+  width: 230px;
+  position: absolute;
+  left: 0;
+}
+@media (max-width: 512px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media (max-width: 448px) {
+  html {
+    font-size: 12px;
+  }
+}
+.Title {
+  text-align: center;
+  margin-top: 4rem;
+}
+.Title h1 {
+  text-transform: uppercase;
+  font-size: 4rem;
+  font-weight: 700;
+}
+.Title p {
+  margin-top: 0.5rem;
+}
+.GlobalVolume {
+  justify-content: space-around;
+  align-items: center;
+  max-width: 16rem;
+  margin-left: 1rem;
+  display: inline-flex;
+  position: relative;
+  flex: 1;
+}
+@media screen and (max-width: 512px) {
+  .GlobalVolume {
+    margin-left: 0;
+  }
+  .GlobalVolume .sliderContainer {
+    display: none;
+  }
+}
+.GlobalVolume .mute {
+  text-align: center;
+  text-transform: uppercase;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  min-width: 4rem;
+  margin-left: 1rem;
+  padding: 0.25rem 0;
+  font-size: 0.6rem;
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+.GlobalVolume .mute:hover,
+.GlobalVolume .mute:active {
+  color: #1f1e21;
+  background: #fff;
+}
+.GlobalVolume input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  margin: 11px 0;
+}
+.GlobalVolume input[type="range"]:focus {
+  outline: none;
+}
+.GlobalVolume input[type="range"]::-webkit-slider-runnable-track {
+  cursor: pointer;
+  background: #fff;
+  border: 0 solid #fff;
+  border-radius: 255px;
+  width: 100%;
+  height: 2px;
+  box-shadow:
+    0 0 1px #000,
+    0 0 #0d0d0d;
+}
+.GlobalVolume input[type="range"]::-webkit-slider-thumb {
+  cursor: pointer;
+  -webkit-appearance: none;
+  background: #fff;
+  border: 1px solid #c8c8c8;
+  border-radius: 4px;
+  width: 12px;
+  height: 24px;
+  margin-top: -11px;
+  box-shadow:
+    0 0 #000,
+    0 0 #0d0d0d;
+}
+.GlobalVolume input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: #fff;
+}
+.GlobalVolume input[type="range"]::-moz-range-track {
+  cursor: pointer;
+  background: #fff;
+  border: 0 solid #fff;
+  border-radius: 255px;
+  width: 100%;
+  height: 2px;
+  box-shadow:
+    0 0 1px #000,
+    0 0 #0d0d0d;
+}
+.GlobalVolume input[type="range"]::-moz-range-thumb {
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #c8c8c8;
+  border-radius: 4px;
+  width: 12px;
+  height: 24px;
+  box-shadow:
+    0 0 #000,
+    0 0 #0d0d0d;
+}
+.GlobalVolume input[type="range"]::-ms-track {
+  cursor: pointer;
+  color: transparent;
+  background: 0 0;
+  border-color: transparent;
+  width: 100%;
+  height: 2px;
+}
+.GlobalVolume input[type="range"]::-ms-fill-lower {
+  background: #f2f2f2;
+  border: 0 solid #fff;
+  border-radius: 510px;
+  box-shadow:
+    0 0 1px #000,
+    0 0 #0d0d0d;
+}
+.GlobalVolume input[type="range"]::-ms-fill-upper {
+  background: #fff;
+  border: 0 solid #fff;
+  border-radius: 510px;
+  box-shadow:
+    0 0 1px #000,
+    0 0 #0d0d0d;
+}
+.GlobalVolume input[type="range"]::-ms-thumb {
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #c8c8c8;
+  border-radius: 4px;
+  width: 12px;
+  height: 2px;
+  box-shadow:
+    0 0 #000,
+    0 0 #0d0d0d;
+}
+.GlobalVolume input[type="range"]:focus::-ms-fill-lower {
+  background: #fff;
+}
+.GlobalVolume input[type="range"]:focus::-ms-fill-upper {
+  background: #fff;
+}
+.Subscribe {
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+.Subscribe #dialog-content {
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  display: flex;
+}
+.Subscribe form {
+  flex-direction: row;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  height: 3.5rem;
+  display: flex;
+}
+.Subscribe .emailInput {
+  border: 0;
+  border-radius: 4px 0 0 4px;
+  min-width: 20rem;
+  height: 2.2rem;
+  padding: 0 0.75rem;
+  font-size: 1.25rem;
+  line-height: 2.2rem;
+}
+.Subscribe .button {
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: 0 0;
+  border: 2px solid #fff;
+  border-radius: 0 4px 4px 0;
+  height: 2.2rem;
+  margin: 0;
+  padding: 0 0.75rem;
+  font-family: Montserrat, sans-serif;
+  font-size: 0.75rem;
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  display: block;
+}
+.Subscribe .button:hover {
+  color: #000;
+  background-color: #fff;
+}
+.Subscribe .text {
+  text-align: center;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;
+  padding: 0 2rem 1rem;
+  font-size: 0.75rem;
+  line-height: 1.4em;
+  display: flex;
+}
+.Header {
+  background-color: rgba(0, 0, 0, 0.3);
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 2.8rem;
+  transition: height 0.3s;
+  display: flex;
+}
+.Header .container {
+  justify-content: space-between;
+  height: 2.8rem;
+  display: flex;
+}
+.Header nav,
+.Header .GlobalVolume {
+  height: 2.8rem;
+}
+.Header nav {
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 1rem;
+  display: inline-flex;
+}
+.Header .updateButton {
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 0.25rem 0.75rem;
+  text-decoration: underline;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+.Header .updateButton.active {
+  color: #000;
+  background-color: #fff;
+  text-decoration: none;
+}
+.Header.subscribe {
+  height: 10rem;
+}
+.home {
+  width: 100%;
+  min-height: 100%;
+  padding: 56px 20px;
+}
+.PlayControls {
+  flex: 1;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 4rem 0 2rem;
+  display: flex;
+}
+.PlayControls .pb {
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+}
+.PlayControls .pb .first {
+  margin-left: 0.25rem;
+  transition:
+    border 0.15s linear,
+    opacity 0.1s;
+}
+.PlayControls .pb .first:hover {
+  opacity: 0.9;
+}
+.PlayControls .pb.play .first {
+  border: 2.5rem solid transparent;
+  border-left: 4.5rem solid #fff;
+  border-right: 0 solid #fff;
+  width: 5rem;
+  height: 5rem;
+}
+.PlayControls .pb.stop .first {
+  border: 0 solid transparent;
+  border-left: 1.6rem solid #fff;
+  border-right: 1.6rem solid #fff;
+  width: 4.5rem;
+  height: 4.5rem;
+}
+.PlayControls .secondary {
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 2.5rem;
+  min-width: 38px;
+  height: 2.5rem;
+  min-height: 38px;
+  font-size: 0.7rem;
+  display: block;
+}
+.PlayControls .secondary:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.PlayControls .secondary:active {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.PlayControls .buttonContents {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+}
+.PlayControls .secondary.meander .image,
+.PlayControls .secondary.reset .image {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+.PlayControls .secondary.meander.active {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.PlayControls .secondary.meander .image {
+  background-image: url(./assets/sprite.svg);
+  background-position: 0px -600px;
+  width: 24px;
+  height: 24px;
+}
+.PlayControls .secondary.reset .image {
+  background-image: url(./assets/sprite.svg);
+  background-position: -30px -600px;
+  width: 24px;
+  height: 24px;
+}
+.PlayControls .secondary.reset.canRestore .image {
+  background-image: url(./assets/sprite.svg);
+  background-position: -60px -600px;
+  width: 24px;
+  height: 24px;
+}
+.PlayControls .meanderHelpText {
+  text-align: center;
+  color: #fff;
+  background-color: #000;
+  border-radius: 4px;
+  width: 180px;
+  padding: 0.75rem 0.5rem;
+  position: absolute;
+  top: 45px;
+}
+.PlayControls .meanderHelpText:before {
+  content: "";
+  border-bottom: 10px solid #000;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  height: 10px;
+  display: block;
+  position: absolute;
+  top: -15px;
+  left: 80px;
+}
+.ActiveTimerDisplay {
+  flex-direction: column;
+  flex: 1;
+  display: flex;
+}
+.ActiveTimerDisplay .wrap {
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.ActiveTimerDisplay .msg {
+  text-align: center;
+  max-width: 80%;
+  padding-bottom: 0.5rem;
+  font-size: 1rem;
+}
+.ActiveTimerDisplay .timeLeft {
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 6em;
+  padding: 0.5rem 1rem;
+  font-size: 1.75rem;
+  display: flex;
+}
+.ActiveTimerDisplay .timeLeft > span {
+  flex: 1;
+  justify-content: space-between;
+  display: flex;
+}
+.ActiveTimerDisplay .timeLeft > span .colon {
+  text-align: center;
+  width: 0.4em;
+}
+.ActiveTimerDisplay .timeLeft > span .time {
+  text-align: center;
+  width: 0.675em;
+}
+.ActiveTimerDisplay .controls {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  justify-content: space-between;
+  align-items: center;
+  height: 95px;
+  padding: 0 1rem;
+  display: flex;
+}
+.ActiveTimerDisplay .controls button {
+  border: 2px solid #fff;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+.ActiveTimerDisplay .controls button:hover,
+.ActiveTimerDisplay .controls button:active {
+  color: #1f1e21;
+  background-color: #fff;
+}
+.TimerInput {
+  flex: 1;
+  height: 285px;
+  transition: height 0.3s;
+  display: flex;
+}
+.TimerInput.extraHeight {
+  height: 380px;
+}
+.TimerInput .input {
+  flex-direction: column;
+  flex: 1;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+.TimerInput select {
+  color: #fff;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  background-color: transparent;
+}
+.TimerInput .step1,
+.TimerInput .step2,
+.TimerInput .step3 {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.TimerInput .step1,
+.TimerInput .step2,
+.TimerInput .step3,
+.TimerInput .step4 {
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 95px;
+  display: flex;
+}
+.TimerInput .step1 {
+  padding: 0 0.5rem;
+  display: flex;
+}
+.TimerInput .step1 button {
+  border-radius: 4px;
+  flex: 1;
+  height: 3.4em;
+  margin: 0 0.5rem;
+  font-size: 0.9rem;
+  transition:
+    background 0.3s,
+    border 0.3s,
+    padding 0.3s;
+}
+.TimerInput .step1 button.selected {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.TimerInput .step1.haveSelection button.deselected {
+  border-color: gray;
+}
+.TimerInput .step1.haveSelection button.deselected:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.TimerInput .step1.haveSelection button.deselected:active {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.TimerInput .step1,
+.TimerInput .step2 {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.TimerInput .step1 select,
+.TimerInput .step2 select {
+  margin-left: 0.5rem;
+}
+.TimerInput .step2 {
+  opacity: 1;
+  padding: 0 1rem;
+  transition:
+    height 0.3s,
+    opacity 0.3s;
+}
+.TimerInput .step2.empty {
+  opacity: 0;
+  height: 0;
+}
+.TimerInput .step2 .wrap {
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+.TimerInput .step2 .origin,
+.TimerInput .step2 .to,
+.TimerInput .step2 .destination {
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+.TimerInput .step2 .origin,
+.TimerInput .step2 .destination {
+  flex: 6;
+}
+.TimerInput .step2 .to {
+  flex: 3;
+  margin-top: 1.25rem;
+}
+.TimerInput .step2 select {
+  width: 100%;
+  min-height: 28px;
+  margin-top: 0.25rem;
+  padding: 0.5rem 1rem;
+}
+@media (max-width: 512px) {
+  .TimerInput .step2 select {
+    padding: 0.25rem 0.5rem;
+  }
+}
+.TimerInput .step2 label {
+  color: #c8c8c8;
+  height: 1rem;
+  min-height: 14px;
+  font-size: 0.8rem;
+}
+.TimerInput .step3 {
+  justify-content: center;
+}
+.TimerInput .step3 input {
+  font-size: 1.25rem;
+  line-height: inherit;
+  color: #fff;
+  text-align: right;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+  width: 4rem;
+  margin: 0 0.5rem;
+  padding: 0.25rem;
+}
+.TimerInput .step4 {
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+.TimerInput .step4 button {
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  transition:
+    color 0.3s,
+    background-color 0.3s;
+}
+.TimerInput .step4 button:hover,
+.TimerInput .step4 button:active {
+  color: #1f1e21;
+  background-color: #fff;
+}
+.MixInputItem {
+  flex: 1;
+  width: 100%;
+  min-height: 3rem;
+  margin-bottom: 0.75rem;
+  padding: 0.25rem 0;
+  display: flex;
+  position: relative;
+}
+.MixInputItem .wrap {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+}
+.MixInputItem .deletePending {
+  background-color: #1f1e21;
+  margin: 0;
+  display: flex;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.MixInputItem button {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  padding: 0.5rem;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+.MixInputItem button:hover,
+.MixInputItem button:active {
+  color: #1f1e21;
+  background-color: #fff;
+}
+.MixInputItem button.main {
+  flex: 8;
+}
+.MixInputItem button.main,
+.MixInputItem button.deleteCancel {
+  border-left: 2px solid #fff;
+  border-right: 2px solid #fff;
+  border-radius: 4px 0 0 4px;
+}
+.MixInputItem button.share {
+  text-transform: uppercase;
+  flex: 1;
+  font-size: 0.7rem;
+}
+.MixInputItem button.deleteCancel {
+  flex: 1;
+}
+.MixInputItem button.delete,
+.MixInputItem button.deleteConfirm {
+  border-right: 2px solid #fff;
+  border-radius: 0 4px 4px 0;
+  flex: 1;
+}
+.MixInputItem button.delete {
+  border-left: 2px solid #fff;
+  max-width: 2rem;
+}
+@media (max-width: 512px) {
+  .MixInputItem button.delete {
+    min-width: 32px;
+  }
+}
+.MixInput {
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 400px;
+  display: flex;
+}
+.MixInput .save,
+.MixInput .controls {
+  height: 95px;
+  display: flex;
+}
+.MixInput .save {
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1.5rem 1rem;
+  display: flex;
+}
+.MixInput .save input {
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  flex: 1;
+  margin-right: 1rem;
+  padding: 0.5rem;
+  font-family: inherit;
+  font-size: 1.2rem;
+}
+.MixInput .save input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+.MixInput .save button {
+  border: 2px solid #fff;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+.MixInput .save button:hover,
+.MixInput .save button:active {
+  color: #1f1e21;
+  background-color: #fff;
+}
+@media (max-width: 512px) {
+  .MixInput .save input,
+  .MixInput .save button {
+    max-height: 55px;
+  }
+}
+.MixInput input {
+  background-color: transparent;
+}
+.MixInput .mixList {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  display: flex;
+  overflow-y: auto;
+}
+.MixInput .mixList ol {
+  flex: 1;
+  width: 100%;
+}
+.MixInput .mixList .noMixMessage {
+  color: rgba(255, 255, 255, 0.6);
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-size: 0.8rem;
+  display: flex;
+}
+.MixInput .controls {
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 1rem;
+}
+.MixInput .controls button {
+  border: 2px solid #fff;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+.MixInput .controls button:hover,
+.MixInput .controls button:active {
+  color: #1f1e21;
+  background-color: #fff;
+}
+.ManageSoundsInput {
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 400px;
+  display: flex;
+}
+.ManageSoundsInput .content {
+  flex-direction: row;
+  flex: 1;
+  display: flex;
+  overflow-y: auto;
+}
+@media (max-width: 1200px) {
+  .ManageSoundsInput .content {
+    flex-direction: column;
+  }
+}
+.ManageSoundsInput .pane1,
+.ManageSoundsInput .pane2 {
+  flex-direction: column;
+  flex: 1;
+  display: flex;
+}
+.ManageSoundsInput .pane2 {
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+@media (max-width: 1200px) {
+  .ManageSoundsInput .pane2 {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: none;
+    margin-top: 2rem;
+  }
+}
+.ManageSoundsInput .slots {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+  justify-content: center;
+  height: 4rem;
+  display: flex;
+}
+@media (max-width: 1200px) {
+  .ManageSoundsInput .slots {
+    height: 3rem;
+  }
+}
+.ManageSoundsInput .slots p {
+  font-size: 1.2rem;
+  line-height: 4rem;
+}
+@media (max-width: 1200px) {
+  .ManageSoundsInput .slots p {
+    font-size: 1rem;
+    line-height: 3rem;
+  }
+}
+.ManageSoundsInput .lists {
+  background: rgba(255, 255, 255, 0.1);
+  flex-shrink: 1;
+}
+.ManageSoundsInput .activeList,
+.ManageSoundsInput .inactiveList {
+  flex-direction: column;
+  flex: 1;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  overflow-y: auto;
+}
+.ManageSoundsInput .activeList ol,
+.ManageSoundsInput .inactiveList ol {
+  flex-flow: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  margin: 1rem 0;
+  display: flex;
+}
+.ManageSoundsInput .SoundItem,
+.ManageSoundsInput .emptySlot {
+  border: 2px solid #fff;
+  border-radius: 4px;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: calc(50% - 2rem);
+  height: 3rem;
+  margin: 0.5rem 1rem;
+  padding: 0 0.5rem;
+  display: flex;
+}
+@media (max-width: 1200px) {
+  .ManageSoundsInput .SoundItem,
+  .ManageSoundsInput .emptySlot {
+    width: calc(25% - 1rem);
+    height: 2.5rem;
+    margin: 0.5rem;
+  }
+  .ManageSoundsInput .SoundItem .label,
+  .ManageSoundsInput .emptySlot .label {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 975px) {
+  .ManageSoundsInput .SoundItem,
+  .ManageSoundsInput .emptySlot {
+    width: calc(33.33% - 1rem);
+  }
+}
+@media (max-width: 768px) {
+  .ManageSoundsInput .SoundItem,
+  .ManageSoundsInput .emptySlot {
+    width: calc(50% - 1rem);
+  }
+}
+@media (max-width: 580px) {
+  .ManageSoundsInput .SoundItem,
+  .ManageSoundsInput .emptySlot {
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .ManageSoundsInput .SoundItem,
+  .ManageSoundsInput .emptySlot {
+    height: 3rem;
+  }
+  .ManageSoundsInput .SoundItem .label,
+  .ManageSoundsInput .emptySlot .label {
+    font-size: 1rem;
+  }
+}
+.ManageSoundsInput .emptySlot {
+  background: rgba(255, 255, 255, 0.1);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.ManageSoundsInput .emptySlot p {
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.8rem;
+}
+.ManageSoundsInput .clearAllContainer {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
+.ManageSoundsInput .clearAllContainer button {
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  font-size: 0.8rem;
+}
+.ManageSoundsInput .controls {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 4rem;
+  padding: 0 1rem;
+  display: flex;
+}
+.ManageSoundsInput .controls button,
+.ManageSoundsInput .clearAllContainer button {
+  border: 2px solid #fff;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+.ManageSoundsInput .controls button:hover,
+.ManageSoundsInput .controls button:active,
+.ManageSoundsInput .clearAllContainer button:hover,
+.ManageSoundsInput .clearAllContainer button:active {
+  color: #1f1e21;
+  background-color: #fff;
+}
+.ManageSoundsInput .slotMessage {
+  color: #fff;
+  background: #050505;
+  border-radius: 25px;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 50px;
+  display: flex;
+  position: fixed;
+  top: calc(50% - 25px);
+  right: calc(50% - 200px);
+  box-shadow: 0 0 24px 10px rgba(255, 255, 255, 0.2);
+}
+.SoundItem {
+  transition:
+    background 0.1s,
+    color 0.1s;
+  position: relative;
+}
+.SoundItem.active {
+  color: #000;
+  background: #fff;
+}
+.SoundItem .label {
+  user-select: none;
+  flex: 1;
+  order: 2;
+}
+.SoundItem .previewButton {
+  order: 3;
+  width: 2rem;
+  height: 2rem;
+  margin: 0 0.5rem;
+  position: relative;
+}
+.SoundItem .previewButton .touchTarget {
+  position: absolute;
+  top: -8px;
+  bottom: -8px;
+  left: -8px;
+  right: -8px;
+}
+.SoundItem .previewButton .button {
+  width: 2rem;
+  height: 2rem;
+}
+.SoundItem .previewButton .previewInnerContainer {
+  background: #1e1e1e;
+  border-radius: 1rem;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+}
+.SoundItem .previewButton .previewInner {
+  content: "";
+  border: 6px solid transparent;
+  border-left: 10px solid #fff;
+  border-right-width: 0;
+  width: 0;
+  height: 0;
+  margin-right: -2px;
+}
+.SoundItem .previewButton.previewing .previewInner {
+  background: #fff;
+  border: 4px solid #fff;
+  margin-right: 0;
+}
+.SoundItem .buttonContainer {
+  border: 2px solid #000;
+  border-radius: 4px;
+  order: 4;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  overflow: hidden;
+}
+@media (max-width: 1200px) {
+  .SoundItem .buttonContainer {
+    width: 32px;
+    height: 32px;
+  }
+}
+@media (max-width: 512px) {
+  .SoundItem .buttonContainer {
+    width: 28px;
+    height: 28px;
+  }
+}
+.SoundItem .buttonContainer button {
+  background: #fff;
+}
+.SoundItem .buttonContainer button:hover {
+  background: #ebebeb;
+}
+.SoundItem .buttonContainer button:active {
+  background: #d7d7d7;
+}
+.SoundItem .buttonContainer button,
+.SoundItem .buttonContainer .buttonInner {
+  width: 36px;
+  height: 36px;
+}
+@media (max-width: 1200px) {
+  .SoundItem .buttonContainer button,
+  .SoundItem .buttonContainer .buttonInner {
+    width: 32px;
+    height: 32px;
+  }
+}
+@media (max-width: 512px) {
+  .SoundItem .buttonContainer button,
+  .SoundItem .buttonContainer .buttonInner {
+    width: 28px;
+    height: 28px;
+  }
+}
+.SoundItem .buttonContainer .buttonInner {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+@media (min-width: 1201px) {
+  .SoundItem .buttonContainer .buttonInnerContent {
+    background: #000;
+    width: 12px;
+    height: 6px;
+    margin-left: -12px;
+    position: relative;
+  }
+  .SoundItem .buttonContainer .buttonInnerContent:after {
+    content: "";
+    top: -5px;
+    right: -12px;
+    left: initial;
+    border: 8px solid transparent;
+    border-left: 12px solid #000;
+    border-right: none;
+    display: block;
+    position: absolute;
+  }
+}
+@media (max-width: 1200px) {
+  .SoundItem .buttonContainer .buttonInnerContent {
+    background: #000;
+    width: 6px;
+    height: 12px;
+    margin-top: -12px;
+    position: relative;
+  }
+  .SoundItem .buttonContainer .buttonInnerContent:after {
+    content: "";
+    bottom: -12px;
+    right: -5px;
+    left: initial;
+    border: 8px solid transparent;
+    border-top: 12px solid #000;
+    border-bottom: none;
+    display: block;
+    position: absolute;
+  }
+}
+@media (max-width: 512px) {
+  .SoundItem .buttonContainer .buttonInnerContent {
+    width: 6px;
+    height: 8px;
+    margin-top: -10px;
+  }
+  .SoundItem .buttonContainer .buttonInnerContent:after {
+    bottom: -10px;
+  }
+}
+@media (min-width: 1201px) {
+  .SoundItem .buttonContainer.left {
+    order: 1;
+    margin-right: 0.5rem;
+  }
+  .SoundItem .buttonContainer.left .buttonInnerContent {
+    margin-left: initial;
+    margin-right: -12px;
+  }
+  .SoundItem .buttonContainer.left .buttonInnerContent:after {
+    top: -5px;
+    right: initial;
+    border: 8px solid transparent;
+    border-left: none;
+    border-right: 12px solid #000;
+    left: -12px;
+  }
+}
+@media (max-width: 1200px) {
+  .SoundItem .buttonContainer.left .buttonInnerContent {
+    margin-bottom: -12px;
+    margin-top: initial;
+    background: #000;
+    width: 6px;
+    height: 12px;
+    position: relative;
+  }
+  .SoundItem .buttonContainer.left .buttonInnerContent:after {
+    content: "";
+    left: initial;
+    bottom: unset;
+    border: 8px solid transparent;
+    border-top: none;
+    border-bottom: 12px solid #000;
+    display: block;
+    position: absolute;
+    top: -12px;
+  }
+}
+@media (max-width: 512px) {
+  .SoundItem .buttonContainer.left .buttonInnerContent {
+    width: 6px;
+    height: 8px;
+    margin-bottom: -10px;
+  }
+  .SoundItem .buttonContainer.left .buttonInnerContent:after {
+    top: -10px;
+  }
+}
+.SoundItem .biggerTarget {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.ShareInput {
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  display: flex;
+  position: relative;
+}
+.ShareInput .linkStuff {
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-around;
+  width: 100%;
+  padding: 0 1rem;
+  display: flex;
+}
+.ShareInput .shareUrl {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  justify-content: center;
+  align-items: center;
+  width: calc(100% - 2rem);
+  height: 3.8rem;
+  margin: 1rem 1rem 0.25rem;
+  padding: 0.5rem 1rem;
+  display: flex;
+}
+.ShareInput .options {
+  color: #f0f0f0;
+  justify-content: space-around;
+  align-items: flex-end;
+  width: 100%;
+  padding: 0 1rem;
+  font-size: 0.8rem;
+  display: flex;
+}
+.ShareInput .options input {
+  margin-left: 0.5rem;
+}
+.ShareInput .options .option,
+.ShareInput .options .mixListContainer,
+.ShareInput .options .clipboardContainer {
+  flex: 1;
+  display: flex;
+}
+.ShareInput .options .option {
+  justify-content: center;
+  display: flex;
+}
+.ShareInput .options .mixListContainer {
+  flex-direction: column;
+  align-items: flex-start;
+  display: flex;
+}
+.ShareInput .options .mixListContainer select {
+  transition: box-shadow 3s;
+}
+.ShareInput .options .mixListContainer.highlight select {
+  box-shadow: 0 0 30px 5px #fff;
+}
+.ShareInput .options .mixListContainer label {
+  font-size: 0.8rem;
+  line-height: 1.6em;
+}
+.ShareInput .options .mixListContainer select {
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+.ShareInput .options .clipboardContainer {
+  justify-content: flex-end;
+  display: flex;
+}
+.ShareInput .options .clipboard {
+  border: 2px solid #fff;
+  border-radius: 4px;
+  width: 9rem;
+  padding: 0.25rem 0.5rem;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+.ShareInput .options .clipboard:hover,
+.ShareInput .options .clipboard:active {
+  color: #1f1e21;
+  background-color: #fff;
+}
+.ShareInput .letsGetSocial {
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+  display: flex;
+}
+.ShareInput .letsGetSocial h3 {
+  text-align: center;
+  text-transform: uppercase;
+  height: 2.8rem;
+  font-size: 0.8rem;
+  line-height: 2.8rem;
+}
+.ShareInput .letsGetSocial .links {
+  flex: 1;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding-top: 1.5rem;
+  display: flex;
+}
+.ShareInput .letsGetSocial a {
+  display: block;
+}
+.ShareInput .letsGetSocial a span {
+  border-radius: 4px;
+  width: 32px;
+  height: 32px;
+  margin: 0 auto 0.5rem;
+  display: block;
+}
+.ShareInput .letsGetSocial .fb span {
+  background-image: url(./assets/sprite.svg);
+  background-position: -120px -600px;
+  width: 32px;
+  height: 32px;
+}
+.ShareInput .letsGetSocial .tw span {
+  background-image: url(./assets/sprite.svg);
+  background-position: -160px -600px;
+  width: 32px;
+  height: 32px;
+}
+.ShareInput .letsGetSocial .re span {
+  background-image: url(./assets/sprite.svg);
+  background-position: -200px -600px;
+  width: 32px;
+  height: 32px;
+}
+.ShareInput .letsGetSocial .tu span {
+  background-image: url(./assets/sprite.svg);
+  background-position: -232px -600px;
+  width: 32px;
+  height: 32px;
+}
+.RowControls {
+  width: 35rem;
+  max-width: 90%;
+  margin: 1rem auto 2rem;
+  position: relative;
+}
+.RowControls.manage {
+  width: 70rem;
+}
+.RowControls .container {
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 35rem;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+}
+.RowControls button.rowControl {
+  text-transform: uppercase;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  width: 6rem;
+  height: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0.25rem 0;
+  font-size: 0.75rem;
+  transition:
+    color 0.4s,
+    background-color 0.4s,
+    border-color 0.3s,
+    border-radius 0.15s;
+  box-sizing: border-box !important;
+}
+.RowControls button.rowControl.initial:hover {
+  color: #1f1e21;
+  background-color: #fff;
+}
+.RowControls button.rowControl.initial:active {
+  background-color: #c8c8c8;
+}
+.RowControls button.rowControl.expanded {
+  color: #1f1e21;
+  background-color: #fff;
+}
+.RowControls button.rowControl.timeDisplay > span {
+  justify-content: center;
+  display: flex;
+}
+.RowControls button.rowControl.timeDisplay > span > span {
+  display: block;
+}
+.RowControls button.rowControl.timeDisplay .colon {
+  text-align: center;
+  width: 0.4em;
+}
+.RowControls button.rowControl.timeDisplay .time {
+  text-align: center;
+  width: 0.675em;
+}
+.RowControls .controlContent {
+  border: 0 solid transparent;
+  width: 100%;
+  margin-top: 3rem;
+  transition:
+    height 0.3s,
+    border 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.RowControls .controlContent.initial {
+  height: 0;
+  margin: 0;
+}
+.RowControls .controlContent.expanded .TimerInput,
+.RowControls .controlContent.expanded .ShareInput,
+.RowControls .controlContent.expanded .MixInput,
+.RowControls .controlContent.expanded .ManageSoundsInput {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.RowControls .controlContent.expanded,
+.RowControls .controlContent .inner {
+  height: 380px;
+}
+.RowControls .controlContent.expanded.timers,
+.RowControls .controlContent.expanded.timers .inner {
+  height: 285px;
+}
+.RowControls .controlContent.expanded.timers.fade,
+.RowControls .controlContent.expanded.timers.fade .inner {
+  height: 380px;
+}
+.RowControls .controlContent.expanded.manage,
+.RowControls .controlContent.expanded.manage .inner,
+.RowControls .controlContent.expanded.manage .ManageSoundsInput {
+  height: 636px;
+}
+@media (max-width: 1200px) {
+  .RowControls .controlContent.expanded.manage,
+  .RowControls .controlContent.expanded.manage .inner,
+  .RowControls .controlContent.expanded.manage .ManageSoundsInput {
+    height: auto;
+  }
+}
+.RowControls .controlContent.expanded.mixes,
+.RowControls .controlContent.expanded.mixes .inner,
+.RowControls .controlContent.expanded.mixes .MixInput {
+  height: 380px;
+}
+.RowControls .controlContent.expanded.mixes.mixes4,
+.RowControls .controlContent.expanded.mixes.mixes4 .inner,
+.RowControls .controlContent.expanded.mixes.mixes4 .MixInput {
+  height: 456px;
+}
+.RowControls .controlContent.expanded.mixes.mixes5,
+.RowControls .controlContent.expanded.mixes.mixes5 .inner,
+.RowControls .controlContent.expanded.mixes.mixes5 .MixInput {
+  height: 516px;
+}
+.RowControls .controlContent.expanded.mixes.mixes6,
+.RowControls .controlContent.expanded.mixes.mixes6 .inner,
+.RowControls .controlContent.expanded.mixes.mixes6 .MixInput {
+  height: 576px;
+}
+.RowControls .controlContent.expanded.mixes.mixesLots,
+.RowControls .controlContent.expanded.mixes.mixesLots .inner,
+.RowControls .controlContent.expanded.mixes.mixesLots .MixInput {
+  height: 636px;
+}
+.RowControls .managerHelpText {
+  background: rgba(255, 255, 255, 0.5);
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.RowControls .managerHelpText .content {
+  background: #000;
+  border-radius: 4px;
+  width: 24rem;
+  max-width: 80%;
+  margin-top: 2rem;
+  padding: 1rem;
+}
+.RowControls .managerHelpText .content p {
+  margin-bottom: 1rem;
+}
+.RowControls .managerHelpText .content .it {
+  font-style: italic;
+}
+.RowControls .managerHelpText .content button {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid #fff;
+  border-radius: 4px;
+  margin: 0 auto;
+  padding: 0.25rem 1.75rem;
+  display: block;
+}
+.RowControls .managerHelpText .content button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+.RowControls .managerHelpText .content button:active {
+  background: rgba(255, 255, 255, 0.4);
+}
+.SoundContainer {
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 230px;
+  display: flex;
+  position: relative;
+}
+@media screen and (max-width: 512px) and (min-width: 400px) {
+  .SoundContainer {
+    width: 50%;
+  }
+}
+.SoundContainer .inner {
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+  height: 180px;
+  display: flex;
+}
+.SoundContainer .imageContainer {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 1rem;
+  position: relative;
+}
+.SoundContainer .imageContainer .image {
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.SoundContainer .imageContainer .image.outline.rain {
+  background-image: url(./assets/sprite.svg);
+  background-position: -0px -0px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer .image.outline.thunder {
+  background-image: url(./assets/sprite.svg);
+  background-position: -100px -0px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer .image.outline.waves {
+  background-image: url(./assets/sprite.svg);
+  background-position: -200px -0px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer .image.outline.wind {
+  background-image: url(./assets/sprite.svg);
+  background-position: -300px -0px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer .image.outline.fire {
+  background-image: url(./assets/sprite.svg);
+  background-position: -400px -0px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer .image.outline.birds {
+  background-image: url(./assets/sprite.svg);
+  background-position: -500px -0px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer .image.outline.crickets {
+  background-image: url(./assets/sprite.svg);
+  background-position: -600px -0px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer .image.outline.people {
+  background-image: url(./assets/sprite.svg);
+  background-position: -700px -0px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer .image.outline.sbowl {
+  background-image: url(./assets/sprite.svg);
+  background-position: -800px -0px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer .image.outline.whitenoise {
+  background-image: url(./assets/sprite.svg);
+  background-position: -900px -0px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer .image.fill.rain {
+  background-image: url(./assets/sprite.svg);
+  background-position: -0px -100px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer .image.fill.thunder {
+  background-image: url(./assets/sprite.svg);
+  background-position: -100px -100px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer .image.fill.waves {
+  background-image: url(./assets/sprite.svg);
+  background-position: -200px -100px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer .image.fill.wind {
+  background-image: url(./assets/sprite.svg);
+  background-position: -300px -100px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer .image.fill.fire {
+  background-image: url(./assets/sprite.svg);
+  background-position: -400px -100px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer .image.fill.birds {
+  background-image: url(./assets/sprite.svg);
+  background-position: -500px -100px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer .image.fill.crickets {
+  background-image: url(./assets/sprite.svg);
+  background-position: -600px -100px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer .image.fill.people {
+  background-image: url(./assets/sprite.svg);
+  background-position: -700px -100px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer .image.fill.sbowl {
+  background-image: url(./assets/sprite.svg);
+  background-position: -800px -100px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer .image.fill.whitenoise {
+  background-image: url(./assets/sprite.svg);
+  background-position: -900px -100px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer .loadingIndicator {
+  opacity: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  transition: opacity 0.5s;
+  display: flex;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.SoundContainer .imageContainer .loadingIndicator.loadingGlue {
+  opacity: 1;
+}
+.SoundContainer .imageContainer.pro .image.fill.aircon {
+  background-image: url(./assets/sprite.svg);
+  background-position: -0px -300px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer.pro .image.fill.fanhigh {
+  background-image: url(./assets/sprite.svg);
+  background-position: -100px -300px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer.pro .image.fill.fanlow {
+  background-image: url(./assets/sprite.svg);
+  background-position: -200px -300px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer.pro .image.fill.city {
+  background-image: url(./assets/sprite.svg);
+  background-position: -300px -300px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer.pro .image.fill.chimesmetal {
+  background-image: url(./assets/sprite.svg);
+  background-position: -400px -300px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer.pro .image.fill.stream {
+  background-image: url(./assets/sprite.svg);
+  background-position: -500px -300px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer.pro .image.fill.raintinroof {
+  background-image: url(./assets/sprite.svg);
+  background-position: -600px -300px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer.pro .image.fill.raintrees {
+  background-image: url(./assets/sprite.svg);
+  background-position: -700px -300px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer.pro .image.fill.raincabin {
+  background-image: url(./assets/sprite.svg);
+  background-position: -800px -300px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer.pro .image.fill.waterfall {
+  background-image: url(./assets/sprite.svg);
+  background-position: -900px -300px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer.pro .image.fill.cicadas {
+  background-image: url(./assets/sprite.svg);
+  background-position: -0px -500px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer.pro .image.fill.frogs {
+  background-image: url(./assets/sprite.svg);
+  background-position: -100px -500px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer.pro .image.fill.clock {
+  background-image: url(./assets/sprite.svg);
+  background-position: -200px -500px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer.pro .image.fill.vinyl {
+  background-image: url(./assets/sprite.svg);
+  background-position: -300px -500px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer.pro .image.fill.brownnoise {
+  background-image: url(./assets/sprite.svg);
+  background-position: -400px -500px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer.pro .image.fill.pinknoise {
+  background-image: url(./assets/sprite.svg);
+  background-position: -500px -500px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer.pro .image.outline.aircon {
+  background-image: url(./assets/sprite.svg);
+  background-position: -0px -200px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer.pro .image.outline.fanhigh {
+  background-image: url(./assets/sprite.svg);
+  background-position: -100px -200px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer.pro .image.outline.fanlow {
+  background-image: url(./assets/sprite.svg);
+  background-position: -200px -200px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer.pro .image.outline.city {
+  background-image: url(./assets/sprite.svg);
+  background-position: -300px -200px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer.pro .image.outline.chimesmetal {
+  background-image: url(./assets/sprite.svg);
+  background-position: -400px -200px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer.pro .image.outline.stream {
+  background-image: url(./assets/sprite.svg);
+  background-position: -500px -200px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer.pro .image.outline.raintinroof {
+  background-image: url(./assets/sprite.svg);
+  background-position: -600px -200px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer.pro .image.outline.raintrees {
+  background-image: url(./assets/sprite.svg);
+  background-position: -700px -200px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer.pro .image.outline.raincabin {
+  background-image: url(./assets/sprite.svg);
+  background-position: -800px -200px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer.pro .image.outline.waterfall {
+  background-image: url(./assets/sprite.svg);
+  background-position: -900px -200px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer.pro .image.outline.cicadas {
+  background-image: url(./assets/sprite.svg);
+  background-position: -0px -400px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer.pro .image.outline.frogs {
+  background-image: url(./assets/sprite.svg);
+  background-position: -100px -400px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer.pro .image.outline.clock {
+  background-image: url(./assets/sprite.svg);
+  background-position: -200px -400px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer.pro .image.outline.vinyl {
+  background-image: url(./assets/sprite.svg);
+  background-position: -300px -400px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer.pro .image.outline.brownnoise {
+  background-image: url(./assets/sprite.svg);
+  background-position: -400px -400px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer .imageContainer.pro .image.outline.pinknoise {
+  background-image: url(./assets/sprite.svg);
+  background-position: -500px -400px;
+  width: 100px;
+  height: 100px;
+}
+.SoundContainer h3 {
+  position: relative;
+}
+.SoundContainer .meanderIndicator {
+  background-image: url(./assets/sprite.svg);
+  background-position: -90px -600px;
+  width: 16px;
+  height: 16px;
+  display: block;
+  position: absolute;
+  top: 1px;
+  right: -20px;
+}
+.SoundSlider {
+  flex-direction: column;
+  flex: 1;
+  justify-content: flex-end;
+  width: 100px;
+  display: flex;
+}
+.SoundSlider span {
+  display: block;
+}
+.SoundSlider input[type="range"] {
+  -webkit-appearance: none;
+  background: 0 0;
+  width: 100%;
+  margin: 10px 0;
+}
+.SoundSlider input[type="range"]:focus {
+  outline: none;
+}
+.SoundSlider input[type="range"]::-webkit-slider-runnable-track {
+  cursor: pointer;
+  background: #fff;
+  border: 0 solid #010101;
+  border-radius: 4px;
+  width: 100%;
+  height: 8px;
+  box-shadow:
+    0 0 #000,
+    0 0 #0d0d0d;
+}
+.SoundSlider input[type="range"]::-webkit-slider-thumb {
+  cursor: pointer;
+  -webkit-appearance: none;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 14px;
+  width: 28px;
+  height: 28px;
+  margin-top: -10px;
+  box-shadow:
+    1px 1px 1px rgba(0, 0, 0, 0.25),
+    0 0 1px rgba(13, 13, 13, 0.25);
+}
+.SoundSlider input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: #fff;
+}
+.SoundSlider input[type="range"]::-moz-range-track {
+  cursor: pointer;
+  background: #fff;
+  border: 0 solid #010101;
+  border-radius: 4px;
+  width: 100%;
+  height: 8px;
+  box-shadow:
+    0 0 #000,
+    0 0 #0d0d0d;
+}
+.SoundSlider input[type="range"]::-moz-range-thumb {
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 14px;
+  width: 28px;
+  height: 28px;
+  box-shadow:
+    1px 1px 1px rgba(0, 0, 0, 0.25),
+    0 0 1px rgba(13, 13, 13, 0.25);
+}
+.SoundSlider input[type="range"]::-ms-track {
+  cursor: pointer;
+  color: transparent;
+  background: 0 0;
+  border-color: transparent;
+  width: 100%;
+  height: 8px;
+}
+.SoundSlider input[type="range"]::-ms-fill-lower {
+  background: #f2f2f2;
+  border: 0 solid #010101;
+  border-radius: 8px;
+  box-shadow:
+    0 0 #000,
+    0 0 #0d0d0d;
+}
+.SoundSlider input[type="range"]::-ms-fill-upper {
+  background: #fff;
+  border: 0 solid #010101;
+  border-radius: 8px;
+  box-shadow:
+    0 0 #000,
+    0 0 #0d0d0d;
+}
+.SoundSlider input[type="range"]::-ms-thumb {
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 14px;
+  width: 28px;
+  height: 8px;
+  box-shadow:
+    1px 1px 1px rgba(0, 0, 0, 0.25),
+    0 0 1px rgba(13, 13, 13, 0.25);
+}
+.SoundSlider input[type="range"]:focus::-ms-fill-lower {
+  background: #fff;
+}
+.SoundSlider input[type="range"]:focus::-ms-fill-upper {
+  background: #fff;
+}
+.SoundList {
+  flex-flow: wrap;
+  justify-content: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+}
+.Footer .container {
+  text-align: center;
+  justify-content: space-around;
+  max-width: 30rem;
+  margin: 5rem auto 0;
+  padding-bottom: 2rem;
+  display: flex;
+}
+.Footer button {
+  text-decoration: underline;
+}
+.AppLinks {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  justify-content: space-around;
+  align-items: center;
+  width: 30rem;
+  max-width: 90%;
+  height: 5.2rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+  transition: height 0.2s;
+  display: flex;
+  position: relative;
+}
+.AppLinks.hidden {
+  height: 0;
+  overflow: hidden;
+}
+.AppLinks a {
+  background-color: #000;
+  background-repeat: no-repeat;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  width: 148px;
+  height: 43.2px;
+  display: flex;
+  overflow: hidden;
+}
+.AppLinks a span {
+  width: 120px;
+  height: 38px;
+  display: block;
+}
+.AppLinks .mountainview span {
+  background-image: url(./assets/sprite.svg);
+  background-position: -280px -600px;
+  width: 120px;
+  height: 40px;
+}
+.AppLinks .cupertino span {
+  background-image: url(./assets/sprite.svg);
+  background-position: -410px -600px;
+  width: 120px;
+  height: 40px;
+}
+.AppLinks .hide {
+  color: #fff;
+  opacity: 0.4;
+  padding: 0.25rem 0.5rem;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.AppLinks .hide:hover {
+  opacity: 0.2;
+}
+.MoreSounds {
+  justify-content: center;
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+}
+.MoreSounds .button {
+  text-transform: uppercase;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  width: 10rem;
+  height: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0.25rem 0;
+  font-size: 0.75rem;
+  transition:
+    color 0.4s,
+    background-color 0.4s,
+    border-color 0.3s,
+    border-radius 0.15s;
+  box-sizing: border-box !important;
+}
+.MoreSounds .button:hover {
+  color: #1f1e21;
+  background-color: #fff;
+}
+.MoreSounds .button:active {
+  background-color: #c8c8c8;
+}
+.UpgradeModal {
+  z-index: 999;
+  color: #000;
+  background: #fff;
+  flex-direction: column;
+  display: flex;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.UpgradeModal a {
+  color: #000;
+  text-decoration: none;
+}
+.UpgradeModal a:hover {
+  color: #0f0f0f;
+}
+.UpgradeModal a:active {
+  color: #1e1e1e;
+}
+.UpgradeModal button {
+  cursor: pointer;
+}
+.UpgradeModal input {
+  cursor: text;
+}
+.UpgradeModal .continueContainer {
+  flex: 1;
+  justify-content: space-between;
+  display: flex;
+}
+@media (max-width: 850px) {
+  .UpgradeModal .continueContainer {
+    flex-direction: column;
+  }
+}
+.UpgradeModal .continue.button,
+.UpgradeModal .cancel.button {
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  border-radius: 4px;
+  margin: 1rem 0;
+  padding: 1rem 5rem;
+  font-weight: 700;
+}
+.UpgradeModal .continue.button {
+  background: #009600;
+}
+.UpgradeModal .continue.button:hover {
+  background: #00a000;
+}
+.UpgradeModal .continue.button:active {
+  background: #0a0;
+}
+.UpgradeModal .cancel.button {
+  background: #969696;
+}
+.UpgradeModal .cancel.button:hover {
+  background: #a0a0a0;
+}
+.UpgradeModal .cancel.button:active {
+  background: #aaa;
+}
+.UpgradeModal .UpgradeHeader {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 1rem 2rem;
+}
+.UpgradeModal .UpgradeHeader .content {
+  justify-content: flex-start;
+  align-items: center;
+  height: 4rem;
+  display: flex;
+}
+.UpgradeModal .UpgradeHeader .content .icon {
+  width: 3rem;
+  height: 3rem;
+  margin-left: -11px;
+  margin-right: 0.25rem;
+}
+.UpgradeModal .UpgradeHeader .content .title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.UpgradeModal .UpgradeHeader .content .signIn {
+  flex: 1;
+  justify-content: flex-end;
+  display: flex;
+}
+.UpgradeModal .UpgradeHeader .content .signIn button:hover {
+  color: #646464;
+}
+.UpgradeModal .UpgradeHeader .content .signIn button:active {
+  color: #969696;
+}
+.UpgradeModal .container {
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+  font-size: 1.25rem;
+  display: flex;
+  overflow-y: auto;
+}
+.UpgradeModal .container p {
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+.UpgradeModal .Stage1 {
+  width: 100%;
+  max-width: 1070px;
+  max-height: 100%;
+  padding: 1rem;
+}
+.UpgradeModal .Stage1 p {
+  text-align: center;
+}
+.UpgradeModal .Stage1 .previewSounds ul {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 100%;
+  display: flex;
+}
+.UpgradeModal .Stage1 li.SoundItem {
+  box-sizing: border-box;
+  border: 2px solid #000;
+  border-radius: 4px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  width: calc(25% - 2rem);
+  margin: 1rem;
+  padding: 1rem;
+  font-size: 0.9rem;
+  display: flex;
+}
+@media (max-width: 1200px) {
+  .UpgradeModal .Stage1 li.SoundItem {
+    width: calc(33.333% - 2rem);
+  }
+}
+@media (max-width: 850px) {
+  .UpgradeModal .Stage1 li.SoundItem {
+    width: calc(50% - 2rem);
+  }
+}
+@media (max-width: 650px) {
+  .UpgradeModal .Stage1 li.SoundItem {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 1.25rem;
+  }
+}
+.UpgradeModal .Stage1 li.SoundItem:hover {
+  background: #f5f5f5;
+}
+.UpgradeModal .Stage1 li.SoundItem:active {
+  background: #ebebeb;
+}
+.UpgradeModal .Stage1 li.SoundItem.active {
+  background: #d7ffd7;
+}
+.UpgradeModal .Stage1 li.SoundItem.active .previewInner {
+  border-color: #d7ffd7;
+}
+.UpgradeModal .Stage1 li.SoundItem .label {
+  margin-bottom: 0;
+  line-height: 2rem;
+}
+.UpgradeModal .Stage1 .continueContainer {
+  width: 40rem;
+  max-width: 90%;
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 850px) {
+  .UpgradeModal .Stage1 .continueContainer {
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+.UpgradeModal .Stage2 {
+  max-width: 100%;
+  margin: 2rem;
+}
+.UpgradeModal .Stage2 .loadingContainer {
+  background-color: rgba(255, 255, 255, 0.9);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.UpgradeModal .Stage2 .loadingContainer .loading {
+  border: 1rem solid #d2d2d2;
+  border-top-color: #464646;
+  border-radius: 50%;
+  width: 10rem;
+  height: 10rem;
+  animation: 1s linear infinite spin;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.UpgradeModal .Stage2 h3 {
+  text-align: center;
+  margin-bottom: 4rem;
+  font-size: 2rem;
+  display: block;
+}
+.UpgradeModal .Stage2 label {
+  margin-bottom: 0.5rem;
+  display: block;
+}
+.UpgradeModal .Stage2 input {
+  border: 2px solid #000;
+  border-radius: 0.5rem;
+  width: 40rem;
+  max-width: 100%;
+  height: 2.2rem;
+  margin-bottom: 1rem;
+  padding: 2rem 1rem;
+  font-size: 2rem;
+  line-height: 2.2rem;
+  display: block;
+}
+@media (max-width: 850px) {
+  .UpgradeModal .Stage2 input {
+    padding: 1.5rem 0.75rem;
+    font-size: 1.5rem;
+  }
+}
+.UpgradeModal .Stage2 input.invalid {
+  background-color: rgba(231, 76, 60, 0.1);
+  border-color: #e74c3c;
+}
+.UpgradeModal .Stage2 .validationWarning {
+  color: #e74c3c;
+  width: 40rem;
+  max-width: 100%;
+}
+.UpgradeModal .Stage2 .userEnteredEmail {
+  border: 2px dashed #c8c8c8;
+  padding: 0.5rem;
+  font-weight: 700;
+}
+@media (max-width: 850px) {
+  .UpgradeModal .Stage2 .userEnteredEmail {
+    margin: 0 auto;
+    display: block;
+  }
+}
+.UpgradeModal .Stage2 .continueContainer {
+  margin-top: 3rem;
+}
+.UpgradeModal .Stage3 {
+  width: 40rem;
+  max-width: 100%;
+}
+.UpgradeModal .Stage3 p {
+  text-align: center;
+}
+.UpgradeModal .Stage3 .price {
+  font-size: 150%;
+}
+.UpgradeModal .Stage3 .currencyMessage,
+.UpgradeModal .Stage3 .webOnlyMessage {
+  font-size: 1.1rem;
+}
+.UpgradeModal .Stage3 .webOnlyMessage {
+  margin-top: 3rem;
+}
+.UpgradeModal .Stage3 .renewInput {
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 450px;
+  margin: 3rem 0;
+  display: flex;
+}
+@media (max-width: 512px) {
+  .UpgradeModal .Stage3 .renewInput {
+    width: 100%;
+  }
+}
+.UpgradeModal .Stage3 .renewInput label {
+  line-height: 2rem;
+}
+.UpgradeModal .Stage3 .renewInput .renewLabel.inactive {
+  color: #7d7d7d;
+}
+.UpgradeModal .Stage3 .renewInput .toggle {
+  background-color: #0f0;
+  border: 2px solid #646464;
+  border-radius: 1rem;
+  width: 4rem;
+  height: 2rem;
+  margin-right: 1rem;
+  transition: background-color 0.1s;
+  position: relative;
+}
+.UpgradeModal .Stage3 .renewInput .toggle .inner {
+  background: #fff;
+  border-radius: 50%;
+  width: calc(2rem - 8px);
+  height: calc(2rem - 8px);
+  margin: 2px;
+  transition:
+    right 0.1s,
+    background-color 0.1s;
+  position: absolute;
+  right: 0;
+  box-shadow: 0 0 4px 2px #646464;
+}
+.UpgradeModal .Stage3 .renewInput .toggle.off {
+  background: #969696;
+}
+.UpgradeModal .Stage3 .renewInput .toggle.off .inner {
+  right: 2rem;
+}
+.AccountView table td {
+  padding-bottom: 0.75rem;
+}
+.AccountView table .label {
+  text-align: right;
+  padding-right: 1rem;
+}
+.AccountView table .content {
+  text-align: left;
+}
+.AccountView table button {
+  color: #000;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  text-decoration: underline;
+}
+.AccountView table .renewalOptions a {
+  color: #00f;
+}
+.Modal {
+  z-index: 999;
+  color: #000;
+  background: rgba(0, 0, 0, 0.8);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.Modal .inner {
+  background: #fff;
+  border-radius: 4px;
+  width: 40rem;
+  max-width: 90%;
+  margin-top: -8rem;
+  padding: 1.5rem 2rem;
+}
+.Modal .header {
+  flex-direction: "row";
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 1.5rem;
+  display: flex;
+}
+.Modal .header .cornerClose {
+  color: #000;
+  padding: 0 0 0.5rem 0.5rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.Modal p,
+.Modal h2,
+.Modal button,
+.Modal label,
+.Modal input {
+  line-height: 1.4;
+}
+.Modal h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+.Modal p {
+  margin-bottom: 1rem;
+}
+.Modal .buttonContainer {
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  padding-top: 2.5rem;
+  display: flex;
+}
+.Modal button {
+  color: #fff;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+}
+.Modal button.cancel {
+  background: #e68c32;
+}
+.Modal button.cancel:hover {
+  background: #faa046;
+}
+.Modal button.cancel:active {
+  background: #ffb45a;
+}
+.Modal button.submit {
+  background: #009600;
+}
+.Modal button.submit:hover {
+  background: #0a0;
+}
+.Modal button.submit:active {
+  background: #00be00;
+}
+.Modal .submitted button.cancel {
+  background: #009600;
+}
+.ProHelpModal {
+  z-index: 999;
+  color: #000;
+  background: rgba(0, 0, 0, 0.8);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.ProHelpModal .inner {
+  background: #fff;
+  border-radius: 4px;
+  width: 40rem;
+  max-width: 90%;
+  margin-top: -8rem;
+  padding: 2rem;
+}
+.ProHelpModal p,
+.ProHelpModal h2,
+.ProHelpModal button {
+  line-height: 1.4;
+}
+.ProHelpModal h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+.ProHelpModal p {
+  margin-bottom: 1rem;
+}
+.ProHelpModal .buttonContainer {
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  margin-top: 2rem;
+  display: flex;
+}
+.ProHelpModal button {
+  color: #fff;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+}
+.ProHelpModal button.ok {
+  background: #009600;
+}
+.ProHelpModal button.ok:hover {
+  background: #0a0;
+}
+.ProHelpModal button.ok:active {
+  background: #00be00;
+}
+.WaitingForLicense {
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.WaitingForLicense .inner {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.WaitingForLicense .inner .message {
+  color: #fff;
+  margin-bottom: 3rem;
+  font-size: 2rem;
+}
+.WaitingForLicense .inner .loading {
+  border: 1rem solid #d2d2d2;
+  border-top-color: #464646;
+  border-radius: 50%;
+  width: 10rem;
+  height: 10rem;
+  animation: 1s linear infinite spin;
+}
+.WaitingForLogin {
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.WaitingForLogin .inner {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.WaitingForLogin .inner .message {
+  color: #fff;
+  margin-bottom: 3rem;
+  font-size: 2rem;
+}
+.WaitingForLogin .inner .loading {
+  border: 1rem solid #d2d2d2;
+  border-top-color: #464646;
+  border-radius: 50%;
+  width: 10rem;
+  height: 10rem;
+  animation: 1s linear infinite spin;
+}
+.StaticSiteDescription .borderTop {
+  width: 100%;
+  margin-top: 5rem;
+  display: none;
+  position: relative;
+}
+.StaticSiteDescription .borderTop:before {
+  content: "";
+  background-color: #fff;
+  height: 1px;
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+}
+.StaticSiteDescription .borderTop * {
+  box-sizing: border-box;
+}
+.StaticSiteDescription .borderTop .left,
+.StaticSiteDescription .borderTop .right {
+  background-color: #1e2832;
+  width: 50%;
+  display: inline-block;
+}
+@supports (width: 10vw) and
+  (
+    ((-webkit-mask-image: radial-gradient(black, white))) or
+      (
+        (-webkit-mask-image: radial-gradient(black, white)) or
+          (mask-image: radial-gradient(black, white))
+      )
+  ) {
+  .StaticSiteDescription .borderTop {
+    height: 3vw;
+    display: block;
+  }
+  .StaticSiteDescription .borderTop .left {
+    height: 3vw;
+    -webkit-mask-image: radial-gradient(
+      200vw at 50% 200vw,
+      #000 0,
+      #000 99.95%,
+      transparent 100%
+    );
+    mask-image: radial-gradient(
+      200vw at 50% 200vw,
+      #000 0,
+      #000 99.95%,
+      transparent 100%
+    );
+  }
+  .StaticSiteDescription .borderTop .right {
+    height: 3vw;
+    -webkit-mask-image: radial-gradient(
+      200vw at 50% -196.9vw,
+      transparent 0,
+      transparent 99.95%,
+      #000 100%
+    );
+    mask-image: radial-gradient(
+      200vw at 50% -196.9vw,
+      transparent 0,
+      transparent 99.95%,
+      #000 100%
+    );
+  }
+  @media (max-width: 600px) {
+    .StaticSiteDescription .borderTop {
+      height: 6vw;
+    }
+    .StaticSiteDescription .borderTop .left {
+      -webkit-mask-image: radial-gradient(
+        circle 100vw at 50% 100vw,
+        black 0,
+        black transparent 99.95%,
+        transparent 100%
+      );
+      -webkit-mask-image: radial-gradient(
+        circle 100vw at 50% 100vw,
+        black 0,
+        black transparent 99.95%,
+        transparent 100%
+      );
+      mask-image: radial-gradient(
+        circle 100vw at 50% 100vw,
+        black 0,
+        black transparent 99.95%,
+        transparent 100%
+      );
+      height: 6vw;
+    }
+    .StaticSiteDescription .borderTop .right {
+      height: 6vw;
+      -webkit-mask-image: radial-gradient(
+        100vw at 50% -93.8vw,
+        transparent 0,
+        transparent 99.95%,
+        #000 100%
+      );
+      mask-image: radial-gradient(
+        100vw at 50% -93.8vw,
+        transparent 0,
+        transparent 99.95%,
+        #000 100%
+      );
+    }
+  }
+  @media (max-width: 1000px) {
+    .StaticSiteDescription .borderTop {
+      height: 4vw;
+    }
+    .StaticSiteDescription .borderTop .left {
+      height: 4vw;
+      -webkit-mask-image: radial-gradient(
+        150vw at 50% 150vw,
+        #000 0,
+        #000 99.95%,
+        transparent 100%
+      );
+      mask-image: radial-gradient(
+        150vw at 50% 150vw,
+        #000 0,
+        #000 99.95%,
+        transparent 100%
+      );
+    }
+    .StaticSiteDescription .borderTop .right {
+      height: 4vw;
+      -webkit-mask-image: radial-gradient(
+        150vw at 50% -145.9vw,
+        transparent 0,
+        transparent 99.95%,
+        #000 100%
+      );
+      mask-image: radial-gradient(
+        150vw at 50% -145.9vw,
+        transparent 0,
+        transparent 99.95%,
+        #000 100%
+      );
+    }
+  }
+  .StaticSiteDescription .hideButton {
+    position: absolute;
+    top: 4rem;
+    right: 2rem;
+  }
+  .StaticSiteDescription .hideButton button {
+    color: #fff;
+    padding: 0.25rem 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  .StaticSiteDescription .inner {
+    background: linear-gradient(#1e2832, #3c281e);
+    width: 100%;
+    padding: 3rem;
+  }
+  .StaticSiteDescription .content {
+    width: 800px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 4rem;
+    font-size: 1.1rem;
+    line-height: 1.45;
+  }
+  .StaticSiteDescription .content p {
+    margin-bottom: 1.5rem;
+  }
+}
+.Toast {
+  z-index: 999;
+  color: #000;
+  background: rgba(20, 20, 20, 0.8);
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+  display: flex;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.Toast .inner {
+  text-align: center;
+  background: #fff;
+  border-radius: 8px;
+  flex-direction: column;
+  align-items: center;
+  width: 40rem;
+  max-width: 90%;
+  padding: 2rem 2rem 1rem;
+  display: flex;
+}
+.Toast .inner p {
+  margin-bottom: 1.5rem;
+}
+.Toast a {
+  color: inherit;
+}
+.Toast .button {
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  background: #000;
+  border-radius: 4px;
+  margin: 1rem 0;
+  padding: 1rem 5rem;
+  font-weight: 700;
+}
+.Toast .button:hover {
+  background: #141414;
+}
+.Toast .button:active {
+  background: #282828;
+}
+#App.ios .RowControls .container {
+  justify-content: center;
+}
+#App.ios .RowControls .container > .timers,
+#App.ios .RowControls .container > .mixes,
+#App.ios .RowControls .container > .share {
+  display: none;
+}
+#App.ios .PlayControls .secondary,
+#App.ios .GlobalVolume {
+  display: none !important;
+}
+#App.ios .Header nav {
+  max-width: 100% !important;
+}
+#App.ios .AppLinks .mountainview,
+#App.ios .AppLinks .hide {
+  display: none !important;
+}
+#App.ios .AppLinks {
+  background: 0 0;
+}
+#App.ios .SoundSlider {
+  display: none !important;
+}
+#App.ios .SoundContainer {
+  height: 180px;
+}
+#App.ios .SoundContainer:first-child {
+  margin-top: 2rem;
+}
 /* Font Overrides for Khmer and English */
-body, #App, h1, h2, h3, h4, h5, p, button, input, select { font-family: 'Inter', 'Kantumruy Pro', 'Montserrat', sans-serif !important; }
-
+body,
+#App,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+button,
+input,
+select {
+  font-family: "Inter", "Kantumruy Pro", "Montserrat", sans-serif !important;
+}
