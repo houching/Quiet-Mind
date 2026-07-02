@@ -22,3 +22,46 @@ body, #App, h1, h2, h3, h4, h5, p, button, input, select { font-family: 'Inter',
     background-size: auto !important;
   }
 }
+
+/* Enable Master Volume Slider on Mobile */
+@media screen and (max-width:512px){
+  .Header .container {
+    padding: 0 0.5rem;
+  }
+  .Header nav {
+    flex: initial;
+    max-width: 45%;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .Header nav span {
+    padding-left: 0.5rem !important;
+    font-size: 0.8rem !important;
+    white-space: nowrap;
+  }
+  .Header .updateButton {
+    padding: 0.2rem 0.4rem !important;
+    font-size: 0.7rem !important;
+    white-space: nowrap;
+  }
+  .Header .GlobalVolume {
+    flex: 1;
+    max-width: 55%;
+    margin-left: 0.5rem;
+    justify-content: flex-end;
+  }
+  .GlobalVolume .sliderContainer {
+    display: block !important;
+    flex: 1;
+    max-width: 8rem;
+  }
+  .GlobalVolume input[type=range] {
+    width: 100%;
+  }
+  .GlobalVolume .mute {
+    margin-left: 0.5rem;
+    min-width: 3rem;
+  }
+}
