@@ -6,7 +6,6 @@ import {
   MeanderState,
   SOUND_KEYS,
   SOUND_LABELS,
-  SOUND_LABELS_KM,
   SOUND_SHORTCODES,
   SOUND_SORT_KEYS,
   TimerMode
@@ -149,23 +148,68 @@ const TRANSLATIONS = {
     limitMessage: 'សូមដកសំឡេងកំពុងដំណើរការចេញសិន (អនុញ្ញាតត្រឹមតែ ២៥ សំឡេងប៉ុណ្នោះ)។',
     presetMixes: 'ល្បាយគំរូ',
     myMixes: 'ល្បាយរបស់ខ្ញុំ'
+  },
+  zh: {
+    title: '静心',
+    subtitle: '混合背景音，帮助您专注或放松',
+    mute: '静音',
+    unmute: '取消静音',
+    timers: '定时器',
+    mixes: '混合声',
+    sounds: '声音',
+    share: '分享',
+    meanderTitle: '漫游：随机漂移音量',
+    resetTitle: '重置所有音量或恢复上一次混合',
+    activeSounds: '启用中',
+    availableSounds: '可用声音',
+    slotsTitle: '可用插槽',
+    clearAll: '清空全部',
+    addAll: '添加全部',
+    noMixes: '尚未保存任何混合声音。',
+    saveMix: '保存混合声',
+    mixNamePlaceholder: '输入名字...',
+    save: '保存',
+    copy: '复制到剪贴板',
+    copied: '已复制!',
+    copyError: '无法复制',
+    shareTitle: '↓ 分享此混合声音 ↓',
+    timerModeLabel: '定时模式',
+    timerDurationLabel: '时长',
+    timerStart: '启动定时',
+    timerCancel: '取消定时',
+    soundsWillStartIn: '声音将在以下时间后开启',
+    soundsWillStopIn: '声音将在以下时间后停止',
+    soundsWillFadeIn: '声音将在以下时间后淡入',
+    soundsWillFadeOut: '声音将在以下时间后淡出',
+    hours: '小时',
+    minutes: '分钟',
+    limitMessage: '请先移除部分启用中的声音（最多支持 25 个）。',
+    presetMixes: '预设混合声',
+    myMixes: '我的混合声'
   }
 };
 
 // Why only 10: show core sounds first, rest revealed via "More Sounds" button
 const DEFAULT_ACTIVE_KEYS = SOUND_KEYS.slice(0, 10);
 
+// Supported application languages
+const LANGUAGES = [
+  { code: 'en', label: 'English' },
+  { code: 'km', label: 'ភាសាខ្មែរ' },
+  { code: 'zh', label: '中文' }
+];
+
 export const App: React.FC = () => {
   // --- Language / i18n State ---
-  const [lang, setLang] = useState<'en' | 'km'>(() => {
+  const [lang, setLang] = useState<string>(() => {
     const stored = localStorage.getItem('quietmind_lang');
-    return (stored === 'km' ? 'km' : 'en');
+    return stored || 'en';
   });
 
-  const t = TRANSLATIONS[lang];
+  const t = TRANSLATIONS[lang as keyof typeof TRANSLATIONS] || TRANSLATIONS.en;
 
   const getSoundLabel = (key: string) => {
-    return lang === 'km' ? SOUND_LABELS_KM[key] || SOUND_LABELS[key] : SOUND_LABELS[key];
+    return SOUND_LABELS[lang]?.[key] || SOUND_LABELS.en?.[key] || key;
   };
 
   // --- Active / Available Sounds Configuration ---
@@ -180,7 +224,7 @@ export const App: React.FC = () => {
     SOUND_KEYS.forEach(key => {
       initial[key] = {
         key,
-        label: SOUND_LABELS[key],
+        label: SOUND_LABELS.en[key] || key,
         shortcode: SOUND_SHORTCODES[key],
         volume: 0, // initially off
         sortKey: SOUND_SORT_KEYS[key]
@@ -1108,12 +1152,18 @@ export const App: React.FC = () => {
           </div>
 
           <nav>
-            <button
-              className="updateButton active"
-              onClick={() => setLang(prev => prev === 'en' ? 'km' : 'en')}
+            <select
+              className="langSelect"
+              value={lang}
+              onChange={(e) => {
+                setLang(e.target.value);
+                localStorage.setItem('quietmind_lang', e.target.value);
+              }}
             >
-              {lang === 'en' ? 'ភាសាខ្មែរ' : 'English'}
-            </button>
+              {LANGUAGES.map(l => (
+                <option key={l.code} value={l.code}>{l.label}</option>
+              ))}
+            </select>
           </nav>
         </div>
       </div>
