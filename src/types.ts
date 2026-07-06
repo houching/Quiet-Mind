@@ -26,6 +26,7 @@ export interface MeanderSoundState {
   baseVolume: number;
   tickOffset: number;
   direction: 'left' | 'right';
+  disabled?: boolean;
 }
 
 export interface MeanderState {

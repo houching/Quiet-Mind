@@ -14,6 +14,64 @@ import {
 import { SoundPlayer } from './components/SoundPlayer';
 import spinner from './assets/spinner.gif';
 
+interface PresetMix {
+  id: string;
+  nameEn: string;
+  nameKm: string;
+  sounds: { [key: string]: number };
+}
+
+const PRESET_MIXES: PresetMix[] = [
+  {
+    id: 'preset_rainy_cafe',
+    nameEn: 'Rainy Café',
+    nameKm: 'ហាងកាហ្វេពេលភ្លៀង',
+    sounds: { rain: 0.60, people: 0.45, raincabin: 0.30 }
+  },
+  {
+    id: 'preset_deep_focus',
+    nameEn: 'Deep Focus',
+    nameKm: 'ផ្ដោតអារម្មណ៍ជ្រៅ',
+    sounds: { brownnoise: 0.50, fanhigh: 0.35, aircon: 0.20 }
+  },
+  {
+    id: 'preset_summer_night',
+    nameEn: 'Summer Night',
+    nameKm: 'រាត្រីរដូវក្ដៅ',
+    sounds: { crickets: 0.60, frogs: 0.40, fire: 0.20 }
+  },
+  {
+    id: 'preset_ocean_breeze',
+    nameEn: 'Ocean Breeze',
+    nameKm: 'ខ្យល់ជំនោរសមុទ្រ',
+    sounds: { waves: 0.65, wind: 0.35, birds: 0.25 }
+  },
+  {
+    id: 'preset_cozy_cabin',
+    nameEn: 'Cozy Cabin',
+    nameKm: 'ផ្ទះកក់ក្ដៅ',
+    sounds: { raincabin: 0.60, fire: 0.55, chimesmetal: 0.20 }
+  },
+  {
+    id: 'preset_zen_garden',
+    nameEn: 'Zen Garden',
+    nameKm: 'សួនហ្សិន',
+    sounds: { sbowl: 0.40, stream: 0.40, birds: 0.30, chimesmetal: 0.20 }
+  },
+  {
+    id: 'preset_stormy_night',
+    nameEn: 'Stormy Night',
+    nameKm: 'រាត្រីមានព្យុះ',
+    sounds: { rain: 0.70, thunder: 0.50, wind: 0.30 }
+  },
+  {
+    id: 'preset_morning_forest',
+    nameEn: 'Morning Forest',
+    nameKm: 'ព្រៃព្រឹក្សា',
+    sounds: { birds: 0.60, stream: 0.35, wind: 0.20 }
+  }
+];
+
 // Multi-language translation dictionary for Khmer intranet context
 const TRANSLATIONS = {
   en: {
@@ -50,7 +108,9 @@ const TRANSLATIONS = {
     soundsWillFadeOut: 'Sounds will fade out in',
     hours: 'hours',
     minutes: 'mins',
-    limitMessage: 'Please remove an active sound first (max 25 active sounds).'
+    limitMessage: 'Please remove an active sound first (max 25 active sounds).',
+    presetMixes: 'Preset Mixes',
+    myMixes: 'My Mixes'
   },
   km: {
     title: 'ស្ងប់ចិត្ត',
@@ -86,7 +146,9 @@ const TRANSLATIONS = {
     soundsWillFadeOut: 'សំឡេងនឹងរលត់ទៅវិញក្នុងរយៈពេល',
     hours: 'ម៉ោង',
     minutes: 'នាទី',
-    limitMessage: 'សូមដកសំឡេងកំពុងដំណើរការចេញសិន (អនុញ្ញាតត្រឹមតែ ២៥ សំឡេងប៉ុណ្ណោះ)។'
+    limitMessage: 'សូមដកសំឡេងកំពុងដំណើរការចេញសិន (អនុញ្ញាតត្រឹមតែ ២៥ សំឡេងប៉ុណ្នោះ)។',
+    presetMixes: 'ល្បាយគំរូ',
+    myMixes: 'ល្បាយរបស់ខ្ញុំ'
   }
 };
 
@@ -210,6 +272,8 @@ export const App: React.FC = () => {
     const params = new URLSearchParams(window.location.search);
     const mixCode = params.get('m');
     const autoplay = params.get('autoplay') === '1';
+    const meanderActive = params.get('meander') === '1';
+    const meanderDisabledCodes = params.get('md')?.split(',') || [];
 
     if (mixCode) {
       const newVolumes: Record<string, number> = {};
@@ -236,7 +300,26 @@ export const App: React.FC = () => {
         return next;
       });
 
-      if (autoplay) {
+      if (meanderActive) {
+        // Initialize meander state parameters from loaded URL volumes
+        const meanderSounds: Record<string, { baseVolume: number; tickOffset: number; direction: 'left' | 'right'; disabled?: boolean }> = {};
+        Object.keys(SOUND_LABELS).forEach(key => {
+          const isSoundDisabled = meanderDisabledCodes.includes(SOUND_SHORTCODES[key]);
+          meanderSounds[key] = {
+            baseVolume: newVolumes[key] || 0,
+            tickOffset: 0,
+            direction: Math.random() > 0.5 ? 'right' : 'left',
+            disabled: isSoundDisabled
+          };
+        });
+        setMeander({
+          isActive: true,
+          sounds: meanderSounds,
+          tickCount: 0
+        });
+      }
+
+      if (autoplay || meanderActive) {
         setIsPlaying(true);
       }
     }
@@ -303,7 +386,8 @@ export const App: React.FC = () => {
               meanderSounds![key] = {
                 baseVolume: currentSounds[key].volume,
                 tickOffset: 0,
-                direction: Math.random() > 0.5 ? 'right' : 'left'
+                direction: Math.random() > 0.5 ? 'right' : 'left',
+                disabled: false
               };
             });
           }
@@ -312,6 +396,7 @@ export const App: React.FC = () => {
             const nextSounds = { ...prevSounds };
             Object.keys(meanderSounds!).forEach(key => {
               const mState = meanderSounds![key];
+              if (mState.disabled) return; // skip if meander is disabled for this sound
               const baseVol = mState.baseVolume;
               if (baseVol <= 0.02) return; // ignore inactive sounds
 
@@ -391,12 +476,13 @@ export const App: React.FC = () => {
       setMeander({ isActive: false, sounds: null, tickCount: 0 });
     } else {
       // Initialize meander state parameters
-      const meanderSounds: Record<string, { baseVolume: number; tickOffset: number; direction: 'left' | 'right' }> = {};
+      const meanderSounds: Record<string, { baseVolume: number; tickOffset: number; direction: 'left' | 'right'; disabled?: boolean }> = {};
       Object.keys(sounds).forEach(key => {
         meanderSounds[key] = {
           baseVolume: sounds[key].volume,
           tickOffset: 0,
-          direction: Math.random() > 0.5 ? 'right' : 'left'
+          direction: Math.random() > 0.5 ? 'right' : 'left',
+          disabled: false
         };
       });
       setMeander({
@@ -405,6 +491,40 @@ export const App: React.FC = () => {
         tickCount: 0
       });
     }
+  };
+
+  const toggleMeanderForSound = (key: string) => {
+    if (!meander.isActive) return;
+    setMeander(prev => {
+      if (!prev.sounds) return prev;
+      const nextSounds = { ...prev.sounds };
+      const currentSoundState = nextSounds[key];
+      if (!currentSoundState) return prev;
+
+      const isDisabling = !currentSoundState.disabled;
+
+      nextSounds[key] = {
+        ...currentSoundState,
+        disabled: isDisabling
+      };
+
+      if (isDisabling) {
+        // Restore base volume when disabling meander for this sound
+        setSounds(prevSounds => ({
+          ...prevSounds,
+          [key]: { ...prevSounds[key], volume: currentSoundState.baseVolume }
+        }));
+      } else {
+        // If enabling, set baseVolume to the current volume
+        nextSounds[key].baseVolume = soundsRef.current[key].volume;
+        nextSounds[key].tickOffset = prev.tickCount; // Reset tick offset to keep transition smooth
+      }
+
+      return {
+        ...prev,
+        sounds: nextSounds
+      };
+    });
   };
 
   const handleReset = () => {
@@ -549,11 +669,20 @@ export const App: React.FC = () => {
   const getShareUrl = () => {
     let code = '';
     const sortedActive = Object.keys(sounds)
-      .filter(k => sounds[k].volume > 0.02)
+      .filter(k => {
+        const vol = (meander.isActive && meander.sounds && meander.sounds[k])
+          ? meander.sounds[k].baseVolume
+          : sounds[k].volume;
+        return vol > 0.02;
+      })
       .sort((a, b) => sounds[a].sortKey - sounds[b].sortKey);
 
     sortedActive.forEach(key => {
-      const vol = Math.round(sounds[key].volume * 100);
+      const vol = Math.round(
+        ((meander.isActive && meander.sounds && meander.sounds[key])
+          ? meander.sounds[key].baseVolume
+          : sounds[key].volume) * 100
+      );
       let volStr = vol.toString();
       if (volStr.length === 1) volStr = '0' + volStr;
       if (volStr === '100') volStr = '99';
@@ -564,6 +693,23 @@ export const App: React.FC = () => {
     if (code) {
       url.searchParams.set('m', code);
     }
+
+    if (meander.isActive) {
+      url.searchParams.set('meander', '1');
+
+      const disabledShortcodes: string[] = [];
+      if (meander.sounds) {
+        Object.keys(meander.sounds).forEach(key => {
+          if (meander.sounds![key]?.disabled) {
+            disabledShortcodes.push(SOUND_SHORTCODES[key]);
+          }
+        });
+      }
+      if (disabledShortcodes.length > 0) {
+        url.searchParams.set('md', disabledShortcodes.join(','));
+      }
+    }
+
     return url.toString();
   };
 
@@ -686,7 +832,29 @@ export const App: React.FC = () => {
   const renderMixesTab = () => {
     return (
       <div className="MixInput">
-        <form onSubmit={handleSaveMix} className="save">
+        {/* Preset Mixes Section - Horizontal list at the top */}
+        <div className="mixSection presetMixesSection" style={{ width: '100%', padding: '1rem 1.25rem' }}>
+          <h4 style={{ margin: '0 0 0.5rem 0', opacity: 0.7, fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+            {t.presetMixes}
+          </h4>
+          <div className="presetsHorizontalContainer">
+            {PRESET_MIXES.map(preset => {
+              const name = lang === 'km' ? preset.nameKm : preset.nameEn;
+              return (
+                <button
+                  key={preset.id}
+                  className="presetPill interactive"
+                  type="button"
+                  onClick={() => handleLoadMix(preset.sounds)}
+                >
+                  {name}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        <form onSubmit={handleSaveMix} className="save" style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '1.25rem' }}>
           <input
             type="text"
             placeholder={t.mixNamePlaceholder}
@@ -697,64 +865,70 @@ export const App: React.FC = () => {
         </form>
 
         <div className="mixList">
-          {mixes.length === 0 ? (
-            <div className="noMixMessage">{t.noMixes}</div>
-          ) : (
-            <ol>
-              {mixes.map(mix => (
-                <li key={mix.id} className="MixInputItem">
-                  <div className="wrap">
-                    {mixDeletePendingId === mix.id ? (
-                      <div className="deletePending">
-                        <button
-                          className="deleteCancel interactive"
-                          type="button"
-                          onClick={() => setMixDeletePendingId(null)}
-                        >
-                          Cancel
-                        </button>
-                        <button
-                          className="deleteConfirm interactive"
-                          type="button"
-                          onClick={() => handleDeleteMix(mix.id)}
-                        >
-                          Delete Mix
-                        </button>
-                      </div>
-                    ) : (
-                      <>
-                        <button
-                          className="main interactive"
-                          type="button"
-                          onClick={() => handleLoadMix(mix.sounds)}
-                        >
-                          {mix.name}
-                        </button>
-                        <button
-                          className="share interactive"
-                          type="button"
-                          onClick={() => {
-                            // Load sounds then open share tab
-                            handleLoadMix(mix.sounds);
-                            setActiveTab('share');
-                          }}
-                        >
-                          Share
-                        </button>
-                        <button
-                          className="delete interactive"
-                          type="button"
-                          onClick={() => setMixDeletePendingId(mix.id)}
-                        >
-                          ✕
-                        </button>
-                      </>
-                    )}
-                  </div>
-                </li>
-              ))}
-            </ol>
-          )}
+          {/* User Saved Mixes Section */}
+          <div className="mixSection myMixesSection">
+            <h4 style={{ margin: '0 0 0.5rem 0', opacity: 0.7, fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              {t.myMixes}
+            </h4>
+            {mixes.length === 0 ? (
+              <div className="noMixMessage">{t.noMixes}</div>
+            ) : (
+              <ol>
+                {mixes.map(mix => (
+                  <li key={mix.id} className="MixInputItem">
+                    <div className="wrap">
+                      {mixDeletePendingId === mix.id ? (
+                        <div className="deletePending">
+                          <button
+                            className="deleteCancel interactive"
+                            type="button"
+                            onClick={() => setMixDeletePendingId(null)}
+                          >
+                            Cancel
+                          </button>
+                          <button
+                            className="deleteConfirm interactive"
+                            type="button"
+                            onClick={() => handleDeleteMix(mix.id)}
+                          >
+                            Delete Mix
+                          </button>
+                        </div>
+                      ) : (
+                        <>
+                          <button
+                            className="main interactive"
+                            type="button"
+                            onClick={() => handleLoadMix(mix.sounds)}
+                          >
+                            {mix.name}
+                          </button>
+                          <button
+                            className="share interactive"
+                            type="button"
+                            onClick={() => {
+                              // Load sounds then open share tab
+                              handleLoadMix(mix.sounds);
+                              setActiveTab('share');
+                            }}
+                          >
+                            Share
+                          </button>
+                          <button
+                            className="delete interactive"
+                            type="button"
+                            onClick={() => setMixDeletePendingId(mix.id)}
+                          >
+                            ✕
+                          </button>
+                        </>
+                      )}
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            )}
+          </div>
         </div>
       </div>
     );
@@ -1044,7 +1218,14 @@ export const App: React.FC = () => {
                   <h3>
                     {getSoundLabel(sound.key)}
                     {isPlaying && hasVolume && meander.isActive && (
-                      <span className="meanderIndicator" />
+                      <button
+                        className={`meanderIndicator ${meander.sounds?.[sound.key]?.disabled ? 'disabled' : 'active'}`}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          toggleMeanderForSound(sound.key);
+                        }}
+                        title={meander.sounds?.[sound.key]?.disabled ? 'Enable meander for this sound / បើកការលម្អៀងសម្រាប់សំឡេងនេះ' : 'Disable meander for this sound / បិទការលម្អៀងសម្រាប់សំឡេងនេះ'}
+                      />
                     )}
                   </h3>
                   <div className="sliderContainer" style={{ display: 'flex', width: '100%', padding: '0 0.5rem' }}>

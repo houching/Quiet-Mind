@@ -813,6 +813,31 @@ audio {
   color: #1f1e21;
   background-color: #fff;
 }
+.presetsHorizontalContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.25rem 0;
+}
+.presetPill {
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+.presetPill:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+.presetPill:active {
+  transform: scale(0.95);
+}
+
 .MixInputItem {
   flex: 1;
   width: 100%;
@@ -833,11 +858,8 @@ audio {
   background-color: #1f1e21;
   margin: 0;
   display: flex;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  flex: 1;
+  width: 100%;
 }
 .MixInputItem button {
   background-color: rgba(0, 0, 0, 0.3);
@@ -2090,6 +2112,23 @@ audio {
   position: absolute;
   top: 1px;
   right: -20px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: opacity 0.2s, transform 0.2s;
+  outline: none;
+}
+.SoundContainer .meanderIndicator:hover {
+  transform: scale(1.2);
+}
+.SoundContainer .meanderIndicator.disabled {
+  opacity: 0.25;
+  filter: grayscale(1);
+}
+.SoundContainer .meanderIndicator.disabled:hover {
+  opacity: 0.6;
+  filter: none;
 }
 .SoundSlider {
   flex-direction: column;
