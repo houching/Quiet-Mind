@@ -8,7 +8,10 @@ import {
   SOUND_LABELS,
   SOUND_SHORTCODES,
   SOUND_SORT_KEYS,
-  TimerMode
+  TimerMode,
+  MeanderIntensity,
+  MEANDER_INTENSITY_CONFIG,
+  MeanderPattern
 } from './types';
 import { SoundPlayer } from './components/SoundPlayer';
 import spinner from './assets/spinner.gif';
@@ -22,52 +25,52 @@ interface PresetMix {
 
 const PRESET_MIXES: PresetMix[] = [
   {
-    id: 'preset_rainy_cafe',
-    nameEn: 'Rainy Café',
-    nameKm: 'ហាងកាហ្វេពេលភ្លៀង',
-    sounds: { rain: 0.60, people: 0.45, raincabin: 0.30 }
+    id: 'p1',
+    nameEn: 'Relaxing Rain',
+    nameKm: 'ភ្លៀងលំហែកាយ',
+    sounds: { rain: 0.5, thunder: 0.2, wind: 0.3 }
   },
   {
-    id: 'preset_deep_focus',
+    id: 'p2',
+    nameEn: 'Forest Walk',
+    nameKm: 'ដើរលេងក្នុងព្រៃ',
+    sounds: { birds: 0.6, crickets: 0.4, stream: 0.5 }
+  },
+  {
+    id: 'p3',
+    nameEn: 'Cozy Cafe',
+    nameKm: 'ហាងកាហ្វេកក់ក្ដៅ',
+    sounds: { people: 0.5, rain: 0.3, vinyl: 0.2 }
+  },
+  {
+    id: 'p4',
     nameEn: 'Deep Focus',
-    nameKm: 'ផ្ដោតអារម្មណ៍ជ្រៅ',
-    sounds: { brownnoise: 0.50, fanhigh: 0.35, aircon: 0.20 }
+    nameKm: 'ផ្ដោតអារម្មណ៍ខ្លាំង',
+    sounds: { whitenoise: 0.4, fanlow: 0.3, aircon: 0.2 }
   },
   {
-    id: 'preset_summer_night',
+    id: 'p5',
+    nameEn: 'Ocean Breeze',
+    nameKm: 'ខ្យល់សមុទ្រ',
+    sounds: { waves: 0.6, wind: 0.4, chimesmetal: 0.3 }
+  },
+  {
+    id: 'p6',
     nameEn: 'Summer Night',
     nameKm: 'រាត្រីរដូវក្ដៅ',
-    sounds: { crickets: 0.60, frogs: 0.40, fire: 0.20 }
+    sounds: { cicadas: 0.5, frogs: 0.4, crickets: 0.4 }
   },
   {
-    id: 'preset_ocean_breeze',
-    nameEn: 'Ocean Breeze',
-    nameKm: 'ខ្យល់ជំនោរសមុទ្រ',
-    sounds: { waves: 0.65, wind: 0.35, birds: 0.25 }
+    id: 'p7',
+    nameEn: 'Cabin Retreat',
+    nameKm: 'លំហែកាយក្នុងផ្ទះឈើ',
+    sounds: { raincabin: 0.6, fire: 0.5, wind: 0.3 }
   },
   {
-    id: 'preset_cozy_cabin',
-    nameEn: 'Cozy Cabin',
-    nameKm: 'ផ្ទះកក់ក្ដៅ',
-    sounds: { raincabin: 0.60, fire: 0.55, chimesmetal: 0.20 }
-  },
-  {
-    id: 'preset_zen_garden',
-    nameEn: 'Zen Garden',
-    nameKm: 'សួនហ្សិន',
-    sounds: { sbowl: 0.40, stream: 0.40, birds: 0.30, chimesmetal: 0.20 }
-  },
-  {
-    id: 'preset_stormy_night',
-    nameEn: 'Stormy Night',
-    nameKm: 'រាត្រីមានព្យុះ',
-    sounds: { rain: 0.70, thunder: 0.50, wind: 0.30 }
-  },
-  {
-    id: 'preset_morning_forest',
-    nameEn: 'Morning Forest',
-    nameKm: 'ព្រៃព្រឹក្សា',
-    sounds: { birds: 0.60, stream: 0.35, wind: 0.20 }
+    id: 'p8',
+    nameEn: 'Stormy Sleep',
+    nameKm: 'គេងក្នុងព្យុះភ្លៀង',
+    sounds: { raintinroof: 0.7, thunder: 0.4, brownnoise: 0.3 }
   }
 ];
 
@@ -109,7 +112,17 @@ const TRANSLATIONS = {
     minutes: 'mins',
     limitMessage: 'Please remove an active sound first (max 25 active sounds).',
     presetMixes: 'Preset Mixes',
-    myMixes: 'My Mixes'
+    myMixes: 'My Mixes',
+    settings: 'Settings',
+    meanderIntensity: 'Meander Intensity',
+    gentle: 'Gentle',
+    medium: 'Medium',
+    wild: 'Wild',
+    driftPattern: 'Drift Pattern',
+    sine: 'Sine Wave',
+    random: 'Random Walk',
+    pulse: 'Pulse',
+    applyToAll: 'Apply pattern to all'
   },
   km: {
     title: 'ស្ងប់ចិត្ត',
@@ -147,7 +160,17 @@ const TRANSLATIONS = {
     minutes: 'នាទី',
     limitMessage: 'សូមដកសំឡេងកំពុងដំណើរការចេញសិន (អនុញ្ញាតត្រឹមតែ ២៥ សំឡេងប៉ុណ្នោះ)។',
     presetMixes: 'ល្បាយគំរូ',
-    myMixes: 'ល្បាយរបស់ខ្ញុំ'
+    myMixes: 'ល្បាយរបស់ខ្ញុំ',
+    settings: 'ការកំណត់',
+    meanderIntensity: 'កម្រិតលម្អៀង',
+    gentle: 'ទន់ភ្លន់',
+    medium: 'មធ្យម',
+    wild: 'ខ្លាំង',
+    driftPattern: 'ទម្រង់ផ្លាស់ប្ដូរ',
+    sine: 'រលកសញ្ញាណ',
+    random: 'ចៃដន្យ',
+    pulse: 'ចង្វាក់',
+    applyToAll: 'កំណត់គ្រប់សំឡេង'
   },
   zh: {
     title: '静心',
@@ -185,7 +208,17 @@ const TRANSLATIONS = {
     minutes: '分钟',
     limitMessage: '请先移除部分启用中的声音（最多支持 25 个）。',
     presetMixes: '预设混合声',
-    myMixes: '我的混合声'
+    myMixes: '我的混合声',
+    settings: '设置',
+    meanderIntensity: '漫游强度',
+    gentle: '柔和',
+    medium: '中等',
+    wild: '强烈',
+    driftPattern: '漂移模式',
+    sine: '正弦波',
+    random: '随机漫游',
+    pulse: '脉冲',
+    applyToAll: '应用到全部'
   }
 };
 
@@ -245,11 +278,15 @@ export const App: React.FC = () => {
   // --- State to Reset / Restore previous mix ---
   const [stateToReset, setStateToReset] = useState<Record<string, number> | null>(null);
 
+  // --- Settings Open State ---
+  const [settingsOpen, setSettingsOpen] = useState<boolean>(false);
+
   // --- Meander State ---
   const [meander, setMeander] = useState<MeanderState>({
     isActive: false,
     sounds: null,
-    tickCount: 0
+    tickCount: 0,
+    intensity: 'medium'
   });
 
   // --- Timer State ---
@@ -345,21 +382,42 @@ export const App: React.FC = () => {
       });
 
       if (meanderActive) {
+        let parsedIntensity: MeanderIntensity = 'medium';
+        const intensityCode = params.get('mi');
+        if (intensityCode === 'g') parsedIntensity = 'gentle';
+        else if (intensityCode === 'w') parsedIntensity = 'wild';
+
+        const patternParam = params.get('mp') || '';
+        const patternsMap: Record<string, MeanderPattern> = {};
+        patternParam.split(',').forEach(item => {
+          const [sc, pat] = item.split(':');
+          if (sc && (pat === 'sine' || pat === 'random' || pat === 'pulse')) {
+            const key = Object.keys(SOUND_SHORTCODES).find(
+              k => SOUND_SHORTCODES[k] === sc
+            );
+            if (key) {
+              patternsMap[key] = pat as MeanderPattern;
+            }
+          }
+        });
+
         // Initialize meander state parameters from loaded URL volumes
-        const meanderSounds: Record<string, { baseVolume: number; tickOffset: number; direction: 'left' | 'right'; disabled?: boolean }> = {};
-        Object.keys(SOUND_LABELS).forEach(key => {
+        const meanderSounds: Record<string, { baseVolume: number; tickOffset: number; direction: 'left' | 'right'; disabled?: boolean; pattern: MeanderPattern }> = {};
+        SOUND_KEYS.forEach(key => {
           const isSoundDisabled = meanderDisabledCodes.includes(SOUND_SHORTCODES[key]);
           meanderSounds[key] = {
             baseVolume: newVolumes[key] || 0,
             tickOffset: 0,
             direction: Math.random() > 0.5 ? 'right' : 'left',
-            disabled: isSoundDisabled
+            disabled: isSoundDisabled,
+            pattern: patternsMap[key] || 'sine'
           };
         });
         setMeander({
           isActive: true,
           sounds: meanderSounds,
-          tickCount: 0
+          tickCount: 0,
+          intensity: parsedIntensity
         });
       }
 
@@ -431,10 +489,15 @@ export const App: React.FC = () => {
                 baseVolume: currentSounds[key].volume,
                 tickOffset: 0,
                 direction: Math.random() > 0.5 ? 'right' : 'left',
-                disabled: false
+                disabled: false,
+                pattern: 'sine'
               };
             });
           }
+
+          const intensityConfig = MEANDER_INTENSITY_CONFIG[prevMeander.intensity || 'medium'];
+          const cycleLength = intensityConfig.cycleLength;
+          const driftRange = intensityConfig.driftRange;
 
           setSounds(prevSounds => {
             const nextSounds = { ...prevSounds };
@@ -444,19 +507,45 @@ export const App: React.FC = () => {
               const baseVol = mState.baseVolume;
               if (baseVol <= 0.02) return; // ignore inactive sounds
 
-              const offsetIndex = (nextTick - mState.tickOffset) % 60;
-              if (offsetIndex === 0) {
-                mState.direction = Math.random() > 0.5 ? 'right' : 'left';
+              let nextVol = baseVol;
+              const pat = mState.pattern || 'sine';
+
+              if (pat === 'sine') {
+                const offsetIndex = (nextTick - mState.tickOffset) % cycleLength;
+                const phase = (2 * Math.PI * offsetIndex) / cycleLength;
+                const sineVal = Math.sin(phase);
+                const maxUp = (1 - baseVol) * driftRange;
+                const maxDown = baseVol * (driftRange / (1 + driftRange));
+                nextVol = baseVol + (sineVal > 0 ? sineVal * maxUp : sineVal * maxDown);
+              } else if (pat === 'random') {
+                // Brownian walk drift
+                const stepMax = (baseVol * driftRange) / 8;
+                const randChange = (Math.random() * 2 - 1) * stepMax;
+                const prevVol = prevSounds[key]?.volume ?? baseVol;
+                nextVol = prevVol + randChange;
+                
+                // Clamp within drift range boundaries
+                const maxLimit = baseVol + (1 - baseVol) * driftRange;
+                const minLimit = baseVol - baseVol * (driftRange / (1 + driftRange));
+                nextVol = Math.max(minLimit, Math.min(maxLimit, nextVol));
+              } else if (pat === 'pulse') {
+                // Heartbeat / breathing fade-out cycle
+                const progress = ((nextTick - mState.tickOffset) % cycleLength) / cycleLength;
+                let factor = 1;
+                if (progress < 0.25) {
+                  const p = progress / 0.25;
+                  factor = 1 - (1 - 0.10) * p;
+                } else if (progress < 0.50) {
+                  factor = 0.10;
+                } else if (progress < 0.75) {
+                  const p = (progress - 0.50) / 0.25;
+                  factor = 0.10 + (1 - 0.10) * p;
+                } else {
+                  factor = 1;
+                }
+                nextVol = baseVol * factor;
               }
 
-              const targetVol = mState.direction === 'right'
-                ? baseVol + (1 - baseVol) / 3
-                : baseVol / 1.5;
-
-              const diff = Math.abs(baseVol - targetVol) / 30;
-              const step = (offsetIndex > 30 ? 30 - (offsetIndex - 30) : offsetIndex) * diff;
-
-              let nextVol = mState.direction === 'right' ? baseVol + step : baseVol - step;
               nextVol = Math.max(0, Math.min(1, nextVol));
               nextSounds[key] = { ...nextSounds[key], volume: nextVol };
             });
@@ -517,24 +606,69 @@ export const App: React.FC = () => {
   // --- Playback controls ---
   const toggleMeander = () => {
     if (meander.isActive) {
-      setMeander({ isActive: false, sounds: null, tickCount: 0 });
+      setMeander(prev => ({ isActive: false, sounds: null, tickCount: 0, intensity: prev.intensity }));
     } else {
       // Initialize meander state parameters
-      const meanderSounds: Record<string, { baseVolume: number; tickOffset: number; direction: 'left' | 'right'; disabled?: boolean }> = {};
+      const meanderSounds: Record<string, { baseVolume: number; tickOffset: number; direction: 'left' | 'right'; disabled?: boolean; pattern: MeanderPattern }> = {};
       Object.keys(sounds).forEach(key => {
         meanderSounds[key] = {
           baseVolume: sounds[key].volume,
           tickOffset: 0,
           direction: Math.random() > 0.5 ? 'right' : 'left',
-          disabled: false
+          disabled: false,
+          pattern: 'sine'
         };
       });
-      setMeander({
+      setMeander(prev => ({
         isActive: true,
         sounds: meanderSounds,
-        tickCount: 0
-      });
+        tickCount: 0,
+        intensity: prev.intensity
+      }));
     }
+  };
+
+  const setMeanderIntensity = (level: MeanderIntensity) => {
+    setMeander(prev => ({
+      ...prev,
+      intensity: level
+    }));
+  };
+
+  const setSoundPattern = (key: string, pattern: MeanderPattern) => {
+    setMeander(prev => {
+      if (!prev.sounds) return prev;
+      const nextSounds = { ...prev.sounds };
+      if (nextSounds[key]) {
+        nextSounds[key] = {
+          ...nextSounds[key],
+          pattern,
+          tickOffset: prev.tickCount
+        };
+      }
+      return {
+        ...prev,
+        sounds: nextSounds
+      };
+    });
+  };
+
+  const setAllSoundPatterns = (pattern: MeanderPattern) => {
+    setMeander(prev => {
+      if (!prev.sounds) return prev;
+      const nextSounds = { ...prev.sounds };
+      Object.keys(nextSounds).forEach(key => {
+        nextSounds[key] = {
+          ...nextSounds[key],
+          pattern,
+          tickOffset: prev.tickCount
+        };
+      });
+      return {
+        ...prev,
+        sounds: nextSounds
+      };
+    });
   };
 
   const toggleMeanderForSound = (key: string) => {
@@ -602,7 +736,7 @@ export const App: React.FC = () => {
           return next;
         });
         setIsPlaying(false);
-        setMeander({ isActive: false, sounds: null, tickCount: 0 });
+        setMeander(prev => ({ isActive: false, sounds: null, tickCount: 0, intensity: prev.intensity }));
         setTimer({ isActive: false, secondsLeft: 0, totalSeconds: 0, mode: null });
       }
     }
@@ -741,16 +875,31 @@ export const App: React.FC = () => {
     if (meander.isActive) {
       url.searchParams.set('meander', '1');
 
+      if (meander.intensity !== 'medium') {
+        const intCode = meander.intensity === 'gentle' ? 'g' : 'w';
+        url.searchParams.set('mi', intCode);
+      }
+
       const disabledShortcodes: string[] = [];
+      const patternPairs: string[] = [];
+
       if (meander.sounds) {
         Object.keys(meander.sounds).forEach(key => {
-          if (meander.sounds![key]?.disabled) {
+          const mState = meander.sounds![key];
+          if (mState?.disabled) {
             disabledShortcodes.push(SOUND_SHORTCODES[key]);
+          }
+          if (mState?.pattern && mState.pattern !== 'sine') {
+            patternPairs.push(`${SOUND_SHORTCODES[key]}:${mState.pattern}`);
           }
         });
       }
+
       if (disabledShortcodes.length > 0) {
         url.searchParams.set('md', disabledShortcodes.join(','));
+      }
+      if (patternPairs.length > 0) {
+        url.searchParams.set('mp', patternPairs.join(','));
       }
     }
 
@@ -1108,8 +1257,102 @@ export const App: React.FC = () => {
     );
   };
 
+  const renderSettingsPanel = () => {
+    if (!settingsOpen) return null;
+
+    // Get list of currently active sounds (volume > 0.02)
+    const activeSoundsList = Object.keys(sounds).filter(key => sounds[key].volume > 0.02);
+
+    return (
+      <div className="settingsBackdrop" onClick={() => setSettingsOpen(false)}>
+        <div className="settingsPanel" onClick={(e) => e.stopPropagation()}>
+          <div className="settingsHeader">
+            <h2>⚙ {t.settings}</h2>
+            <button className="closeBtn interactive" onClick={() => setSettingsOpen(false)}>×</button>
+          </div>
+
+          <div className="settingsContent">
+            <div className="settingsSection">
+              <h3>{t.meanderIntensity}</h3>
+              <div className="intensityGroup">
+                {(['gentle', 'medium', 'wild'] as MeanderIntensity[]).map(level => (
+                  <button
+                    key={level}
+                    className={`intensityBtn interactive ${meander.intensity === level ? 'active' : ''}`}
+                    onClick={() => setMeanderIntensity(level)}
+                  >
+                    {t[level]}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {meander.isActive && activeSoundsList.length > 0 && (
+              <div className="settingsSection">
+                <div className="sectionHeader">
+                  <h3>{t.driftPattern}</h3>
+                  <div className="bulkAction">
+                    <select
+                      className="bulkPatternSelect"
+                      defaultValue=""
+                      onChange={(e) => {
+                        if (e.target.value) {
+                          setAllSoundPatterns(e.target.value as MeanderPattern);
+                          e.target.value = "";
+                        }
+                      }}
+                    >
+                      <option value="" disabled>{t.applyToAll}</option>
+                      <option value="sine">🌊 {t.sine}</option>
+                      <option value="random">🎲 {t.random}</option>
+                      <option value="pulse">💓 {t.pulse}</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div className="patternsList">
+                  {activeSoundsList.map(key => {
+                    const currentPattern = meander.sounds?.[key]?.pattern || 'sine';
+                    const isSoundDisabled = meander.sounds?.[key]?.disabled;
+
+                    return (
+                      <div key={key} className={`patternRow ${isSoundDisabled ? 'soundDisabled' : ''}`}>
+                        <span className="soundLabel">{getSoundLabel(key)}</span>
+                        <div className="rowControls">
+                          <button
+                            className={`rowMeanderToggle interactive ${isSoundDisabled ? 'disabled' : 'active'}`}
+                            onClick={() => toggleMeanderForSound(key)}
+                            title={isSoundDisabled ? 'Enable Meander' : 'Disable Meander'}
+                          >
+                            {isSoundDisabled ? '⏸' : '▶'}
+                          </button>
+                          <select
+                            className="patternSelect"
+                            value={currentPattern}
+                            disabled={isSoundDisabled}
+                            onChange={(e) => setSoundPattern(key, e.target.value as MeanderPattern)}
+                          >
+                            <option value="sine">🌊 {t.sine}</option>
+                            <option value="random">🎲 {t.random}</option>
+                            <option value="pulse">💓 {t.pulse}</option>
+                          </select>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div id="App">
+      {renderSettingsPanel()}
+
       {/* 25 Hidden SoundPlayers dynamically rendering audio loops */}
       {SOUND_KEYS.map(key => {
         const sound = sounds[key];
@@ -1151,7 +1394,7 @@ export const App: React.FC = () => {
             </button>
           </div>
 
-          <nav>
+          <nav style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <select
               className="langSelect"
               value={lang}
@@ -1164,6 +1407,13 @@ export const App: React.FC = () => {
                 <option key={l.code} value={l.code}>{l.label}</option>
               ))}
             </select>
+            <button
+              className={`settingsBtn interactive ${settingsOpen ? 'active' : ''}`}
+              onClick={() => setSettingsOpen(prev => !prev)}
+              title={t.settings}
+            >
+              ⚙
+            </button>
           </nav>
         </div>
       </div>

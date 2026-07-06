@@ -22,17 +22,30 @@ export interface TimerState {
   mode: TimerMode;
 }
 
+export type MeanderPattern = 'sine' | 'random' | 'pulse';
+
+export type MeanderIntensity = 'gentle' | 'medium' | 'wild';
+
+// Why these values: gentle barely moves, medium matches original behavior, wild is dramatic
+export const MEANDER_INTENSITY_CONFIG = {
+  gentle:  { cycleLength: 90, driftRange: 0.10 },
+  medium:  { cycleLength: 60, driftRange: 0.33 },
+  wild:    { cycleLength: 30, driftRange: 0.60 },
+} as const;
+
 export interface MeanderSoundState {
   baseVolume: number;
   tickOffset: number;
   direction: 'left' | 'right';
   disabled?: boolean;
+  pattern: MeanderPattern;
 }
 
 export interface MeanderState {
   isActive: boolean;
   sounds: { [key: string]: MeanderSoundState } | null;
   tickCount: number;
+  intensity: MeanderIntensity;
 }
 
 // Sound definitions matching the scraped A Soft Murmur config
